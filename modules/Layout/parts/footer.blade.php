@@ -134,6 +134,11 @@
 
 {!! \App\Helpers\Assets::js(true) !!}
 
+{{-- Panagea Scripts --}}
+<script src="{{ asset('panagea/js/common_scripts.js') }}"></script>
+<script src="{{ asset('panagea/js/main.js') }}"></script>
+{{-- / Panagea Scripts --}}
+
 @yield('footer')
 
 @php \App\Helpers\ReCaptchaEngine::scripts() @endphp

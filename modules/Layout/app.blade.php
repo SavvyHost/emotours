@@ -159,9 +159,5 @@
 @endif
 @php event(new \Modules\Layout\Events\LayoutEndBody()); @endphp
 
-{{-- Panagea Scripts --}}
-<script src="{{ asset('panagea/js/common_scripts.js') }}"></script>
-<script src="{{ asset('panagea/js/main.js') }}"></script>
-{{-- / Panagea Scripts --}}
 </body>
 </html>
