@@ -93,6 +93,7 @@ Author URI: http://themeforest.net/user/Ansonika/
     display: block;
     padding: 5px 10px;
     white-space: nowrap;
+    text-decoration: none;
   }
 
   /*First level styles */

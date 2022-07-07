@@ -23,7 +23,7 @@
     @include('Layout::parts.seo-meta')
 
 
-<!--  Panagea Styles  -->
+    <!--  Panagea Styles  -->
     <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('panagea/css/vendors.css')}}">
     <!--/ Panagea Styles  -->
