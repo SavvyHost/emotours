@@ -21,13 +21,20 @@
     @endif
 
     @include('Layout::parts.seo-meta')
+
+
+    <!--  Panagea Styles  -->
+    <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/vendors.css')}}">
+    <!--/ Panagea Styles  -->
+
     <link href="{{ asset('libs/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/icofont/icofont.min.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/select2/css/select2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/frontend/css/notification.css') }}" rel="newest stylesheet">
-    <link href="{{ asset('dist/frontend/css/app.css?_ver='.config('app.version')) }}" rel="stylesheet">
+    <link href=" {{ asset('dist/frontend/css/app.css?_ver='.config('app.version')) }}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{ asset("libs/daterange/daterangepicker.css") }}" >
     <!-- Fonts -->
@@ -128,7 +135,7 @@
     @php event(new \Modules\Layout\Events\LayoutEndHead()); @endphp
 
 </head>
-<body class="frontend-page {{ !empty($row->header_style) ? "header-".$row->header_style : "header-normal" }} {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif">
+<body class="frontend-page {{ !empty($row->header_style) ? "header-".$row->header_style : "header-normal" }} {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif ">
     @php event(new \Modules\Layout\Events\LayoutBeginBody()); @endphp
 
     @if(!is_demo_mode())
@@ -138,7 +145,7 @@
     <div class="bravo_wrap">
         @if(!is_api())
             @include('Layout::parts.topbar')
-            @include('Layout::parts.header')
+            @include('Layout::parts.header-panagea')
         @endif
 
         @yield('content')
@@ -151,5 +158,9 @@
     @endif
     @php event(new \Modules\Layout\Events\LayoutEndBody()); @endphp
 
+    {{-- Panagea Scripts --}}
+    <script src="{{ asset('panagea/js/common_scripts.js') }}"></script>
+    <script src="{{ asset('panagea/js/main.js') }}"></script>
+    {{-- / Panagea Scripts --}}
 </body>
 </html>
