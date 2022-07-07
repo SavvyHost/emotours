@@ -38,6 +38,8 @@ php artisan storage:link
 3. Configure and Install the project
 
 ```bash
+# clear cache
+php artisan optimize:clear
 php artisan serve
 ```
 
@@ -53,6 +55,7 @@ git clone http://github.com/aboodazmy/emotours.git
 ```
 
 2. [install](#installation) the project
+
 3. create new branch for the tasks
 
 ```bash
