@@ -917,7 +917,16 @@ ul#top_menu li a.login:before, ul#top_menu li a.wishlist_bt_top:before, ul#top_m
   font-weight: normal;
   line-height: 1;
 }
-.sticky ul#top_menu li a.login:before, .sticky ul#top_menu li a.wishlist_bt_top:before, .sticky ul#top_menu li a.cart-menu-btn:before {
+ul#top_menu li a.register:before{
+  content: '\e6a9';
+  font-family: 'Pe-icon-7-stroke';
+  font-size: 2rem;
+  color: #fff;
+  text-indent: -9999px;
+  font-weight: normal;
+  line-height: 1;
+}
+.sticky ul#top_menu li a.login:before,.sticky ul#top_menu li a.register:before, .sticky ul#top_menu li a.wishlist_bt_top:before, .sticky ul#top_menu li a.cart-menu-btn:before {
   color: #444;
 }
 ul#top_menu li a.wishlist_bt_top {

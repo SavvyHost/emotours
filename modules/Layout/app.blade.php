@@ -23,18 +23,18 @@
     @include('Layout::parts.seo-meta')
 
 
-    <!--  Panagea Styles  -->
-    <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('panagea/css/vendors.css')}}">
-    <!--/ Panagea Styles  -->
-
-    <link href="{{ asset('libs/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('libs/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/icofont/icofont.min.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/select2/css/select2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/frontend/css/notification.css') }}" rel="newest stylesheet">
     <link href=" {{ asset('dist/frontend/css/app.css?_ver='.config('app.version')) }}" rel="stylesheet">
+
+    <!--  Panagea Styles  -->
+    <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/vendors.css')}}">
+    <!--/ Panagea Styles  -->
 
     <link rel="stylesheet" type="text/css" href="{{ asset("libs/daterange/daterangepicker.css") }}">
     <!-- Fonts -->

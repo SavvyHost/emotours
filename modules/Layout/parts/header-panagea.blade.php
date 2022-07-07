@@ -18,7 +18,8 @@
     </div>
     <ul id="top_menu">
         <li><a href="cart-1.html" class="cart-menu-btn" title="Cart"><strong>4</strong></a></li>
-        <li><a href="#sign-in-dialog" id="sign-in" class="login" title="Sign In">Sign In</a></li>
+        <li><a href="#login" data-toggle="modal" data-target="#login" class="login">{{__('Login')}}</a></li>
+        <li><a href="#register" data-toggle="modal" data-target="#register" class="register"></a></li>
         <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
     </ul>
     <!-- /top_menu -->
