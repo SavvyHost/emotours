@@ -30,6 +30,7 @@
     <link href="{{ asset('libs/select2/css/select2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/frontend/css/notification.css') }}" rel="newest stylesheet">
     <link href=" {{ asset('dist/frontend/css/app.css?_ver='.config('app.version')) }}" rel="stylesheet">
+    <link href=" {{ asset('css/app.custom.css') }}" rel="stylesheet">
 
     <!--  Panagea Styles  -->
     <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
