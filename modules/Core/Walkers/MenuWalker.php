@@ -55,9 +55,6 @@
 				}
 				$class.=' depth-'.($depth);
 				printf('<li class="%s">', $class);
-				if (!empty($item['children'])) {
-					$item['name'] .= ' <i class="caret fa fa-angle-down"></i>';
-				}
 				printf('<a  target="%s" href="%s" >%s</a>', e($item['target']), e($url), clean($item['name']));
 				if (!empty($item['children'])) {
 					echo '<ul class="children-menu menu-dropdown">';
