@@ -134,6 +134,10 @@
 
 {!! \App\Helpers\Assets::js(true) !!}
 
+<!-- Include JavaScript Files -->
+<script src="{{ asset('js/custom.js') }}"></script>
+<!-- /Include JavaScript Files -->
+
 @yield('footer')
 
 @php \App\Helpers\ReCaptchaEngine::scripts() @endphp
