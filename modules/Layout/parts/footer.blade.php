@@ -136,8 +136,8 @@
 
 <!-- Include Custom JavaScript Files -->
 <script src="{{ asset('js/custom.js') }}"></script>
-<script src="{{ asset('panagea/js/main.js') }}"></script>
 <script src="{{ asset('panagea/js/common_scripts.js') }}"></script>
+<script src="{{ asset('panagea/js/main.js') }}"></script>
 <script src="{{ asset('panagea/js/custom.js') }}"></script>
 <!-- /Include Custom JavaScript Files -->
 
