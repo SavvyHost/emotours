@@ -1,26 +1,14 @@
 # Emotours - Tour Agency
 
-## how to push the project
-
-1. unzip the project in a new directory
-2. link the project with the remote version
-
-```bash
-git remote add origin http://github.com/aboodazmy/emotours.git
-```
-
-3. push the project
-
-```bash
-git push origin master
-```
-
-4. [install](#installation) the project
-5. start [contributing](#contribution)
-
 ## Installation
 
-1. install Laravel packages
+1. clone the project
+
+```bash 
+git clone https://github.com/SavvyHost/emotours.git
+```
+
+2. install Laravel packages
 
 ```bash
 # navigate to the project's directory
@@ -29,21 +17,21 @@ cd emotours
 composer install
 ```
 
-2. link the storage
-
-```bash
-php artisan storage:link
-```
-
 3. Configure and Install the project
 
 ```bash
-# clear cache
-php artisan optimize:clear
 php artisan serve
 ```
 
 Now navigate to [http://localhost:8000](http://localhost:8000), and start the installation wizard
+
+4. Remove cache
+
+```bash
+# clear cache
+php artisan optimize:clear
+
+```
 
 ## Contribution
 
@@ -51,7 +39,7 @@ Now navigate to [http://localhost:8000](http://localhost:8000), and start the in
 
 ```bash
 # change the link
-git clone http://github.com/aboodazmy/emotours.git
+git clone https://github.com/SavvyHost/emotours.git
 ```
 
 2. [install](#installation) the project
@@ -62,7 +50,7 @@ git clone http://github.com/aboodazmy/emotours.git
 git branch task-name
 ```
 
-4. start edits
+4. switch to that branch
 
 ```bash
 git checkout task-name
@@ -74,5 +62,6 @@ git checkout task-name
 # add edited files
 git add .
 git commit -m "commit message"
-git push origin [master | main]
+git push origin master
 ```
+
