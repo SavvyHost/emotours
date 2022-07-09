@@ -93,7 +93,13 @@
 
     <div class="c-grey f14 text-center">
         {{__(" Already have an account?")}}
-        <a href="#" data-target="#login" data-toggle="modal">{{__("Log In")}}</a>
+
+        @if($auth_modal ?? true)
+            <a href="#" data-target="#login" data-toggle="modal">{{__("Log In")}}</a>
+        @else
+            <a href="{{ route('login') }}">{{__("Log In")}}</a>
+        @endif
+
     </div>
 </form>
 

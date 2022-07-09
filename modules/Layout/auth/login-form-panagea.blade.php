@@ -63,8 +63,12 @@
 
         <div class="error message-error invalid-feedback"></div>
         <div class="text-center">
-            {{__('Do not have an account?')}} <a href="" data-target="#register"
-                                                 data-toggle="modal">{{__('Sign Up')}}</a>
+            {{__('Do not have an account?')}}
+            @if($auth_modal ?? true)
+                <a href="" data-target="#register" data-toggle="modal">{{__('Sign Up')}}</a>
+            @else
+                <a href="{{route('register')}}">{{__('Sign Up')}}</a>
+            @endif
         </div>
     </div>
 </form>
