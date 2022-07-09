@@ -147,6 +147,52 @@
     {!! setting_item_with_lang_raw('footer_scripts') !!}
 @endif
 @php event(new \Modules\Layout\Events\LayoutEndBody()); @endphp
+@include('Layout::parts.login-register-modal')
+@if(Auth::id())
+    @include('Media::browser')
+@endif
 
+{!! \App\Helpers\Assets::css(true) !!}
+
+<script src="{{ asset('libs/lodash.min.js') }}"></script>
+<script src="{{ asset('libs/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('libs/vue/vue'.(!env('APP_DEBUG') ? '.min':'').'.js') }}"></script>
+<script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+@if(Auth::id())
+    <script src="{{ asset('module/media/js/browser.js?_ver='.config('app.version')) }}"></script>
+@endif
+<script src="{{ asset('js/functions.js?_ver='.config('app.version')) }}"></script>
+
+@if(
+    setting_item('tour_location_search_style')=='autocompletePlace' || setting_item('hotel_location_search_style')=='autocompletePlace' || setting_item('car_location_search_style')=='autocompletePlace' || setting_item('space_location_search_style')=='autocompletePlace' || setting_item('hotel_location_search_style')=='autocompletePlace' || setting_item('event_location_search_style')=='autocompletePlace'
+)
+    {!! App\Helpers\MapEngine::scripts() !!}
+@endif
+<script src="{{ asset('libs/pusher.min.js') }}"></script>
+<script src="{{ asset('js/home.js?_ver='.config('app.version')) }}"></script>
+
+@if(!empty($is_user_page))
+    <script src="{{ asset('module/user/js/user.js?_ver='.config('app.version')) }}"></script>
+@endif
+@if(setting_item('cookie_agreement_enable')==1 and request()->cookie('booking_cookie_agreement_enable') !=1 and !is_api()  and !isset($_COOKIE['booking_cookie_agreement_enable']))
+    <div class="booking_cookie_agreement p-3 d-flex fixed-bottom">
+        <div class="content-cookie">{!! clean(setting_item_with_lang('cookie_agreement_content')) !!}</div>
+        <button class="btn save-cookie">{!! clean(setting_item_with_lang('cookie_agreement_button_text')) !!}</button>
+    </div>
+    <script>
+        var save_cookie_url = '{{route('core.cookie.check')}}';
+    </script>
+    <script src="{{ asset('js/cookie.js?_ver='.config('app.version')) }}"></script>
+@endif
+
+{!! \App\Helpers\Assets::js(true) !!}
+
+<!-- Include JavaScript Files -->
+<script src="{{ asset('js/custom.js') }}"></script>
+<!-- /Include JavaScript Files -->
+
+@yield('footer')
+
+@php \App\Helpers\ReCaptchaEngine::scripts() @endphp
 </body>
 </html>
