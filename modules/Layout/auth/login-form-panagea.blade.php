@@ -54,9 +54,11 @@
                 {{recaptcha_field($captcha_action ?? 'login')}}
             </div>
         @endif
-        <div class="text-center">
-            <input type="submit" value="{{ __('Log in') }}" class="btn_1 full-width  form-submit">
-            <span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+        <div class="form-group">
+            <button class="btn_1 full-width form-submit" type="submit">
+                {{ __('Login') }}
+                <span class="spinner-grow spinner-grow-sm icon-loading" role="status" aria-hidden="true"></span>
+            </button>
         </div>
 
         <div class="error message-error invalid-feedback"></div>
