@@ -31,6 +31,9 @@
 
     <!--  Include Custom Styles  -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/vendors.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/custom.css')}}">
     <!--  / Include Custom Styles  -->
 
     <!-- Fonts -->
@@ -189,6 +192,9 @@
 
 <!-- Include JavaScript Files -->
 <script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('panagea/js/common_scripts.js') }}"></script>
+<script src="{{ asset('panagea/js/main.js') }}"></script>
+<script src="{{ asset('panagea/js/custom.js') }}"></script>
 <!-- /Include JavaScript Files -->
 
 @yield('footer')
