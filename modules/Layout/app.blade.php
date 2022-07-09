@@ -29,6 +29,13 @@
     <link href="{{ asset('dist/frontend/css/notification.css') }}" rel="newest stylesheet">
     <link href="{{ asset('dist/frontend/css/app.css?_ver='.config('app.version')) }}" rel="stylesheet">
 
+    <!--  Panagea Styles  -->
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/vendors.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/custom.css')}}">
+    <!--/ Panagea Styles  -->
+
     <link rel="stylesheet" type="text/css" href="{{ asset("libs/daterange/daterangepicker.css") }}" >
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
