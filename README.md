@@ -47,16 +47,10 @@ git clone https://github.com/SavvyHost/emotours.git
 3. create new branch for the tasks
 
 ```bash
-git branch task-name
+git checkout -b task-name
 ```
 
-4. switch to that branch
-
-```bash
-git checkout task-name
-```
-
-5. push your edits
+4. push your edits
 
 ```bash
 # add edited files
