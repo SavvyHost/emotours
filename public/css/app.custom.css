@@ -12,3 +12,7 @@
 .z-max{
     z-index: 99999999 !important;
 }
+
+.social_bt.twitter{
+    background-color: #5191fa;
+}

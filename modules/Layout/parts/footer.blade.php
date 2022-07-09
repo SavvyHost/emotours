@@ -76,7 +76,7 @@
 
 @endif
 
-@include('Layout::parts.login-register-modal')
+@include('Layout::parts.login-register-modal-panagea')
 @include('Layout::parts.chat')
 @if(Auth::id())
     @include('Media::browser')
