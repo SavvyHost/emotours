@@ -14,79 +14,77 @@
             $file = (new \Modules\Media\Models\MediaFile())->findById($favicon);
         @endphp
         @if(!empty($file))
-            <link rel="icon" type="{{$file['file_type']}}" href="{{asset('uploads/'.$file['file_path'])}}"/>
+            <link rel="icon" type="{{$file['file_type']}}" href="{{asset('uploads/'.$file['file_path'])}}" />
         @else:
-        <link rel="icon" type="image/png" href="{{url('images/favicon.png')}}"/>
+            <link rel="icon" type="image/png" href="{{url('images/favicon.png')}}" />
         @endif
     @endif
 
     @include('Layout::parts.seo-meta')
-
-
-    <link href="{{ asset('libs/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('libs/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/icofont/icofont.min.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/select2/css/select2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/frontend/css/notification.css') }}" rel="newest stylesheet">
-    <link href=" {{ asset('dist/frontend/css/app.css?_ver='.config('app.version')) }}" rel="stylesheet">
-    <link href=" {{ asset('css/app.custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('dist/frontend/css/app.css?_ver='.config('app.version')) }}" rel="stylesheet">
 
     <!--  Panagea Styles  -->
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
     <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('panagea/css/vendors.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/custom.css')}}">
     <!--/ Panagea Styles  -->
 
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/daterange/daterangepicker.css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset("libs/daterange/daterangepicker.css") }}" >
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel='stylesheet' id='google-font-css-css'
-          href='https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600' type='text/css' media='all'/>
+    <link rel='stylesheet' id='google-font-css-css'  href='https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600' type='text/css' media='all' />
     {!! \App\Helpers\Assets::css() !!}
     {!! \App\Helpers\Assets::js() !!}
     <script>
         var bookingCore = {
-            url: '{{url( app_get_locale() )}}',
-            url_root: '{{ url('') }}',
+            url:'{{url( app_get_locale() )}}',
+            url_root:'{{ url('') }}',
             booking_decimals:{{(int)get_current_currency('currency_no_decimal',2)}},
-            thousand_separator: '{{get_current_currency('currency_thousand')}}',
-            decimal_separator: '{{get_current_currency('currency_decimal')}}',
-            currency_position: '{{get_current_currency('currency_format')}}',
-            currency_symbol: '{{currency_symbol()}}',
-            currency_rate: '{{get_current_currency('rate',1)}}',
-            date_format: '{{get_moment_date_format()}}',
-            map_provider: '{{setting_item('map_provider')}}',
-            map_gmap_key: '{{setting_item('map_gmap_key')}}',
-            map_options: {
-                map_lat_default: '{{setting_item('map_lat_default')}}',
-                map_lng_default: '{{setting_item('map_lng_default')}}',
-                map_clustering: '{{setting_item('map_clustering')}}',
-                map_fit_bounds: '{{setting_item('map_fit_bounds')}}',
+            thousand_separator:'{{get_current_currency('currency_thousand')}}',
+            decimal_separator:'{{get_current_currency('currency_decimal')}}',
+            currency_position:'{{get_current_currency('currency_format')}}',
+            currency_symbol:'{{currency_symbol()}}',
+			currency_rate:'{{get_current_currency('rate',1)}}',
+            date_format:'{{get_moment_date_format()}}',
+            map_provider:'{{setting_item('map_provider')}}',
+            map_gmap_key:'{{setting_item('map_gmap_key')}}',
+            map_options:{
+                map_lat_default:'{{setting_item('map_lat_default')}}',
+                map_lng_default:'{{setting_item('map_lng_default')}}',
+                map_clustering:'{{setting_item('map_clustering')}}',
+                map_fit_bounds:'{{setting_item('map_fit_bounds')}}',
             },
-            routes: {
-                login: '{{route('auth.login')}}',
-                register: '{{route('auth.register')}}',
-                checkout: '{{is_api() ? route('api.booking.doCheckout') : route('booking.doCheckout')}}'
+            routes:{
+                login:'{{route('auth.login')}}',
+                register:'{{route('auth.register')}}',
+                checkout:'{{is_api() ? route('api.booking.doCheckout') : route('booking.doCheckout')}}'
             },
-            module: {
-                hotel: '{{route('hotel.search')}}',
-                car: '{{route('car.search')}}',
-                tour: '{{route('tour.search')}}',
-                space: '{{route('space.search')}}',
-                flight: "{{route('flight.search')}}"
+            module:{
+                hotel:'{{route('hotel.search')}}',
+                car:'{{route('car.search')}}',
+                tour:'{{route('tour.search')}}',
+                space:'{{route('space.search')}}',
+                flight:"{{route('flight.search')}}"
             },
             currentUser: {{(int)Auth::id()}},
-            isAdmin: {{is_admin() ? 1 : 0}},
+            isAdmin : {{is_admin() ? 1 : 0}},
             rtl: {{ setting_item_with_lang('enable_rtl') ? "1" : "0" }},
-            markAsRead: '{{route('core.notification.markAsRead')}}',
-            markAllAsRead: '{{route('core.notification.markAllAsRead')}}',
-            loadNotify: '{{route('core.notification.loadNotify')}}',
-            pusher_api_key: '{{setting_item("pusher_api_key")}}',
-            pusher_cluster: '{{setting_item("pusher_cluster")}}',
+            markAsRead:'{{route('core.notification.markAsRead')}}',
+            markAllAsRead:'{{route('core.notification.markAllAsRead')}}',
+            loadNotify : '{{route('core.notification.loadNotify')}}',
+            pusher_api_key : '{{setting_item("pusher_api_key")}}',
+            pusher_cluster : '{{setting_item("pusher_cluster")}}',
         };
         var i18n = {
-            warning: "{{__("Warning")}}",
-            success: "{{__("Success")}}",
+            warning:"{{__("Warning")}}",
+            success:"{{__("Success")}}",
         };
         var daterangepickerLocale = {
             "applyLabel": "{{__('Apply')}}",
@@ -137,28 +135,28 @@
     @php event(new \Modules\Layout\Events\LayoutEndHead()); @endphp
 
 </head>
-<body class="frontend-page {{ !empty($row->header_style) ? "header-".$row->header_style : "header-normal" }} {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif ">
-@php event(new \Modules\Layout\Events\LayoutBeginBody()); @endphp
+<body class="frontend-page {{ !empty($row->header_style) ? "header-".$row->header_style : "header-normal" }} {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif">
+    @php event(new \Modules\Layout\Events\LayoutBeginBody()); @endphp
 
-@if(!is_demo_mode())
-    {!! setting_item('body_scripts') !!}
-    {!! setting_item_with_lang_raw('body_scripts') !!}
-@endif
-<div class="bravo_wrap">
-    @if(!is_api())
-        {{--   @include('Layout::parts.topbar')--}}
-        @include('Layout::parts.header-panagea')
+    @if(!is_demo_mode())
+        {!! setting_item('body_scripts') !!}
+        {!! setting_item_with_lang_raw('body_scripts') !!}
     @endif
+    <div class="bravo_wrap">
+        @if(!is_api())
+            {{--   @include('Layout::parts.topbar')--}}
+            @include('Layout::parts.header-panagea')
+        @endif
 
-    @yield('content')
+        @yield('content')
 
-    @include('Layout::parts.footer')
-</div>
-@if(!is_demo_mode())
-    {!! setting_item('footer_scripts') !!}
-    {!! setting_item_with_lang_raw('footer_scripts') !!}
-@endif
-@php event(new \Modules\Layout\Events\LayoutEndBody()); @endphp
+        @include('Layout::parts.footer')
+    </div>
+    @if(!is_demo_mode())
+        {!! setting_item('footer_scripts') !!}
+        {!! setting_item_with_lang_raw('footer_scripts') !!}
+    @endif
+    @php event(new \Modules\Layout\Events\LayoutEndBody()); @endphp
 
 </body>
 </html>
