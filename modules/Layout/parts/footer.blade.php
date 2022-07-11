@@ -139,6 +139,11 @@
 <script src="{{ asset('panagea/js/common_scripts.js') }}"></script>
 <script src="{{ asset('panagea/js/main.js') }}"></script>
 <script src="{{ asset('panagea/js/custom.js') }}"></script>
+
+<!-- SPECIFIC SCRIPTS -->
+<script src="{{ asset('panagea/js/jarallax.min.js') }}"></script> 
+<script src="{{ asset('panagea/js/jarallax-video.min.js') }}"></script> 
+<script src="{{ asset('panagea/js/input_qty.js') }}"></script> 
 <!-- /Include Custom JavaScript Files -->
 
 @yield('footer')
