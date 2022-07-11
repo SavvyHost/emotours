@@ -60,7 +60,7 @@
         margin-top: 10px;
     }
     .hero_single.version_4 .wrapper .main_search p {
-    font-size: 1.2rem;
+    font-size: 1.275rem;
     }
     
 }
@@ -68,8 +68,10 @@
 
 @media (max-width: 575px) {
     .hero_single.version_4 .wrapper .main_search h3 {
-        font-size: 22px;
         font-size: 1.375rem;
+    }
+    .hero_single.version_4 .wrapper .main_search p {
+    font-size: 1.175rem;
     }
 }
 
