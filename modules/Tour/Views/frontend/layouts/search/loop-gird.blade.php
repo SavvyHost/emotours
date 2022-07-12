@@ -1,7 +1,7 @@
 @php
     $translation = $row->translateOrOrigin(app()->getLocale());
 @endphp
-<div class="card item-tour {{$wrap_class ?? ''}}">
+<div class="item-tour {{$wrap_class ?? ''}}">
     @if($row->is_featured == "1")
         <div class="featured">
             {{__("Featured")}}
