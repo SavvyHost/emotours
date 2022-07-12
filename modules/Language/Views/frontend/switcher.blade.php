@@ -7,16 +7,17 @@
     <li class="dropdown">
         @foreach($languages as $language)
             @if($locale == $language->locale)
-                <a href="#" data-toggle="dropdown" class="is_login">
-                    @if($language->flag)
-                        <span class="flag-icon flag-icon-{{$language->flag}}"></span>
-                    @endif
-                    {{$language->name}}
-                    <i class="fa fa-angle-down"></i>
-                </a>
+                <span>
+                    <a href="#" data-toggle="dropdown" class="is_login">
+                        @if($language->flag)
+                            <span class="flag-icon flag-icon-{{$language->flag}}"></span>
+                        @endif
+                        {{$language->name}}
+                    </a>
+                </span>
             @endif
         @endforeach
-        <ul class="dropdown-menu text-left">
+        <ul class="text-left">
             @foreach($languages as $language)
                 @if($locale != $language->locale)
                     <li>

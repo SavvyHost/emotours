@@ -1,4 +1,4 @@
-<div class="modal fade login" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade login z-max" id="login" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content relative">
             <div class="modal-header">
@@ -15,7 +15,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade login" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade login z-max" id="register" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content relative">
             <div class="modal-header">

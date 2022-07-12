@@ -29,9 +29,12 @@
     <link href="{{ asset('dist/frontend/css/notification.css') }}" rel="newest stylesheet">
     <link href="{{ asset('dist/frontend/css/app.css?_ver='.config('app.version')) }}" rel="stylesheet">
 
-    <!--  Include Custom Styles  -->
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-    <!--  / Include Custom Styles  -->
+    <!--  Panagea Styles  -->
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/vendors.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/custom.css')}}">
+    <!--/ Panagea Styles  -->
 
     <link rel="stylesheet" type="text/css" href="{{ asset("libs/daterange/daterangepicker.css") }}" >
     <!-- Fonts -->
@@ -141,8 +144,8 @@
     @endif
     <div class="bravo_wrap">
         @if(!is_api())
-            @include('Layout::parts.topbar')
-            @include('Layout::parts.header')
+            {{--   @include('Layout::parts.topbar')--}}
+            @include('Layout::parts.header-panagea')
         @endif
 
         @yield('content')
