@@ -2792,7 +2792,7 @@ a#moveDown {
     font-size: 14px;
     font-size: 0.875rem;
     border: 0;
-    /* padding: 0 25px; */
+    padding: 0 25px;
     /* height: 50px; */
     cursor: pointer;
     outline: none;
