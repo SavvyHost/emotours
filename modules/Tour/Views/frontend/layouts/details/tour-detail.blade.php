@@ -1,162 +1,168 @@
-<div class="g-header">
-    <div class="left">
-        <h1>{!! clean($translation->title) !!}</h1>
-        @if($translation->address)
-            <p class="address"><i class="fa fa-map-marker"></i>
-                {{$translation->address}}
-            </p>
-        @endif
-    </div>
-    <div class="right">
-        @if(setting_item('tour_enable_review') and $review_score)
-            <div class="review-score">
-                <div class="head">
-                    <div class="left">
-                        <span class="head-rating">{{$review_score['score_text']}}</span>
-                        <span class="text-rating">{{__("from :number reviews",['number'=>$review_score['total_review']])}}</span>
-                    </div>
-                    <div class="score">
-                        {{$review_score['score_total']}}<span>/5</span>
-                    </div>
-                </div>
-                <div class="foot">
-                    {{__(":number% of guests recommend",['number'=>$row->recommend_percent])}}
-                </div>
-            </div>
-        @endif
-    </div>
-</div>
-@if(!empty($row->duration) or !empty($row->category_tour->name) or !empty($row->max_people) or !empty($row->location->name))
-    <div class="g-tour-feature">
+<div class="container margin_60_35">
     <div class="row">
-        @if($row->duration)
-            <div class="col-xs-6 col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="icon">
-                        <i class="icofont-wall-clock"></i>
-                    </div>
-                    <div class="info">
-                        <h4 class="name">{{__("Duration")}}</h4>
-                        <p class="value">
-                            {{duration_format($row->duration,true)}}
-                        </p>
-                    </div>
+        <div class="col-lg-8">
+            <section id="description" class="g-overview">
+                <h2>{{__("Overview")}}</h2>
+                <div class="description">
+                    @php echo $translation->content @endphp
                 </div>
-            </div>
-        @endif
-        @if(!empty($row->category_tour->name))
-            @php $cat =  $row->category_tour->translateOrOrigin(app()->getLocale()) @endphp
-            <div class="col-xs-6 col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="icon">
-                        <i class="icofont-beach"></i>
+                @if($row->getGallery())
+                    <h3>{{ __('Pictures from our users') }}</h3>
+                    <div class="pictures_grid magnific-gallery clearfix">
+
+                        @if(count($row->getGallery()) < 4)
+
+                            @for($i = 0 ; $i < 4;$i++)
+
+                                @php $item = $row->getGallery()[$i] @endphp
+
+                                <figure>
+                                    <a href="{{$item['large']}}" title="Photo title" data-effect="mfp-zoom-in"><img
+                                                src="{{$item['thumb']}}" alt=""></a>
+                                </figure>
+
+                            @endfor
+
+                        @endif
+
+                        @if(count($row->getGallery()) > 4)
+
+                            @for($i = 0 ; $i < 4;$i++)
+
+                                @php $item = $row->getGallery()[$i] @endphp
+
+                                <figure>
+                                    <a href="{{$item['large']}}" title="Photo title" data-effect="mfp-zoom-in"><img
+                                                src="{{$item['thumb']}}" alt=""></a>
+                                </figure>
+
+                            @endfor
+
+                            <figure>
+                                <a href="{{ $row->getGallery()[4]['large'] }}" title="" data-effect="mfp-zoom-in">
+                                    <span class="d-flex align-items-center justify-content-center">+10</span>
+                                    <img src="{{ $row->getGallery()[4]['thumb'] }}" alt="">
+                                </a>
+
+                                @for($i = 5 ; $i < count($row->getGallery());$i++)
+                                    <a href="{{ $row->getGallery()[$i]['large'] }}" title="" data-effect="mfp-zoom-in">
+                                        <span class="d-flex align-items-center justify-content-center">+10</span>
+                                        <img src="{{ $row->getGallery()[$i]['thumb'] }}" alt="">
+                                    </a>
+                                @endfor
+
+                            </figure>
+
+                        @endif
                     </div>
-                    <div class="info">
-                        <h4 class="name">{{__("Tour Type")}}</h4>
-                        <p class="value">
-                            {{$cat->name ?? ''}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        @endif
-        @if($row->max_people)
-            <div class="col-xs-6 col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="icon">
-                        <i class="icofont-travelling"></i>
-                    </div>
-                    <div class="info">
-                        <h4 class="name">{{__("Group Size")}}</h4>
-                        <p class="value">
-                            @if($row->max_people > 1)
-                                {{ __(":number persons",array('number'=>$row->max_people)) }}
-                            @else
-                                {{ __(":number person",array('number'=>$row->max_people)) }}
-                            @endif
-                        </p>
-                    </div>
-                </div>
-            </div>
-        @endif
-        @if(!empty($row->location->name))
-                @php $location =  $row->location->translateOrOrigin(app()->getLocale()) @endphp
-            <div class="col-xs-6 col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="icon">
-                        <i class="icofont-island-alt"></i>
-                    </div>
-                    <div class="info">
-                        <h4 class="name">{{__("Location")}}</h4>
-                        <p class="value">
-                            {{$location->name ?? ''}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        @endif
-    </div>
-</div>
-@endif
-@if($row->getGallery())
-    <div class="g-gallery">
-        <div class="fotorama" data-width="100%" data-thumbwidth="135" data-thumbheight="135" data-thumbmargin="15" data-nav="thumbs" data-allowfullscreen="true">
-            @foreach($row->getGallery() as $key=>$item)
-                <a href="{{$item['large']}}" data-thumb="{{$item['thumb']}}" data-alt="{{ __("Gallery") }}"></a>
-            @endforeach
-        </div>
-        <div class="social">
-            <div class="social-share">
-                <span class="social-icon">
-                    <i class="icofont-share"></i>
-                </span>
-                <ul class="share-wrapper">
+                    <!-- /pictures -->
+                @endif
+                <hr>
+
+                <ul class="cbp_tmtimeline">
                     <li>
-                        <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{$row->getDetailUrl()}}&amp;title={{$translation->title}}" target="_blank" rel="noopener" original-title="{{__("Facebook")}}">
-                            <i class="fa fa-facebook fa-lg"></i>
-                        </a>
+                        <time class="cbp_tmtime" datetime="09:30"><span>30 min.</span><span>09:30</span>
+                        </time>
+                        <div class="cbp_tmicon">
+                            1
+                        </div>
+                        <div class="cbp_tmlabel">
+                            <div class="hidden-xs">
+                                <img src="img/tour_plan_1.jpg" alt="" class="rounded-circle thumb_visit">
+                            </div>
+                            <h4>Interior of the cathedral</h4>
+                            <p>
+                                Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu. Ius diam
+                                vivendo ne.
+                            </p>
+                        </div>
                     </li>
                     <li>
-                        <a class="twitter" href="https://twitter.com/share?url={{$row->getDetailUrl()}}&amp;title={{$translation->title}}" target="_blank" rel="noopener" original-title="{{__("Twitter")}}">
-                            <i class="fa fa-twitter fa-lg"></i>
-                        </a>
+                        <time class="cbp_tmtime" datetime="11:30"><span>2 hours</span><span>11:30</span>
+                        </time>
+                        <div class="cbp_tmicon">
+                            2
+                        </div>
+                        <div class="cbp_tmlabel">
+                            <div class="hidden-xs">
+                                <img src="img/tour_plan_2.jpg" alt="" class="rounded-circle thumb_visit">
+                            </div>
+                            <h4>Statue of Saint Reparata</h4>
+                            <p>
+                                Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu. Ius diam
+                                vivendo ne.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <time class="cbp_tmtime" datetime="13:30"><span>1 hour</span><span>13:30</span>
+                        </time>
+                        <div class="cbp_tmicon">
+                            3
+                        </div>
+                        <div class="cbp_tmlabel">
+                            <div class="hidden-xs">
+                                <img src="img/tour_plan_3.jpg" alt="" class="rounded-circle thumb_visit">
+                            </div>
+                            <h4>Huge clock decorated</h4>
+                            <p>
+                                Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu. Ius diam
+                                vivendo ne.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <time class="cbp_tmtime" datetime="14:30"><span>2 hours</span><span>14:30</span>
+                        </time>
+                        <div class="cbp_tmicon">
+                            4
+                        </div>
+                        <div class="cbp_tmlabel">
+                            <div class="hidden-xs">
+                                <img src="img/tour_plan_4.jpg" alt="" class="rounded-circle thumb_visit">
+                            </div>
+                            <h4>Vasari's fresco</h4>
+                            <p>
+                                Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu. Ius diam
+                                vivendo ne.
+                            </p>
+                        </div>
                     </li>
                 </ul>
-            </div>
-            <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
-                <i class="fa fa-heart-o"></i>
-            </div>
-        </div>
-    </div>
-@endif
-@if($translation->content)
-    <div class="g-overview">
-        <h3>{{__("Overview")}}</h3>
-        <div class="description">
-            <?php echo $translation->content ?>
-        </div>
-    </div>
-@endif
-@include('Tour::frontend.layouts.details.tour-include-exclude')
-@include('Tour::frontend.layouts.details.tour-itinerary')
-@include('Tour::frontend.layouts.details.tour-attributes')
-@include('Tour::frontend.layouts.details.tour-faqs')
-@includeIf("Hotel::frontend.layouts.details.hotel-surrounding")
+                <hr>
 
-@if($row->map_lat && $row->map_lng)
-<div class="g-location">
-    <div class="location-title">
-        <h3>{{__("Tour Location")}}</h3>
-        @if($translation->address)
-            <div class="address">
-                <i class="icofont-location-arrow"></i>
-                {{$translation->address}}
-            </div>
-        @endif
-    </div>
+                @include('Tour::frontend.layouts.details.tour-include-exclude')
+                @include('Tour::frontend.layouts.details.tour-itinerary')
+                @include('Tour::frontend.layouts.details.tour-attributes')
+                @include('Tour::frontend.layouts.details.tour-faqs')
+                @includeIf("Hotel::frontend.layouts.details.hotel-surrounding")
 
-    <div class="location-map">
-        <div id="map_content"></div>
+                @if($row->map_lat && $row->map_lng)
+                    <div class="g-location">
+                        <div class="location-title">
+                            <h3>{{__("Tour Location")}}</h3>
+                            @if($translation->address)
+                                <div class="address">
+                                    <i class="icofont-location-arrow"></i>
+                                    {{$translation->address}}
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="location-map">
+                            <div id="map_content"></div>
+                        </div>
+                    </div>
+            @endif
+            <!-- /row -->
+
+            </section>
+            <!-- /section -->
+
+
+        </div>
+        <!-- /col -->
+        <!--  Reviews  -->
+        @include('Tour::frontend.layouts.details.tour-form-book-panagea')
     </div>
 </div>
-@endif
