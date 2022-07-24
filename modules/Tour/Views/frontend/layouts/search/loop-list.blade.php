@@ -4,7 +4,7 @@
 
 <div class=" card item-tour {{$wrap_class ?? ''}}">
 <div class="row">
-        <div class="col-lg-5 pt-2">
+        <div class="col-lg-4 col-md-4 pt-2">
             @if($row->is_featured == "1")
             <div class="featured">
                 {{__("Featured")}}
@@ -28,15 +28,31 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-7">
+        <div class=" col-lg-5 col-md-6">
                 
             <div class="location">
                 <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl($include_param ?? true)}}">
                         {!! clean($translation->title) !!}
                     </a>
                     
-            </div>
-            <div class="item-title">
+            </div>  
+            
+            @if($translation->content)
+                <div class="g-overview mt-2 listTour">
+                    <div class="description">
+                        <?php $string = $translation->content;
+                        if (strlen($string) > 25) {
+                        $trimstring = substr($string, 0, 120). ' <a href="#">..</a>';
+                        } else {
+                        $trimstring = $string;
+                        }
+                        echo $trimstring;
+                        //Output : Lorem Ipsum is simply dum [readmore...][1]
+                        ?>
+                    </div>
+                </div>
+            @endif
+            <div class="item-title mt-1">
                 @if(!empty($row->location->name))
                         @php $location =  $row->location->translateOrOrigin(app()->getLocale()) @endphp
                         <i class="icofont-paper-plane"></i>
@@ -48,8 +64,8 @@
             $reviewData = $row->getScoreReview();
             $score_total = $reviewData['score_total'];
             ?>
-            <div class="clearfix service-review tour-review-{{$score_total}}">
-                <div class="list-star float-left">
+            <div class="mt-2 service-review tour-review-{{$score_total}}">
+                <div class="list-star">
                     <ul class="booking-item-rating-stars">
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
@@ -74,7 +90,7 @@
                         {{ __(":number Review",["number"=>$reviewData['total_review'] ]) }}
                     @endif
                 </span>
-                <div class="float-right">
+                <!-- <div class="float-right">
                     <div class="info">
                         <div class="g-price">
                             
@@ -90,24 +106,47 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
             </div>
             
                 @endif
-                <div class="clearfix mb-3">
-                    <div class="float-left info">
-                        <div class=" duration">
+                <div class="clearfix">
+                    <div class="float-left">
+                    <div class=" duration">
                             <i class="icofont-wall-clock"></i>
                             {{duration_format($row->duration)}}
-                        </div>
-
+                 </div> 
                     </div>
-                    <div class="float-right duration">
+                    <div class="float-left ml-5">
+                            <div class=" duration">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                                   {{__("Free Cancellation")}}
+                        </div> 
+                     </div>
+                </div>
+
+  
+        </div>
+        <div class=" col-lg-3 col-md-2  mt-5 left-side">
+        <div class="info">
+                        <div class="g-price">
+                            
+                            <div class="prefix">
+                                <i class="icofont-flash"></i>
+                                <span class="fr_text">{{__("from")}}</span>
+                                
+                                
+                            </div>
+                            <div class="price">
+                                <span class="onsale">{{ $row->display_sale_price }}</span>
+                                <span class="text-price">{{ $row->display_price }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="duration">
                             <a class = "btn btn-danger" href="">Book Now</a>
                     </div>
-                </div>  
-  
         </div>
 
             <!-- <div class="col">

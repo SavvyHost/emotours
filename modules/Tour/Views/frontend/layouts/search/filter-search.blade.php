@@ -13,11 +13,11 @@
 
         <div id="filters_col">
 						<a data-bs-toggle="collapse" href="#collapseFilters" aria-expanded="true" aria-controls="collapseFilters" id="filters_col_bt" class="">            {{__("FILTER BY")}}
- </a>
+                         </a>
 						<div class="collapse show" id="collapseFilters" style="">
 							<div class="filter_type">
                             <div class="filter-title"> </div>
-  
+               
         <div class="g-filter-item">
             <div class="item-title">
                 <h3>{{__("Filter Price")}}</h3>
@@ -68,6 +68,7 @@
                 </ul>
             </div>
         </div>
+        
         <div class="g-filter-item">
             <div class="item-title">
                 <h3>{{__("Tour Type")}}</h3>

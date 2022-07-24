@@ -10265,6 +10265,7 @@ ul.plan-features {
     display: block;
     width: 100%;
      padding-bottom: 0%;
+     border-radius: 15px;
 
 
 }
@@ -10306,7 +10307,7 @@ ul.plan-features {
     color: #fc5b62 !important;
 }
 .location a{
-    color: #fc5b62 !important;
+    color: #000000 !important;
     font-size: 16px !important;
     font-weight: 600 !important;
 }
@@ -10508,3 +10509,26 @@ a.btn_mapp:hover {
   .slider.round:before {
     border-radius: 50%;
   }
+  .bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .thumb-image {
+    height: 180px !important;
+
+}
+.left-side .duration{
+    text-align: right !important;
+    margin-top: 15px;
+}
+.bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .location {
+    font-size: 13px;
+    color: #5e6d77;
+    padding: 0px !important;
+    padding-top:15px !important;
+}
+.listTour p{
+    margin-bottom: 0px !important;
+}
+.bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .item-title {
+    padding: 0px !important;
+}
+.bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .service-review {
+    padding: 0px !important; 
+}
