@@ -1,7 +1,15 @@
-<aside class="col-lg-4" id="sidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+<aside class="col-lg-4" id="sidebar"
+       style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
     <div class="box_detail booking" id="bravo_tour_book_app">
         <div class="price">
-            <span class="fs-5">{{ $row->display_price }}/<small>{{ __('person') }}</small></span>
+            <div>
+                <span class="label">
+                {{__("from")}}
+            </span>
+                <span class="onsale text-danger"> <s> {{ $row->display_sale_price }} </s> </span>
+            </div>
+
+            <span class="mt-2">{{ $row->display_price }}/<small>{{ __('person') }}</small></span>
             <div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div>
         </div>
 
