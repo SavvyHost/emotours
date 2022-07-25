@@ -12,7 +12,7 @@
         </div>
 
 
-        <div class="panel-dropdown">
+        <div class="panel-dropdown" id="guests-dropdown">
             <a @click.prevent="show_guests_dropdown = !show_guests_dropdown">Guests <span
                         class="qtyTotal">1</span></a>
             <div class="panel-dropdown-content right"

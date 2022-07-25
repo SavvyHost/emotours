@@ -140,7 +140,16 @@
             css: [
                 '{{ asset('css/easepick.css') }}',
             ],
-        });
+            setup(picker){
+                picker.on('select',(event)=>{
+                    setTimeout(()=>{
+                        let guestDropdown  =document.querySelector('#guests-dropdown > a')
+                        guestDropdown.click()
+                    },100)
+
+                })
+            }
+        })
 
     </script>
 
