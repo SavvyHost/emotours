@@ -1,4 +1,4 @@
-<header class="header">
+<header class="{{ Request::is('tour/*') ? 'static-header' : 'header' }}">
     <div id="preloader" style="display: none;">
         <div data-loader="circle-side" style="display: none;"></div>
     </div><!-- /Page Preload -->
