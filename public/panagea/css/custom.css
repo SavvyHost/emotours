@@ -20,3 +20,6 @@ ul#top_menu li a.wishlist_bt_top:before,
 .static-header .dropdown-user a{
     color: #444;
 }
+.secondary_nav{
+    top: 0 !important;
+}
