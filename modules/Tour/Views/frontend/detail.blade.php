@@ -11,7 +11,7 @@
                     <ul class="clearfix">
                         <li><a href="#description" class="active">{{__("Overview")}}</a></li>
                         <li><a href="#bravo-reviews">{{__("Reviews")}}</a></li>
-                        <li><a href="#sidebar">{{__("Booking")}}</a></li>
+                        <li data-toggle="modal" data-target="#enquiry_form_modal" class="enquiry-item"><a href=""><span>Enquiry</span></a></li>
                     </ul>
                 </div>
             </nav>

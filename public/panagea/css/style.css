@@ -4400,11 +4400,13 @@ a.boxed_list:hover i {
 }
 
 .secondary_nav ul li:last-child {
-    display: none;
+    display: inline-block;
+    float: right;
+    margin-right: 0;
 }
 
 .secondary_nav ul li:last-child a {
-    background-color: #fc5b62;
+    background-color: #036bd0;
     color: #fff;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -4415,14 +4417,6 @@ a.boxed_list:hover i {
 
 .secondary_nav ul li:last-child a:hover {
     background-color: #0054a6;
-}
-
-@media (max-width: 575px) {
-    .secondary_nav ul li:last-child {
-        display: inline-block;
-        float: right;
-        margin-right: 0;
-    }
 }
 
 .intro_title h2 {
