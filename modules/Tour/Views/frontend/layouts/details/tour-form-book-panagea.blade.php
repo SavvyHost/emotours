@@ -61,8 +61,11 @@
 
     <ul class="share-buttons">
         <li><a class="fb-share"
-               href="https://www.facebook.com/sharer/sharer.php?u={{$row->getDetailUrl()}}&amp;title={{$translation->title}}"><i
+               href="https://web.whatsapp.com/send?text={{$row->getDetailUrl()}}"><i
                         class="social_facebook"></i> Share</a></li>
+        <li><a class="whatsapp-share"
+               href="https://www.facebook.com/sharer/sharer.php?u={{$row->getDetailUrl()}}&amp;title={{$translation->title}}"><i
+                        class="icofont-whatsapp"></i> Message</a></li>
         <li><a class="twitter-share"
                href="https://twitter.com/share?url={{$row->getDetailUrl()}}&amp;title={{$translation->title}}"><i
                         class="social_twitter"></i> Tweet</a></li>

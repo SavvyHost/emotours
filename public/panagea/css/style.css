@@ -8577,13 +8577,13 @@ ul.share-buttons li a.fb-share:hover {
     color: #fff;
 }
 
-ul.share-buttons li a.gplus-share {
-    border-color: #dd4b39;
-    color: #dd4b39;
+ul.share-buttons li a.whatsapp-share {
+    border-color: #07cb00;
+    color:  #07cb00;
 }
 
-ul.share-buttons li a.gplus-share:hover {
-    background: #dd4b39;
+ul.share-buttons li a.whatsapp-share:hover {
+    background:  #07cb00;
     color: #fff;
 }
 
