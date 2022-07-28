@@ -10533,3 +10533,80 @@ a.btn_mapp:hover {
 
 
 }
+@media (max-width: 992px) { 
+.card .listTour p {
+    margin-bottom: 0px !important;
+    display: none;
+}
+
+.freeCancellation{
+    margin-left: -50px;
+    font-size: 14px !important;
+
+}
+.card .col{
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+
+}
+.location a {
+    color: #000000 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+.bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .service-review .list-star .booking-item-rating-stars li .fa {
+    font-size: 13px !important;
+    color: #ffdc00;
+}
+.bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .service-review .review {
+   
+    font-size: 11px !important;
+}
+.duration .btn-danger{
+    display: none;
+}
+.card .g-price{
+    margin-top:-15px;
+
+}
+
+}
+
+@media (max-width: 767) { 
+    .card .listTour p {
+        margin-bottom: 0px !important;
+        display: none;
+    }
+    
+    .freeCancellation{
+        margin-left: -50px;
+        font-size: 14px !important;
+    
+    }
+    .card .col{
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    
+    }
+    .location a {
+        color: #000000 !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+    }
+    .bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .service-review .list-star .booking-item-rating-stars li .fa {
+        font-size: 13px !important;
+        color: #ffdc00;
+    }
+    .bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .service-review .review {
+       
+        font-size: 11px !important;
+    }
+    .duration .btn-danger{
+        display: none;
+    }
+    .card .g-price{
+        margin-top:-5px;
+    
+    }
+    
+    }

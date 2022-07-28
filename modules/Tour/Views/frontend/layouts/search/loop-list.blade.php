@@ -4,7 +4,7 @@
 
 <div class=" card item-tour {{$wrap_class ?? ''}}">
 <div class="row">
-        <div class="col-lg-4 col-md-4 pt-2">
+        <div class="col-lg-4 col pt-2">
             @if($row->is_featured == "1")
             <div class="featured">
                 {{__("Featured")}}
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class=" col-lg-5 col-md-6">
+        <div class=" col-lg-5 col ">
                 
             <div class="location">
                 <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl($include_param ?? true)}}">
@@ -119,7 +119,7 @@
                  </div> 
                     </div>
                     <div class="float-left ml-5">
-                            <div class=" duration">
+                            <div class=" duration freeCancellation">
                             <i class="fa fa-check" aria-hidden="true"></i>
                                    {{__("Free Cancellation")}}
                         </div> 
@@ -128,7 +128,7 @@
 
   
         </div>
-        <div class=" col-lg-3 col-md-2  mt-5 left-side">
+        <div class=" col-lg-3 mt-lg-5 left-side">
         <div class="info">
                         <div class="g-price">
                             
