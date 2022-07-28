@@ -1,10 +1,10 @@
 
 <div class="row mt-3">
     
-    <div class="col-lg-4 col-md-12">
+    <div class="col-lg-3 col-md-12">
         @include('Tour::frontend.layouts.search.filter-search')
     </div>
-    <div class="col-lg-8 col-md-12">
+    <div class="col-lg-9 col-md-12">
 
         <div class="bravo-list-item">
             <!-- sticky_horizontal -->
