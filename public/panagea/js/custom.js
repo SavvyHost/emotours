@@ -5,7 +5,7 @@ const swiperFeatured = new Swiper(".swiper-featured", {
     freemode: true,
     slidesPerView: 1,
     spaceBetween: 10,
-
+   
     // If we need pagination
     pagination: {
         el: ".swiper-pagination",
@@ -37,10 +37,7 @@ const swiperLocations = new Swiper(".swiper-locations", {
     loop: true,
     freemode: true,
     speed: 6000,
-    autoplay: {
-        delay: 0,
-        disableOnInteraction: false,
-    },
+    autoplay:0,
     slidesPerView: 1,
     spaceBetween: 10,
     slidesPerView: "auto",
