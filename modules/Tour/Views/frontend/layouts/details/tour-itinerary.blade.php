@@ -1,5 +1,5 @@
 @if($translation->itinerary)
-    <div class="g-itinerary">
+    <div class="g-itinerary" id="itinerary">
         <h3> {{__("Itinerary")}} </h3>
         <ul class="cbp_tmtimeline position-relative">
             @foreach($translation->itinerary as $key => $item)

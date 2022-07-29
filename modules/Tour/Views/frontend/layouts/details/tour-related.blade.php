@@ -1,5 +1,5 @@
 @if(count($tour_related) > 0)
-    <div class="bravo-list-tour-related">
+    <div class="bravo-list-tour-related" id="suggestion">
         <h2>{{__("You might also like")}}</h2>
         <div class="row">
             @foreach($tour_related as $k=>$item)

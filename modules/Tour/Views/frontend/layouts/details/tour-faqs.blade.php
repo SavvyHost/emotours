@@ -1,5 +1,5 @@
 @if($translation->faqs)
-    <div class="g-faq">
+    <div class="g-faq" id="faqs">
         <h3> {{__("FAQs")}} </h3>
         @foreach($translation->faqs as $item)
             <div class="item">

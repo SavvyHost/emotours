@@ -10,7 +10,7 @@
     }
 @endphp
 @if(!empty($title))
-    <div class="g-include-exclude">
+    <div class="g-include-exclude" id="included-excluded">
         <h3> {{ $title }} </h3>
         <div class="row">
             @if($translation->include)

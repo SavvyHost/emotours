@@ -67,7 +67,7 @@
                 @includeIf("Hotel::frontend.layouts.details.hotel-surrounding")
 
                 @if($row->map_lat && $row->map_lng)
-                    <div class="g-location">
+                    <div class="g-location" id="location">
                         <div class="location-title">
                             <h3>{{__("Tour Location")}}</h3>
                             @if($translation->address)
