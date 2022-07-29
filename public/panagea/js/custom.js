@@ -5,7 +5,7 @@ const swiperFeatured = new Swiper(".swiper-featured", {
     freemode: true,
     slidesPerView: 1,
     spaceBetween: 10,
-   
+
     // If we need pagination
     pagination: {
         el: ".swiper-pagination",
@@ -34,14 +34,16 @@ const swiperFeatured = new Swiper(".swiper-featured", {
 // Locations
 const swiperLocations = new Swiper(".swiper-locations", {
     direction: "horizontal",
-    loop: true,
-    freemode: true,
-    speed: 6000,
-    autoplay:0,
     slidesPerView: 1,
     spaceBetween: 10,
-    slidesPerView: "auto",
-    grabCursor: true,
-    mousewheelControl: true,
-    keyboardControl: true,
+    //  slidesPerGroup: 1,
+    //  loop: true,
+    //  loopFillGroupWithBlank: true,
+    //  grabCursor: true,
+    //  mousewheelControl: true,
+    //  keyboardControl: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });

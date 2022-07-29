@@ -1,13 +1,46 @@
-.g-field-search .form-group{
+.g-field-search .form-group {
     position: static;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     top: auto;
     left: auto;
     right: 48px;
 }
 
-.z-max{
+.z-max {
     z-index: 99999999 !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.1rem;
+    color: black;
+    font-weight: bold;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    height: 2rem;
+    width: 2rem;
+    background: white;
+    padding: 1.1rem;
+    border-radius: 40px;
+    top: calc(50% - 1rem);
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    pointer-events: visible;
+}
+
+.swiper-locations {
+}
+
+.swiper-slide .destination-item {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

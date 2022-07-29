@@ -9,7 +9,7 @@
             </div>
         @endif
         @if(!empty($rows))
-            <div class="list-item swiper-locations">
+            <div class="list-item swiper swiper-locations">
                 <div class="swiper-wrapper">
                     @foreach($rows as $key=>$row)
                         {{-- <?php
@@ -27,6 +27,8 @@
                         </div>
                     @endforeach
                 </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
             </div>
         @endif
     </div>
