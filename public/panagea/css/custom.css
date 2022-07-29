@@ -23,3 +23,34 @@ ul#top_menu li a.wishlist_bt_top:before,
 .secondary_nav{
     top: 0 !important;
 }
+
+input#datepicker[readonly] {
+    background-color: white;
+}
+
+.easepick-wrapper {
+    z-index: 12
+}
+
+.btn_1.full-width.purchase, a.btn_1.full-width.purchase {
+    color: #ffffff;
+}
+
+a.btn_1.full-width.purchase:hover,
+.btn_1.full-width.purchase:hover {
+    background-color: #0cd96e !important;
+}
+
+.bravo_wrap .bravo_detail_tour .cbp_tmtimeline li:before {
+    content: none !important;
+    display: none;
+}
+
+ul.cbp_tmtimeline {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.cbp_tmtimeline:before {
+    left: 18.4% !important;
+}
