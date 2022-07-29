@@ -1291,7 +1291,7 @@ header.sticky .hamburger-inner, header.sticky .hamburger-inner::before, header.s
 }
 
 .hero_in.tours_detail {
-    height: 550px;
+    height: 50vh;
 }
 
 @media (max-width: 575px) {
