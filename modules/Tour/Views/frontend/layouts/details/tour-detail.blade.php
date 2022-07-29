@@ -1,4 +1,5 @@
 <div class="container margin_60_35">
+    @include('Tour::frontend.layouts.details.tour-attributes')
     <div class="row">
         <div class="col-lg-8">
             <section id="description" class="g-overview">
@@ -133,7 +134,6 @@
 
                 @include('Tour::frontend.layouts.details.tour-include-exclude')
                 @include('Tour::frontend.layouts.details.tour-itinerary')
-                @include('Tour::frontend.layouts.details.tour-attributes')
                 @include('Tour::frontend.layouts.details.tour-faqs')
                 @includeIf("Hotel::frontend.layouts.details.hotel-surrounding")
 
