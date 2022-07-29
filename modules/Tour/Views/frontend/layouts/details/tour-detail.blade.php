@@ -59,8 +59,6 @@
                     <!-- /pictures -->
                 @endif
                 <hr>
-
-{{--        Here We Go        --}}
                 <hr>
 
                 @include('Tour::frontend.layouts.details.tour-include-exclude')

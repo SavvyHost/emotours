@@ -54,3 +54,8 @@ ul.cbp_tmtimeline {
 .cbp_tmtimeline:before {
     left: 18.4% !important;
 }
+/*@media (max-width: 767px) {*/
+/*    .theiaStickySidebar{*/
+/*        display: none;*/
+/*    }*/
+/*}*/
