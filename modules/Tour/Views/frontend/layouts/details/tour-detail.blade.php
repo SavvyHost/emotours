@@ -60,76 +60,7 @@
                 @endif
                 <hr>
 
-                <ul class="cbp_tmtimeline">
-                    <li>
-                        <time class="cbp_tmtime" datetime="09:30"><span>30 min.</span><span>09:30</span>
-                        </time>
-                        <div class="cbp_tmicon">
-                            1
-                        </div>
-                        <div class="cbp_tmlabel">
-                            <div class="hidden-xs">
-                                <img src="img/tour_plan_1.jpg" alt="" class="rounded-circle thumb_visit">
-                            </div>
-                            <h4>Interior of the cathedral</h4>
-                            <p>
-                                Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu. Ius diam
-                                vivendo ne.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <time class="cbp_tmtime" datetime="11:30"><span>2 hours</span><span>11:30</span>
-                        </time>
-                        <div class="cbp_tmicon">
-                            2
-                        </div>
-                        <div class="cbp_tmlabel">
-                            <div class="hidden-xs">
-                                <img src="img/tour_plan_2.jpg" alt="" class="rounded-circle thumb_visit">
-                            </div>
-                            <h4>Statue of Saint Reparata</h4>
-                            <p>
-                                Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu. Ius diam
-                                vivendo ne.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <time class="cbp_tmtime" datetime="13:30"><span>1 hour</span><span>13:30</span>
-                        </time>
-                        <div class="cbp_tmicon">
-                            3
-                        </div>
-                        <div class="cbp_tmlabel">
-                            <div class="hidden-xs">
-                                <img src="img/tour_plan_3.jpg" alt="" class="rounded-circle thumb_visit">
-                            </div>
-                            <h4>Huge clock decorated</h4>
-                            <p>
-                                Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu. Ius diam
-                                vivendo ne.
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <time class="cbp_tmtime" datetime="14:30"><span>2 hours</span><span>14:30</span>
-                        </time>
-                        <div class="cbp_tmicon">
-                            4
-                        </div>
-                        <div class="cbp_tmlabel">
-                            <div class="hidden-xs">
-                                <img src="img/tour_plan_4.jpg" alt="" class="rounded-circle thumb_visit">
-                            </div>
-                            <h4>Vasari's fresco</h4>
-                            <p>
-                                Vero consequat cotidieque ad eam. Ea duis errem qui, impedit blandit sed eu. Ius diam
-                                vivendo ne.
-                            </p>
-                        </div>
-                    </li>
-                </ul>
+{{--        Here We Go        --}}
                 <hr>
 
                 @include('Tour::frontend.layouts.details.tour-include-exclude')
