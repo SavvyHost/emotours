@@ -1,11 +1,11 @@
 @if($list_item)
     <div class="bravo-testimonial">
-        <div class="container">
+        <div class="container swiper swiper-reviews">
             <h3>{{$title}}</h3>
-            <div class="row">
+            <div class="swiper-wrapper">
                 @foreach($list_item as $item)
                     <?php $avatar_url = get_file_url($item['avatar'], 'full') ?>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 swiper-slide">
                         <div class="item has-matchHeight">
                             <div class="author">
                                 <img src="{{$avatar_url}}" alt="{{$item['name']}}">
@@ -27,6 +27,7 @@
                     </div>
                 @endforeach
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 @endif

@@ -22,7 +22,7 @@
                             }
                         }
                         ?> --}}
-                        <div class="col-lg-3 col-md-6 swiper-slide">
+                        <div class="col-lg-3 col-md-4 swiper-slide">
                             @include('Location::frontend.blocks.list-locations.loop')
                         </div>
                     @endforeach

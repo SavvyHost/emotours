@@ -11,7 +11,7 @@
                     {{$desc}}
                 </div>
             @endif
-            <div class="list-item swiper swiper-locations">
+            <div class="list-item swiper swiper-category">
                 <div class="swiper-wrapper">
                 @foreach($list_item as $k=>$item)
                     @php $image_url = get_file_url($item['image_id'], 'full'); @endphp
@@ -29,8 +29,8 @@
                         @endif
                 @endforeach
                 </div>
-                    <div class="nav-btn swiper-button-next"></div>
-                    <div class="nav-btn swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
             </div>
         </div>
     </div>

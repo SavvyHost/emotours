@@ -1,10 +1,14 @@
 //Featured
-const swiperFeatured = new Swiper(".swiper-featured", {
+const swiperCategory = new Swiper(".swiper-category", {
     // Optional parameters
     direction: "horizontal",
     freemode: true,
-    slidesPerView: 1,
+    slidesPerView: 3,
     spaceBetween: 10,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 
     // If we need pagination
     pagination: {
@@ -34,9 +38,9 @@ const swiperFeatured = new Swiper(".swiper-featured", {
 // Locations
 const swiperLocations = new Swiper(".swiper-locations", {
     direction: "horizontal",
-    slidesPerView: 1,
-    spaceBetween: 10,
-    //  slidesPerGroup: 1,
+    slidesPerView: 4,
+    //  spaceBetween: 10,
+    // slidesPerGroup: 2,
     //  loop: true,
     //  loopFillGroupWithBlank: true,
     //  grabCursor: true,
@@ -45,5 +49,17 @@ const swiperLocations = new Swiper(".swiper-locations", {
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+    },
+});
+const swiperReviews = new Swiper(".swiper-reviews", {
+    direction: "horizontal",
+    slidesPerView: 3,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
 });

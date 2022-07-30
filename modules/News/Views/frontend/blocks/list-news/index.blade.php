@@ -13,7 +13,7 @@
         <div class="list-item swiper swiper-locations ">
             <div class="swiper-wrapper">
                 @foreach($rows as $row)
-                    <div class="col-lg-4 col-md-6 swiper-slide">
+                    <div class="col-lg-3 col-md-4 swiper-slide">
                         @include('News::frontend.blocks.list-news.loop')
                     </div>
                 @endforeach
