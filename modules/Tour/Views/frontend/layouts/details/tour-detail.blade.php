@@ -93,5 +93,6 @@
         <!-- /col -->
         <!--  Reviews  -->
         @include('Tour::frontend.layouts.details.tour-form-book-panagea')
+        @include('Tour::frontend.layouts.details.tour-form-book-modal-panagea')
     </div>
 </div>
