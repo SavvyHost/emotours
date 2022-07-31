@@ -16,8 +16,8 @@
                         <li><a href="#faqs">{{__("FAQs")}}</a></li>
                         <li><a href="#location">{{__("Location")}}</a></li>
                         <li><a href="#suggestion">{{__("Suggestions")}}</a></li>
-                        <li data-toggle="modal" data-target="#enquiry_form_modal" class="enquiry-item"><a href=""><span>Enquiry</span></a></li>
                     </ul>
+                    <div data-toggle="modal" data-target="#enquiry_form_modal" class="enquiry-item"><a href=""><span>Enquiry</span></a></div>
                 </div>
             </nav>
 
@@ -89,7 +89,8 @@
                 </div>
                 <div class="right">
                     @if($row->getBookingEnquiryType() === "book")
-                        <a href="#sidebar"  class="btn btn-primary bravo-button-book-mobile" data-toggle="modal" data-target="#tour-form-book">{{__("Book Now")}}</a>
+                        <a href="#sidebar" class="btn btn-primary bravo-button-book-mobile" data-toggle="modal"
+                           data-target="#tour-form-book">{{__("Book Now")}}</a>
                     @else
                         <a class="btn btn-primary" data-toggle="modal"
                            data-target="#enquiry_form_modal">{{__("Contact Now")}}</a>
@@ -131,7 +132,8 @@
             email_required: '{{ __("Email is Required") }}',
         };
     </script>
-    <script type="text/javascript" src="{{ asset('module/tour/js/single-tour.js?_ver='.config('app.version')) }}"></script>
+    <script type="text/javascript"
+            src="{{ asset('module/tour/js/single-tour.js?_ver='.config('app.version')) }}"></script>
 
 
     <script src="{{ asset('panagea/js/input_qty.js') }}"></script>
@@ -145,12 +147,12 @@
             css: [
                 '{{ asset('css/easepick.css') }}',
             ],
-            setup(picker){
-                picker.on('select',(event)=>{
-                    setTimeout(()=>{
-                        let guestDropdown  =document.querySelector('#guests-dropdown > a')
+            setup(picker) {
+                picker.on('select', (event) => {
+                    setTimeout(() => {
+                        let guestDropdown = document.querySelector('#guests-dropdown > a')
                         guestDropdown.click()
-                    },100)
+                    }, 100)
 
                 })
             }
@@ -160,12 +162,12 @@
             css: [
                 '{{ asset('css/easepick.css') }}',
             ],
-            setup(picker){
-                picker.on('select',(event)=>{
-                    setTimeout(()=>{
-                        let guestDropdown  =document.querySelector('#guests-dropdown > a')
+            setup(picker) {
+                picker.on('select', (event) => {
+                    setTimeout(() => {
+                        let guestDropdown = document.querySelector('#guests-dropdown > a')
                         guestDropdown.click()
-                    },100)
+                    }, 100)
 
                 })
             }

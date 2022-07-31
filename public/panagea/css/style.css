@@ -4398,14 +4398,13 @@ a.boxed_list:hover i {
 .secondary_nav ul li a.active {
     color: rgba(0, 0, 0, 0.9);
 }
-
-.secondary_nav ul li:last-child {
+.secondary_nav .enquiry-item {
     display: inline-block;
     float: right;
-    margin-right: 0;
+    margin: 4px;
 }
 
-.secondary_nav ul li:last-child a {
+.secondary_nav .enquiry-item a {
     background-color: #036bd0;
     color: #fff;
     -webkit-border-radius: 3px;
@@ -4415,7 +4414,7 @@ a.boxed_list:hover i {
     padding: 5px 15px;
 }
 
-.secondary_nav ul li:last-child a:hover {
+.secondary_nav .enquiry-item a:hover {
     background-color: #0054a6;
 }
 
