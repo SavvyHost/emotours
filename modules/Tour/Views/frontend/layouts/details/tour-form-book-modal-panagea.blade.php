@@ -49,6 +49,37 @@
                         </div>
                     </div>
 
+                    <div class="form-section-group form-group" v-if="extra_price.length">
+                        <h4 class="form-section-title">{{__('Extra prices:')}}</h4>
+                        <div class="form-group" v-for="(type,index) in extra_price">
+                            <div class="extra-price-wrap d-flex justify-content-between">
+                                <div class="flex-grow-1">
+                                    <label><input type="checkbox" true-value="1" false-value="0" v-model="type.enable"> @{{type.name}}</label>
+                                    <div class="render" v-if="type.price_type">(@{{type.price_type}})</div>
+                                </div>
+                                <div class="flex-shrink-0">@{{type.price_html}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section-group form-group-padding" v-if="buyer_fees.length">
+                        <div class="extra-price-wrap d-flex justify-content-between" v-for="(type,index) in buyer_fees">
+                            <div class="flex-grow-1">
+                                <label>@{{type.type_name}}
+                                    <i class="icofont-info-circle" v-if="type.desc" data-toggle="tooltip" data-placement="top" :title="type.type_desc"></i>
+                                </label>
+                                <div class="render" v-if="type.price_type">(@{{type.price_type}})</div>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <div class="unit" v-if='type.unit == "percent"'>
+                                    @{{ type.price }}%
+                                </div>
+                                <div class="unit" v-else >
+                                    @{{ formatMoney(type.price) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="submit-group">
                         <a class="btn_1 full-width purchase" @click="doSubmit($event)"
                            :class="{'disabled':onSubmit,'btn-success':(step == 2),'btn-primary':step == 1}"
