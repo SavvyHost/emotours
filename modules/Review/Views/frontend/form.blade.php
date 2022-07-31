@@ -1,5 +1,5 @@
 @if(setting_item($row->type."_enable_review"))
-    <div class="bravo-reviews" id="bravo-reviews">
+    <section class="bravo-reviews" id="bravo-reviews">
         <h3>{{__("Reviews")}}</h3>
         @if($review_score)
             <div class="review-box">
@@ -219,5 +219,5 @@
                 {!!  __("You must <a href='#login' data-toggle='modal' data-target='#login'>log in</a> to write review") !!}
             </div>
         @endif
-    </div>
+    </section>
 @endif
