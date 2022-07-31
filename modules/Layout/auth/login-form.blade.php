@@ -37,7 +37,7 @@
             <div class="row">
                 @if(setting_item('facebook_enable'))
                     <div class="col-xs-12 col-sm-4">
-                        <a href="{{url('/social-login/facebook')}}"class="btn btn_login_fb_link" data-channel="facebook">
+                        <a href="{{url('/social-login/facebook')}}" class="btn btn_login_fb_link" data-channel="facebook">
                             <i class="input-icon fa fa-facebook"></i>
                             {{__('Facebook')}}
                         </a>
