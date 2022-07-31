@@ -9,10 +9,10 @@
             </div>
         @endif
         @if(!empty($rows))
-            <div class="list-item swiper-locations">
-                <div class="swiper-wrapper">
+            <div class="list-item">
+                <div class="row">
                     @foreach($rows as $key=>$row)
-                        {{-- <?php
+                        <?php
                         $size_col = 4;
                         if( !empty($layout) and (  $layout == "style_2" or $layout == "style_3" or $layout == "style_4" )){
                             $size_col = 4;
@@ -21,8 +21,8 @@
                                 $size_col = 8;
                             }
                         }
-                        ?> --}}
-                        <div class="col-lg-3 col-md-6 swiper-slide">
+                        ?>
+                        <div class="col-lg-{{$size_col}} col-md-6">
                             @include('Location::frontend.blocks.list-locations.loop')
                         </div>
                     @endforeach
