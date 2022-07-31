@@ -10,11 +10,11 @@
                 <div class="container">
                     <ul class="clearfix">
                         <li><a href="#description" class="active">{{__("Overview")}}</a></li>
-                        <li><a href="#bravo-reviews">{{__("Reviews")}}</a></li>
                         <li><a href="#included-excluded">{{__("Included/Excluded")}}</a></li>
                         <li><a href="#itinerary">{{__("Itinerary")}}</a></li>
                         <li><a href="#faqs">{{__("FAQs")}}</a></li>
                         <li><a href="#location">{{__("Location")}}</a></li>
+                        <li><a href="#bravo-reviews">{{__("Reviews")}}</a></li>
                         <li><a href="#suggestion">{{__("Suggestions")}}</a></li>
                     </ul>
                     <div data-toggle="modal" data-target="#enquiry_form_modal" class="enquiry-item"><a href=""><span>Enquiry</span></a></div>
