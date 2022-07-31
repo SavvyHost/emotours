@@ -132,8 +132,6 @@
                     </div>
                     <!-- /pictures -->
                 @endif
-                <hr>
-                <hr>
 
                 @include('Tour::frontend.layouts.details.tour-include-exclude')
                 @include('Tour::frontend.layouts.details.tour-attributes')

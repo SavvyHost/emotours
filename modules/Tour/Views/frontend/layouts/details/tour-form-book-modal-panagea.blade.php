@@ -18,7 +18,7 @@
                         </div>
 
                         <span class="mt-2">{{ $row->display_price }}/<small>{{ __('person') }}</small></span>
-                        <div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div>
+                        <div class="score"><span>{{ __('Good') }}<em>350 {{ __ ('Reviews') }}</em></span><strong>7.0</strong></div>
                     </div>
 
 
@@ -61,9 +61,8 @@
                     </div>
 
                     <a href="#" class="btn_1 full-width outline wishlist {{$row->isWishList()}}" data-id="{{$row->id}}"
-                       data-type="{{$row->type}}"><i class="icon_heart"></i> Add to
-                        wishlist</a>
-                    <div class="text-center"><small>No money charged in this step</small></div>
+                       data-type="{{$row->type}}"><i class="icon_heart"></i>{{ __ ('Add to
+                        wishlist') }}</a>
                 </div>
             </div>
         </div>

@@ -55,7 +55,6 @@
         <a href="#" class="btn_1 full-width outline wishlist {{$row->isWishList()}}" data-id="{{$row->id}}"
            data-type="{{$row->type}}"><i class="icon_heart"></i> Add to
             wishlist</a>
-        <div class="text-center"><small>No money charged in this step</small></div>
     </div>
 
     <ul class="share-buttons">
