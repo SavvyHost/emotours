@@ -4397,6 +4397,7 @@ a.boxed_list:hover i {
 
 .secondary_nav ul li a.active {
     color: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.9);
 }
 .secondary_nav .enquiry-item {
     display: inline-block;
