@@ -6,7 +6,7 @@ $(function () {
             e.preventDefault();
             $("html, body").animate(
                 {
-                    scrollTop: $($(this).attr('href')).offset().top -70,
+                    scrollTop: $($(this).attr('href')).offset().top -65,
                 },
                 0
             );
