@@ -94,3 +94,6 @@ ul.cbp_tmtimeline {
 .secondary_nav ul li:last-of-type{
     margin-left: auto;
 }
+.secondary_nav .container div{
+    margin-right: 30px;
+}
