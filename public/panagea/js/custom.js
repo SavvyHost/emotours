@@ -2,9 +2,9 @@
 const swiperCategory = new Swiper(".swiper-category", {
     // Optional parameters
     direction: "horizontal",
-    freemode: true,
-    slidesPerView: 3,
-    spaceBetween: 10,
+    // freemode: true,
+    slidesPerView: 4,
+    // spaceBetween: 10,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -46,17 +46,37 @@ const swiperLocations = new Swiper(".swiper-locations", {
     //  grabCursor: true,
     //  mousewheelControl: true,
     //  keyboardControl: true,
+    breakpoints: {
+        640: {
+            slidesPerView: 3,
+        },
+
+        480: {
+            slidesPerView: 2,
+        },
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+    },
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
 });
+
+//
 const swiperReviews = new Swiper(".swiper-reviews", {
     direction: "horizontal",
     slidesPerView: 3,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+        },
     },
     pagination: {
         el: ".swiper-pagination",

@@ -1,6 +1,6 @@
 @if($list_item)
     <div class="bravo-box-category-tour">
-        <div class="container">
+        <div class="container-fluid ">
             @if($title)
                 <div class="title">
                     {{$title}}

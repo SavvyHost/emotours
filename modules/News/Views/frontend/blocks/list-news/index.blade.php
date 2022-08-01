@@ -1,5 +1,5 @@
 <div class="bravo-list-news">
-    <div class="container">
+    <div class="container-fluid">
         @if($title)
             <div class="title">
                 {{$title}}
