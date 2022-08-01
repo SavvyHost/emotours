@@ -4636,7 +4636,6 @@ section#reviews {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     border-radius: 5px;
-    margin-bottom: 30px;
 }
 
 .box_detail .price {
@@ -5018,9 +5017,9 @@ img.thumb_visit {
 
     .cbp_tmtimeline > li .cbp_tmicon {
         position: relative;
-        float: right;
-        left: auto;
-        right: 88.5%;
+        float: left;
+        right: auto;
+        left: 6px;
         margin: -51px 5px 0 0px;
     }
 }

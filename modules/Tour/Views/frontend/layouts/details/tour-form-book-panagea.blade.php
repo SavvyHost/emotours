@@ -20,7 +20,7 @@
         </div>
 
 
-        <div class="panel-dropdown mt-3" id="guests-dropdown">
+        <div class="panel-dropdown" id="guests-dropdown">
             <a @click.prevent="show_guests_dropdown = !show_guests_dropdown">Guests <span
                         class="qtyTotal">1</span></a>
             <div class="panel-dropdown-content right"
@@ -88,7 +88,7 @@
             wishlist</a>
     </div>
 
-    <ul class="share-buttons mt-3">
+    <ul class="share-buttons mb-1">
         <li><a class="fb-share"
                href="https://web.whatsapp.com/send?text={{$row->getDetailUrl()}}"><i
                         class="social_facebook"></i> Share</a></li>
