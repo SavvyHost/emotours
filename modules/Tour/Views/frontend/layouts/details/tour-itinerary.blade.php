@@ -8,7 +8,7 @@
                         {{ $key +1 }}
                     </div>
                     <div class="cbp_tmlabel">
-                        <div class="hidden-xs">
+                        <div>
                             <img src="{{ !empty($item['image_id']) ? get_file_url($item['image_id'],"full") : "" }}"
                                  alt="" class="rounded-circle thumb_visit">
                         </div>

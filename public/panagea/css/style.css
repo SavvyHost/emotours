@@ -4885,6 +4885,7 @@ ul.cbp_tmtimeline {
 /* The date/time */
 .cbp_tmtimeline > li {
     position: relative;
+    margin-top: 62px;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime {
@@ -4918,12 +4919,6 @@ img.thumb_visit {
     margin-top: -5px;
     float: right;
     margin-left: 15px;
-}
-
-@media (max-width: 767px) {
-    img.thumb_visit {
-        display: none;
-    }
 }
 
 .cbp_tmtimeline > li .cbp_tmlabel {
@@ -5027,7 +5022,8 @@ img.thumb_visit {
         position: relative;
         float: right;
         left: auto;
-        margin: -65px 5px 0 0px;
+        right: 88.5%;
+        margin: -51px 5px 0 0px;
     }
 }
 
