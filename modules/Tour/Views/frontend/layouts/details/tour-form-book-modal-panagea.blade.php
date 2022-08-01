@@ -28,7 +28,7 @@
                     </div>
 
 
-                    <div class="panel-dropdown" id="guests-dropdown">
+                    <div class="panel-dropdown mt-3" id="guests-dropdown-modal">
                         <a @click.prevent="show_guests_dropdown = !show_guests_dropdown">Guests <span
                                     class="qtyTotal">1</span></a>
                         <div class="panel-dropdown-content right"
@@ -49,8 +49,8 @@
                         </div>
                     </div>
 
-                    <div class="form-section-group form-group" v-if="extra_price.length">
-                        <h4 class="form-section-title">{{__('Extra prices:')}}</h4>
+                    <div class="form-section-group form-group mt-3" v-if="extra_price.length">
+                        <h6 class="form-section-title">{{__('Extra prices:')}}</h6>
                         <div class="form-group" v-for="(type,index) in extra_price">
                             <div class="extra-price-wrap d-flex justify-content-between">
                                 <div class="flex-grow-1">
@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="submit-group">
+                    <div class="submit-group mt-4">
                         <a class="btn_1 full-width purchase" @click="doSubmit($event)"
                            :class="{'disabled':onSubmit,'btn-success':(step == 2),'btn-primary':step == 1}"
                            name="submit">

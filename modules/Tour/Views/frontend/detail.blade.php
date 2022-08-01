@@ -165,7 +165,7 @@
             setup(picker) {
                 picker.on('select', (event) => {
                     setTimeout(() => {
-                        let guestDropdown = document.querySelector('#guests-dropdown > a')
+                        let guestDropdown = document.querySelector('#guests-dropdown-modal > a')
                         guestDropdown.click()
                     }, 100)
 

@@ -97,3 +97,9 @@ ul.cbp_tmtimeline {
 .secondary_nav .container div{
     margin-right: 30px;
 }
+#datepicker-modal{
+    background: #ffffff;
+}
+#tour-form-book{
+    padding: 0 !important;
+}
