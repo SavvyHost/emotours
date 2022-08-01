@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('head')
     <link href="{{ asset('dist/frontend/module/tour/css/tour.css?_ver='.config('app.version')) }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}"/>
 @endsection
 @section('content')
     <div class="bravo_detail_tour">
@@ -134,7 +135,7 @@
     </script>
     <script type="text/javascript"
             src="{{ asset('module/tour/js/single-tour.js?_ver='.config('app.version')) }}"></script>
-
+    <script type="text/javascript" src="{{ asset("libs/fotorama/fotorama.js") }}"></script>
 
     <script src="{{ asset('panagea/js/input_qty.js') }}"></script>
     <script src="{{ asset('js/easepick.min.js') }}"></script>
