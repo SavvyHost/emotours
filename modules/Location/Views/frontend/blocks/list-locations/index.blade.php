@@ -12,13 +12,16 @@
             <div class="list-item swiper swiper-locations">
                 <div class="swiper-wrapper">
                     @foreach($rows as $key=>$row)
-                        <div class="col-lg-3 col-md-4 swiper-slide">
+                        <div class="swiper-slide">
                             @include('Location::frontend.blocks.list-locations.loop')
                         </div>
                     @endforeach
                 </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                <div class="row">
+                    <div class="swiper-button-next .button-next"></div>
+                    <div class="swiper-button-prev .button-prev"></div>
+                </div>
+
             </div>
         @endif
     </div>

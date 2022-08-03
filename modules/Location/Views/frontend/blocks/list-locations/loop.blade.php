@@ -22,7 +22,7 @@
             <div class="effect"></div>
             <div class="content">
                 <h4 class="title">{{$translation->name}}</h4>
-                @if( !empty($layout) and ($layout == "style_1" or $layout == "style_3" or $layout == "style_4"))
+                @if( !empty($layout) and ($layout == "style_1" or $layout == "style_3" or $layout == "style_4" or $layout == "style_5"))
                     @if(is_array($service_type))
                         <div class="desc">
                             @foreach($service_type as $type)
