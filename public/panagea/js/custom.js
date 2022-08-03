@@ -1,4 +1,33 @@
 //Featured
+
+// Locations
+const swiperFeatured = new Swiper(".swiper-featured-tours", {
+    direction: "horizontal",
+    spaceBetween: 10,
+    freeMode: true,
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            freeMode: true,
+        },
+        576: {
+            slidesPerView: 3,
+        },
+        768: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+        },
+        992: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+        },
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
 const swiperCategory = new Swiper(".swiper-category", {
     // Optional parameters
     direction: "horizontal",
@@ -31,13 +60,6 @@ const swiperLocations = new Swiper(".swiper-locations", {
     direction: "horizontal",
     spaceBetween: 10,
     freeMode: true,
-
-    // loop: true,
-    // loopFillGroupWithBlank: true,
-    // grabCursor: true,
-    // mousewheelControl: true,
-    // keyboardControl: true,
-
     breakpoints: {
         320: {
             slidesPerView: 1,
@@ -65,6 +87,10 @@ const swiperLocations = new Swiper(".swiper-locations", {
 const swiperReviews = new Swiper(".swiper-reviews", {
     direction: "horizontal",
     spaceBetween: 10,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    grabCursor: true,
+    mousewheelControl: true,
     freeMode: true,
     autoplay: {
         delay: 3000,

@@ -4,13 +4,21 @@
 <div class="item-tour {{$wrap_class ?? ''}}">
     @if($row->is_featured == "1")
         <div class="featured">
-            {{__("Featured")}}
+            {{__("LIKELY TO SELL OUT")}}
         </div>
     @endif
     <div class="thumb-image">
         @if($row->discount_percent)
-            <div class="sale_info">{{$row->discount_percent}}</div>
+            <div class="sale_info-new">
+                Sale
+                <strong class="sale-percent">
+                {{$row->discount_percent}}
+                 </strong>
+             </div>
         @endif
+        <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
+            <i class="fa fa-heart"></i>
+        </div>
         <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl($include_param ?? true)}}">
             @if($row->image_url)
                 @if(!empty($disable_lazyload))
@@ -19,10 +27,6 @@
                     {!! get_image_tag($row->image_id,'medium',['class'=>'img-responsive','alt'=>$row->title]) !!}
                 @endif
             @endif
-        </a>
-        <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
-            <i class="fa fa-heart"></i>
-        </div>
     </div>
     <div class="location">
         @if(!empty($row->location->name))
@@ -31,10 +35,10 @@
             {{$location->name ?? ''}}
         @endif
     </div>
-    <div class="item-title">
-        <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl($include_param ?? true)}}">
-            {!! clean($translation->title) !!}
-        </a>
+    <div class="item-title-2">
+        <strong> 
+            {!! Str::limit($translation->title , 48) !!}
+        </strong>
     </div>
     @if(setting_item('tour_enable_review'))
     <?php
@@ -85,4 +89,5 @@
             </div>
         </div>
     </div>
+    </a>
 </div>

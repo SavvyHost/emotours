@@ -21,7 +21,6 @@
                     <div class="swiper-button-next .button-next"></div>
                     <div class="swiper-button-prev .button-prev"></div>
                 </div>
-
             </div>
         @endif
     </div>
