@@ -11,14 +11,14 @@ const swiperFeatured = new Swiper(".swiper-featured-tours", {
             freeMode: true,
         },
         576: {
-            slidesPerView: 2.2,
+            slidesPerView: 2.3,
         },
         768: {
-            slidesPerView: 3.2,
+            slidesPerView: 3.3,
             spaceBetween: 15,
         },
         992: {
-            slidesPerView: 5.2,
+            slidesPerView: 5,
             spaceBetween: 20,
         },
     },
@@ -42,14 +42,14 @@ const swiperCategory = new Swiper(".swiper-category", {
             slidesPerView: 1.2,
         },
         576: {
-            slidesPerView: 2.2,
+            slidesPerView: 2.3,
         },
         768: {
-            slidesPerView: 3.2,
+            slidesPerView: 3.3,
             spaceBetween: 15,
         },
         992: {
-            slidesPerView: 5.2,
+            slidesPerView: 5,
             spaceBetween: 20,
         },
     },
@@ -58,30 +58,22 @@ const swiperCategory = new Swiper(".swiper-category", {
 // Locations
 const swiperLocations = new Swiper(".swiper-locations", {
     direction: "horizontal",
-    loop: true,
-    spaceBetween: 0,
-    grabCursor: true,
-    autoplay: {
-        delay: 1,
-        disableOnInteraction: true
-    },
+    spaceBetween: 10,
     freeMode: true,
-    speed: 5000,
-    freeModeMomentum: false,
     breakpoints: {
         320: {
             slidesPerView: 1.2,
             freeMode: true,
         },
         576: {
-            slidesPerView:2.2,
+            slidesPerView: 2.3,
         },
         768: {
-            slidesPerView:3.2,
+            slidesPerView: 3.3,
             spaceBetween: 15,
         },
         992: {
-            slidesPerView: 5.2,
+            slidesPerView: 5,
             spaceBetween: 20,
         },
     },
@@ -105,18 +97,18 @@ const swiperReviews = new Swiper(".swiper-reviews", {
         disableOnInteraction: true,
     },
     breakpoints: {
-        992: {
-            slidesPerView: 4.2,
-            spaceBetween: 20,
-        },
-        768: {
-            slidesPerView: 3.2,
+        320: {
+            slidesPerView: 1.2,
         },
         576: {
             slidesPerView: 2.2,
         },
-        320: {
-            slidesPerView: 1.2,
+        768: {
+            slidesPerView: 3,
+        },
+        992: {
+            slidesPerView: 4,
+            spaceBetween: 20,
         },
     },
     pagination: {
@@ -137,16 +129,16 @@ const featuredItem = new Swiper(".swiper-featured", {
 
     breakpoints: {
         320: {
-            slidesPerView: 1.2,
+            slidesPerView: 1,
         },
         576: {
-            slidesPerView: 2.2,
+            slidesPerView: 2,
         },
         768: {
-            slidesPerView: 3.2,
+            slidesPerView: 3,
         },
         1024: {
-            slidesPerView: 4.2,
+            slidesPerView: 4,
             spaceBetween: 20,
         },
     },

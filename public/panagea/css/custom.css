@@ -75,8 +75,8 @@
     border: none !important;
 }
 
-.swiper-locations .swiper-wrapper {
-    -webkit-transition-timing-function:linear!important;
-    -o-transition-timing-function:linear!important;
-    transition-timing-function:linear!important;
+.swiper-locations .swiper-wrapper .swiper-slide {
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
 }
