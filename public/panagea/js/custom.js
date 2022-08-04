@@ -7,18 +7,18 @@ const swiperFeatured = new Swiper(".swiper-featured-tours", {
     freeMode: true,
     breakpoints: {
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
             freeMode: true,
         },
         576: {
-            slidesPerView: 3,
+            slidesPerView: 2.2,
         },
         768: {
-            slidesPerView: 4,
+            slidesPerView: 3.2,
             spaceBetween: 15,
         },
         992: {
-            slidesPerView: 5,
+            slidesPerView: 5.2,
             spaceBetween: 20,
         },
     },
@@ -39,17 +39,17 @@ const swiperCategory = new Swiper(".swiper-category", {
     },
     breakpoints: {
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
         },
         576: {
-            slidesPerView: 2,
+            slidesPerView: 2.2,
         },
         768: {
-            slidesPerView: 3,
+            slidesPerView: 3.2,
             spaceBetween: 15,
         },
         992: {
-            slidesPerView: 5,
+            slidesPerView: 5.2,
             spaceBetween: 20,
         },
     },
@@ -58,22 +58,30 @@ const swiperCategory = new Swiper(".swiper-category", {
 // Locations
 const swiperLocations = new Swiper(".swiper-locations", {
     direction: "horizontal",
-    spaceBetween: 10,
+    loop: true,
+    spaceBetween: 0,
+    grabCursor: true,
+    autoplay: {
+        delay: 1,
+        disableOnInteraction: true
+    },
     freeMode: true,
+    speed: 5000,
+    freeModeMomentum: false,
     breakpoints: {
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
             freeMode: true,
         },
         576: {
-            slidesPerView: 3,
+            slidesPerView:2.2,
         },
         768: {
-            slidesPerView: 4,
+            slidesPerView:3.2,
             spaceBetween: 15,
         },
         992: {
-            slidesPerView: 5,
+            slidesPerView: 5.2,
             spaceBetween: 20,
         },
     },
@@ -98,17 +106,17 @@ const swiperReviews = new Swiper(".swiper-reviews", {
     },
     breakpoints: {
         992: {
-            slidesPerView: 4,
+            slidesPerView: 4.2,
             spaceBetween: 20,
         },
         768: {
-            slidesPerView: 3,
+            slidesPerView: 3.2,
         },
         576: {
-            slidesPerView: 2,
+            slidesPerView: 2.2,
         },
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
         },
     },
     pagination: {
@@ -122,7 +130,6 @@ const swiperReviews = new Swiper(".swiper-reviews", {
 const featuredItem = new Swiper(".swiper-featured", {
     direction: "horizontal",
     spaceBetween: 10,
-    slidesPerView: 1,
     autoplay: {
         delay: 6000,
         disableOnInteraction: true,
@@ -130,16 +137,16 @@ const featuredItem = new Swiper(".swiper-featured", {
 
     breakpoints: {
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
         },
         576: {
-            slidesPerView: 2,
+            slidesPerView: 2.2,
         },
         768: {
-            slidesPerView: 3,
+            slidesPerView: 3.2,
         },
         1024: {
-            slidesPerView: 4,
+            slidesPerView: 4.2,
             spaceBetween: 20,
         },
     },
