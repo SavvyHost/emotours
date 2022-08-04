@@ -142,7 +142,7 @@
         {!! setting_item('body_scripts') !!}
         {!! setting_item_with_lang_raw('body_scripts') !!}
     @endif
-    <div class="bravo_wrap">
+    <div class="bravo_wrap" id="page">
         @if(!is_api())
             {{--   @include('Layout::parts.topbar')--}}
             @include('Layout::parts.header-panagea')

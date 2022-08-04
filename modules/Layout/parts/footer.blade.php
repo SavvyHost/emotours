@@ -100,8 +100,11 @@
 				</div>
 			</div>
 		</div> --}}
+		<div id="toTop"></div><!-- Back to top button -->
 </footer>
 @endif
+
+
 
 @include('Layout::parts.login-register-modal-panagea')
 @include('Layout::parts.chat')
