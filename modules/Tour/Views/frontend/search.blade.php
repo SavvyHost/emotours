@@ -30,4 +30,5 @@
 @section('footer')
     <script type="text/javascript" src="{{ asset("libs/ion_rangeslider/js/ion.rangeSlider.min.js") }}"></script>
     <script type="text/javascript" src="{{ asset('module/tour/js/tour.js?_ver='.config('app.version')) }}"></script>
+    <script src="{{ asset('js/easepick.min.js') }}"></script>
 @endsection
