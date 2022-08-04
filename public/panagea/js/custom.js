@@ -5,14 +5,14 @@ const swiperFeatured = new Swiper(".swiper-featured-tours", {
     freeMode: true,
     breakpoints: {
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
             freeMode: true,
         },
         576: {
-            slidesPerView: 3,
+            slidesPerView: 2.3,
         },
         768: {
-            slidesPerView: 4,
+            slidesPerView: 3.3,
             spaceBetween: 15,
         },
         992: {
@@ -37,13 +37,13 @@ const swiperCategory = new Swiper(".swiper-category", {
     },
     breakpoints: {
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
         },
         576: {
-            slidesPerView: 2,
+            slidesPerView: 2.3,
         },
         768: {
-            slidesPerView: 3,
+            slidesPerView: 3.3,
             spaceBetween: 15,
         },
         992: {
@@ -60,14 +60,14 @@ const swiperLocations = new Swiper(".swiper-locations", {
     freeMode: true,
     breakpoints: {
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1.2,
             freeMode: true,
         },
         576: {
-            slidesPerView: 3,
+            slidesPerView: 2.3,
         },
         768: {
-            slidesPerView: 4,
+            slidesPerView: 3.3,
             spaceBetween: 15,
         },
         992: {
@@ -95,18 +95,18 @@ const swiperReviews = new Swiper(".swiper-reviews", {
         disableOnInteraction: true,
     },
     breakpoints: {
-        992: {
-            slidesPerView: 4,
-            spaceBetween: 20,
+        320: {
+            slidesPerView: 1.2,
+        },
+        576: {
+            slidesPerView: 2.2,
         },
         768: {
             slidesPerView: 3,
         },
-        576: {
-            slidesPerView: 2,
-        },
-        320: {
-            slidesPerView: 1,
+        992: {
+            slidesPerView: 4,
+            spaceBetween: 20,
         },
     },
     pagination: {
@@ -120,7 +120,6 @@ const swiperReviews = new Swiper(".swiper-reviews", {
 const featuredItem = new Swiper(".swiper-featured", {
     direction: "horizontal",
     spaceBetween: 10,
-    slidesPerView: 1,
     autoplay: {
         delay: 6000,
         disableOnInteraction: true,
