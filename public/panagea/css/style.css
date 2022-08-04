@@ -2793,7 +2793,7 @@ a#moveDown {
     font-size: 0.875rem;
     border: 0;
     padding: 0 25px;
-    height: 50px;
+    /* height: 50px; */
     cursor: pointer;
     outline: none;
     width: 100%;
@@ -2802,12 +2802,12 @@ a#moveDown {
     -ms-border-radius: 0 3px 3px 0;
     border-radius: 0 3px 3px 0;
     background-color: #fc5b62;
-    margin-right: -1px;
+    /* margin-right: -1px; */
 }
 
 @media (max-width: 991px) {
     .custom-search-input-2 input[type='submit'] {
-        margin: 20px 0 0 0;
+        margin: 0;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         -ms-border-radius: 3px;
@@ -6132,7 +6132,7 @@ ul.cart_details li span {
 
 #confirm p {
     font-size: 16px !important;
-    font-size: 16px !important / 16 pxrem;
+    font-size: 16px !important;
     margin-bottom: 0;
 }
 
