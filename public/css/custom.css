@@ -187,3 +187,7 @@
 }
 
 /* END: SWIPER CAROUSEL */
+header,
+header.header.sticky {
+    padding: 15px 20px 0 !important;
+}

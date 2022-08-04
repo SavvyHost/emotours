@@ -12,7 +12,8 @@
             @endphp
             @if($logo_id)
                 <?php $logo = get_file_url($logo_id, 'full') ?>
-                <img src="{{$logo}}" alt="{{setting_item("site_title")}}">
+                <img src="{{$logo}}" alt="" class="logo_normal" width="180"  alt="{{setting_item("site_title")}}">
+                <img src="{{$logo}}" alt="" class="logo_sticky" width="160" alt="{{setting_item("site_title")}}">
             @endif
         </a>
     </div>
