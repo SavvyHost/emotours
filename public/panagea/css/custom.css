@@ -1,13 +1,29 @@
-.g-field-search .form-group{
+.container-fluid {
+    max-width: 84.75rem;
+    box-sizing: border-box;
+    position: relative;
+    z-index: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .container-fluid {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.g-field-search .form-group {
     position: static;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     top: auto;
     left: auto;
     right: 48px;
 }
 
-.z-max{
+.z-max {
     z-index: 99999999 !important;
 }
