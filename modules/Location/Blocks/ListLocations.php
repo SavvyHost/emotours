@@ -61,6 +61,10 @@ class ListLocations extends BaseBlock
                         [
                             'value'   => 'style_4',
                             'name' => __("Style 4")
+                        ],
+                        [
+                            'value'   => 'style_5',
+                            'name' => __("Style 5")
                         ]
                     ]
                 ],
