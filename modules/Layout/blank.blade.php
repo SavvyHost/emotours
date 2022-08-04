@@ -16,7 +16,7 @@
         @if(!empty($file))
             <link rel="icon" type="{{$file['file_type']}}" href="{{asset('uploads/'.$file['file_path'])}}" />
         @else:
-            <link rel="icon" type="image/png" href="{{url('images/favicon.png')}}" />
+        <link rel="icon" type="image/png" href="{{url('images/favicon.png')}}" />
         @endif
     @endif
 
@@ -29,15 +29,13 @@
     <link href="{{ asset('dist/frontend/css/notification.css') }}" rel="newest stylesheet">
     <link href="{{ asset('dist/frontend/css/app.css?_ver='.config('app.version')) }}" rel="stylesheet">
 
-    <!--  Panagea Styles  -->
-    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+    <!--  Include Custom Styles  -->
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('panagea/css/vendors.css')}}">
-    <link rel="stylesheet" href="{{asset('panagea/css/swiper-bundle.min.css')}}">
     <link rel="stylesheet" href="{{asset('panagea/css/custom.css')}}">
-    <!--/ Panagea Styles  -->
+    <!--  / Include Custom Styles  -->
 
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/daterange/daterangepicker.css") }}" >
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel='stylesheet' id='google-font-css-css'  href='https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600' type='text/css' media='all' />
@@ -52,7 +50,7 @@
             decimal_separator:'{{get_current_currency('currency_decimal')}}',
             currency_position:'{{get_current_currency('currency_format')}}',
             currency_symbol:'{{currency_symbol()}}',
-			currency_rate:'{{get_current_currency('rate',1)}}',
+            currency_rate:'{{get_current_currency('rate',1)}}',
             date_format:'{{get_moment_date_format()}}',
             map_provider:'{{setting_item('map_provider')}}',
             map_gmap_key:'{{setting_item('map_gmap_key')}}',
@@ -124,7 +122,6 @@
     @yield('head')
     {{--Custom Style--}}
     <link href="{{ route('core.style.customCss') }}" rel="stylesheet">
-    <link href="{{ asset('libs/carousel-2/owl.carousel.css') }}" rel="stylesheet">
     @if(setting_item_with_lang('enable_rtl'))
         <link href="{{ asset('dist/frontend/css/rtl.css') }}" rel="stylesheet">
     @endif
@@ -137,27 +134,71 @@
 
 </head>
 <body class="frontend-page {{ !empty($row->header_style) ? "header-".$row->header_style : "header-normal" }} {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif">
-    @php event(new \Modules\Layout\Events\LayoutBeginBody()); @endphp
+@php event(new \Modules\Layout\Events\LayoutBeginBody()); @endphp
 
-    @if(!is_demo_mode())
-        {!! setting_item('body_scripts') !!}
-        {!! setting_item_with_lang_raw('body_scripts') !!}
-    @endif
-    <div class="bravo_wrap">
-        @if(!is_api())
-            {{--   @include('Layout::parts.topbar')--}}
-            @include('Layout::parts.header-panagea')
-        @endif
+@if(!is_demo_mode())
+    {!! setting_item('body_scripts') !!}
+    {!! setting_item_with_lang_raw('body_scripts') !!}
+@endif
+<div class="bravo_wrap">
 
-        @yield('content')
+    @yield('content')
 
-        @include('Layout::parts.footer')
+</div>
+@if(!is_demo_mode())
+    {!! setting_item('footer_scripts') !!}
+    {!! setting_item_with_lang_raw('footer_scripts') !!}
+@endif
+@php event(new \Modules\Layout\Events\LayoutEndBody()); @endphp
+@include('Layout::parts.login-register-modal')
+@if(Auth::id())
+    @include('Media::browser')
+@endif
+
+{!! \App\Helpers\Assets::css(true) !!}
+
+<script src="{{ asset('libs/lodash.min.js') }}"></script>
+<script src="{{ asset('libs/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('libs/vue/vue'.(!env('APP_DEBUG') ? '.min':'').'.js') }}"></script>
+<script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+@if(Auth::id())
+    <script src="{{ asset('module/media/js/browser.js?_ver='.config('app.version')) }}"></script>
+@endif
+<script src="{{ asset('js/functions.js?_ver='.config('app.version')) }}"></script>
+
+@if(
+    setting_item('tour_location_search_style')=='autocompletePlace' || setting_item('hotel_location_search_style')=='autocompletePlace' || setting_item('car_location_search_style')=='autocompletePlace' || setting_item('space_location_search_style')=='autocompletePlace' || setting_item('hotel_location_search_style')=='autocompletePlace' || setting_item('event_location_search_style')=='autocompletePlace'
+)
+    {!! App\Helpers\MapEngine::scripts() !!}
+@endif
+<script src="{{ asset('libs/pusher.min.js') }}"></script>
+<script src="{{ asset('js/home.js?_ver='.config('app.version')) }}"></script>
+
+@if(!empty($is_user_page))
+    <script src="{{ asset('module/user/js/user.js?_ver='.config('app.version')) }}"></script>
+@endif
+@if(setting_item('cookie_agreement_enable')==1 and request()->cookie('booking_cookie_agreement_enable') !=1 and !is_api()  and !isset($_COOKIE['booking_cookie_agreement_enable']))
+    <div class="booking_cookie_agreement p-3 d-flex fixed-bottom">
+        <div class="content-cookie">{!! clean(setting_item_with_lang('cookie_agreement_content')) !!}</div>
+        <button class="btn save-cookie">{!! clean(setting_item_with_lang('cookie_agreement_button_text')) !!}</button>
     </div>
-    @if(!is_demo_mode())
-        {!! setting_item('footer_scripts') !!}
-        {!! setting_item_with_lang_raw('footer_scripts') !!}
-    @endif
-    @php event(new \Modules\Layout\Events\LayoutEndBody()); @endphp
+    <script>
+        var save_cookie_url = '{{route('core.cookie.check')}}';
+    </script>
+    <script src="{{ asset('js/cookie.js?_ver='.config('app.version')) }}"></script>
+@endif
 
+{!! \App\Helpers\Assets::js(true) !!}
+
+<!-- Include JavaScript Files -->
+<script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('panagea/js/common_scripts.js') }}"></script>
+<script src="{{ asset('panagea/js/main.js') }}"></script>
+<script src="{{ asset('panagea/js/custom.js') }}"></script>
+<!-- /Include JavaScript Files -->
+
+@yield('footer')
+
+@php \App\Helpers\ReCaptchaEngine::scripts() @endphp
 </body>
 </html>
