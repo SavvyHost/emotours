@@ -1,3 +1,35 @@
+/* global css  */
+
+.container-fluid {
+    max-width: 84.75rem;
+    box-sizing: border-box;
+    position: relative;
+    z-index: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .container-fluid {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.g-field-search .form-group {
+    position: static;
+}
+
+.dropdown-menu {
+    top: auto;
+    left: auto;
+    right: 48px;
+}
+
+.z-max {
+    z-index: 99999999 !important;
+}
+
 /* search hero section MP4 video  */
 
 .hero_single.version_4 {
@@ -116,35 +148,9 @@
     opacity: 1;
 }
 
-.container-fluid {
-    max-width: 84.75rem;
-    box-sizing: border-box;
-    position: relative;
-    z-index: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
+/* end search hero section  */
 
-@media screen and (min-width: 1024px) {
-    .container-fluid {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
-}
-
-.g-field-search .form-group {
-    position: static;
-}
-
-.dropdown-menu {
-    top: auto;
-    left: auto;
-    right: 48px;
-}
-
-.z-max {
-    z-index: 99999999 !important;
-}
+/* starts css swipper sliders  */
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
