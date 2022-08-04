@@ -430,7 +430,6 @@ html * {
 }
 
 body {
-    background: #f8f8f8;
     font-size: 0.875rem;
     line-height: 1.6;
     font-family: "Poppins", Helvetica, sans-serif;
@@ -1100,7 +1099,7 @@ ul#top_menu li a.logged img {
     border-radius: 0;
     min-width: 0;
     padding: 0;
-    width: 150px;
+    width: 180px;
     margin-left: -115px;
     font-weight: normal;
     text-shadow: none;
@@ -1292,7 +1291,7 @@ header.sticky .hamburger-inner, header.sticky .hamburger-inner::before, header.s
 }
 
 .hero_in.tours_detail {
-    height: 550px;
+    height: 50vh;
 }
 
 @media (max-width: 575px) {
@@ -4398,14 +4397,16 @@ a.boxed_list:hover i {
 
 .secondary_nav ul li a.active {
     color: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.9);
+}
+.secondary_nav .enquiry-item {
+    display: inline-block;
+    float: right;
+    margin: 4px;
 }
 
-.secondary_nav ul li:last-child {
-    display: none;
-}
-
-.secondary_nav ul li:last-child a {
-    background-color: #fc5b62;
+.secondary_nav .enquiry-item a {
+    background-color: #036bd0;
     color: #fff;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -4414,16 +4415,8 @@ a.boxed_list:hover i {
     padding: 5px 15px;
 }
 
-.secondary_nav ul li:last-child a:hover {
+.secondary_nav .enquiry-item a:hover {
     background-color: #0054a6;
-}
-
-@media (max-width: 575px) {
-    .secondary_nav ul li:last-child {
-        display: inline-block;
-        float: right;
-        margin-right: 0;
-    }
 }
 
 .intro_title h2 {
@@ -4639,13 +4632,10 @@ section#reviews {
 
 .box_detail {
     padding: 25px 25px 15px 25px;
-    border: 1px solid #ededed;
-    background-color: #f8f8f8;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     border-radius: 5px;
-    margin-bottom: 30px;
 }
 
 .box_detail .price {
@@ -4747,7 +4737,6 @@ section#reviews {
 
 .booking input {
     font-weight: 500;
-    height: 45px;
 }
 
 .booking input:focus {
@@ -4893,6 +4882,7 @@ ul.cbp_tmtimeline {
 /* The date/time */
 .cbp_tmtimeline > li {
     position: relative;
+    margin-top: 62px;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime {
@@ -4926,12 +4916,6 @@ img.thumb_visit {
     margin-top: -5px;
     float: right;
     margin-left: 15px;
-}
-
-@media (max-width: 767px) {
-    img.thumb_visit {
-        display: none;
-    }
 }
 
 .cbp_tmtimeline > li .cbp_tmlabel {
@@ -5033,9 +5017,10 @@ img.thumb_visit {
 
     .cbp_tmtimeline > li .cbp_tmicon {
         position: relative;
-        float: right;
-        left: auto;
-        margin: -65px 5px 0 0px;
+        float: left;
+        right: auto;
+        left: 6px;
+        margin: -51px 5px 0 0px;
     }
 }
 
@@ -8543,12 +8528,17 @@ ul.share-buttons {
     padding: 0;
     list-style: none;
     text-align: center;
-    margin: 0 0 25px 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2px;
+
 }
 
 ul.share-buttons li {
     display: inline-block;
-    margin: 0 5px 5px 5px;
+    margin: 2px;
 }
 
 ul.share-buttons li a {
@@ -8578,13 +8568,13 @@ ul.share-buttons li a.fb-share:hover {
     color: #fff;
 }
 
-ul.share-buttons li a.gplus-share {
-    border-color: #dd4b39;
-    color: #dd4b39;
+ul.share-buttons li a.whatsapp-share {
+    border-color: #07cb00;
+    color:  #07cb00;
 }
 
-ul.share-buttons li a.gplus-share:hover {
-    background: #dd4b39;
+ul.share-buttons li a.whatsapp-share:hover {
+    background:  #07cb00;
     color: #fff;
 }
 
