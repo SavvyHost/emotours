@@ -1,0 +1,54 @@
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .call-to-action
+    .context {
+    background: none;
+}
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .call-to-action
+    .section {
+    width: 100%;
+    flex: 1 0 0px;
+    max-width: 100%;
+    margin-left: 0%;
+    right: auto;
+    left: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bravo_wrap .page-template-content .bravo-call-to-action .call-to-action {
+    border-radius: 8px;
+    padding-bottom: unset;
+    margin-left: unset;
+    background: #e4f0f0;
+}
+
+.bravo_wrap .page-template-content .bravo-call-to-action .row {
+    flex-flow: row wrap;
+    align-items: normal;
+    justify-content: flex-start;
+    margin-left: -0.75rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: -0.75rem;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .call-to-action
+    .offer-banner {
+    order: 1;
+    flex: 1;
+    align-self: stretch;
+    height: 100%;
+    width: 100%;
+    border-radius: 0 8px 8px 0;
+    object-fit: cover;
+    object-position: 25% 25%;
+    overflow: hidden;
+}
