@@ -115,3 +115,7 @@
 .hero_single.version_4 video {
     opacity: 1;
 }
+.smart-search .parent_text{
+    height: 50px !important;
+    padding: 8px;
+}
