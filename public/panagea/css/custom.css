@@ -1,3 +1,11 @@
+/* Start of GLOBAL STYLES  */
+
+:root {
+    --primary-color: #ff5f1f;
+    --secondary-color: #00acd5;
+    --accent-color: #e1f9ff;
+}
+
 .container-fluid {
     max-width: 84.75rem;
     box-sizing: border-box;
@@ -27,5 +35,3 @@
 .z-max {
     z-index: 99999999 !important;
 }
-
-/* call to actions custom css style 4 */
