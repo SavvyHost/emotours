@@ -16,7 +16,7 @@ const swiperFeatured = new Swiper(".swiper-featured-tours", {
             spaceBetween: 15,
         },
         992: {
-            slidesPerView: 5,
+            slidesPerView: 4.2,
             spaceBetween: 20,
         },
     },

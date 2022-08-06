@@ -1,4 +1,10 @@
-/* global css  */
+/* Start of GLOBAL STYLES  */
+
+:root {
+    --primary-color: #ff5f1f;
+    --secondary-color: #00acd5;
+    --accent-color: #e1f9ff;
+}
 
 .container-fluid {
     max-width: 84.75rem;
@@ -312,10 +318,10 @@ ul.cbp_tmtimeline {
 span.irs-bar,
 span.irs-to,
 span.irs-from {
-    background: #ed145b !important;
+    background: var(--primary-color) !important;
 }
 .irs-handle i {
-    background: #ed145b !important;
+    background: var(--primary-color) !important;
 }
 .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3,
 .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
@@ -333,7 +339,7 @@ span.irs-from {
 
 .bravo_wrap .bravo_search_tour .bravo_filter .filter-title {
     font-size: 16px;
-    color: #ed145b !important;
+    color: var(--primary-color) !important;
     margin-bottom: 5px;
     margin-top: 30px;
     font-weight: 600 !important;
@@ -359,5 +365,91 @@ span.irs-from {
 }
 .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3,
 .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
-    color: #fc5b62 !important;
+    color: var(--primary-color) !important;
 }
+/* call to actions custom css style 4 */
+
+.bravo_wrap .page-template-content .bravo-call-to-action .hero-call-to-action {
+    border-radius: 8px;
+    padding-bottom: unset;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: #e4f0f0;
+    text-align: center;
+}
+
+.bravo_wrap .page-template-content .bravo-call-to-action .row {
+    flex-flow: row wrap;
+    align-items: normal;
+    justify-content: flex-start;
+    margin-left: -0.75rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: -0.75rem;
+}
+
+@media screen and (max-width: 767px) {
+    .bravo_wrap .page-template-content .bravo-call-to-action .row {
+        flex-direction: column-reverse;
+    }
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .row
+    .bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .hero-call-to-action
+    .section {
+    width: 100%;
+    flex: 1 0 0px;
+    max-width: 100%;
+    margin-left: 0%;
+    right: auto;
+    left: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .hero-call-to-action
+    .context-new {
+    padding: 2rem;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .hero-call-to-action
+    .offer-banner {
+    order: 1;
+    flex: 1;
+    align-self: stretch;
+    height: 100%;
+    width: 100%;
+    border-radius: 0 8px 8px 0;
+    object-fit: cover;
+    object-position: 25% 25%;
+    overflow: hidden;
+}
+
+.bravo_wrap .page-template-content .bravo-call-to-action .context-new .title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .context-new
+    .sub_title {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+}
+
+/* End call to action custom css style 4 */
