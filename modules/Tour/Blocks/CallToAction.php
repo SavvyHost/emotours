@@ -52,6 +52,10 @@ class CallToAction extends BaseBlock
                             'value'   => 'style_3',
                             'name' => __("Style 3")
                         ],
+                        [
+                            'value'   => 'style_4',
+                            'name' => __("Style 4")
+                        ],
                     ]
                 ],
                 [

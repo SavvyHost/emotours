@@ -5,7 +5,7 @@ const swiperFeatured = new Swiper(".swiper-featured-tours", {
     freeMode: true,
     breakpoints: {
         320: {
-            slidesPerView: 1.2,
+            slidesPerView: 1.3,
             freeMode: true,
         },
         576: {
@@ -16,7 +16,7 @@ const swiperFeatured = new Swiper(".swiper-featured-tours", {
             spaceBetween: 15,
         },
         992: {
-            slidesPerView: 5,
+            slidesPerView: 4.2,
             spaceBetween: 20,
         },
     },
