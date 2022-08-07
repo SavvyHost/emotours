@@ -392,6 +392,13 @@ span.irs-from {
     .bravo_wrap .page-template-content .bravo-call-to-action .row {
         flex-direction: column-reverse;
     }
+    .bravo_wrap
+        .page-template-content
+        .bravo-call-to-action
+        .hero-call-to-action {
+        margin-left: unset;
+        margin-right: unset;
+    }
 }
 
 .bravo_wrap
