@@ -1,11 +1,11 @@
 <div class="container-fluid">
+  
     @if($title)
-        <div class="title">
-            {{$title}}
+        <div class="main_title_2">
+            <span><em></em></span>
+           <h2>{{$title}}</h2> 
             @if(!empty($desc))
-                <div class="sub-title">
-                    {{$desc}}
-                </div>
+            <p>{{$desc}}</p>
             @endif
         </div>
     @endif
