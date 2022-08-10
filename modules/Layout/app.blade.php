@@ -135,14 +135,14 @@
     @php event(new \Modules\Layout\Events\LayoutEndHead()); @endphp
 
 </head>
-<body class="frontend-page {{ !empty($row->header_style) ? "header-".$row->header_style : "header-normal" }} {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif">
+<body class=" {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif">
     @php event(new \Modules\Layout\Events\LayoutBeginBody()); @endphp
 
     @if(!is_demo_mode())
         {!! setting_item('body_scripts') !!}
         {!! setting_item_with_lang_raw('body_scripts') !!}
     @endif
-    <div class="bravo_wrap" id="page">
+    <div class="bravo_wrap">
         @if(!is_api())
             {{--   @include('Layout::parts.topbar')--}}
             @include('Layout::parts.header-panagea')

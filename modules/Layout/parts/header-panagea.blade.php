@@ -1,6 +1,6 @@
 <header class="{{ Request::is('tour/*') ? 'static-header' : 'header' }}">
-    <div id="preloader" style="display: none;">
-        <div data-loader="circle-side" style="display: none;"></div>
+    <div id="preloader" >
+        <div data-loader="circle-side"></div>
     </div><!-- /Page Preload -->
     <div id="logo">
         <a href="{{url(app_get_locale(false,'/'))}}">

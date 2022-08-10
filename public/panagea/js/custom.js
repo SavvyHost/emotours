@@ -5,7 +5,7 @@ const swiperFeatured = new Swiper(".swiper-featured-tours", {
     freeMode: true,
     breakpoints: {
         320: {
-            slidesPerView: 1.3,
+            slidesPerView: 1.2,
             freeMode: true,
         },
         576: {

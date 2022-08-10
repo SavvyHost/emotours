@@ -216,6 +216,11 @@
 .static-header {
     position: relative;
 }
+
+.static-header .logo_sticky {
+    display: none;
+}
+
 .static-header .main-menu > ul > li span > a,
 .static-header ul#top_menu li a.cart-menu-btn:before,
 ul#top_menu li a.wishlist_bt_top:before,
