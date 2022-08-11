@@ -1,31 +1,45 @@
-.g-field-search .form-group{
+.container-fluid {
+    max-width: 84.75rem;
+    box-sizing: border-box;
+    position: relative;
+    z-index: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .container-fluid {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.g-field-search .form-group {
     position: static;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     top: auto;
     left: auto;
     right: 48px;
 }
 
-.z-max{
+.z-max {
     z-index: 99999999 !important;
 }
-.z-max{
-    z-index: 99999999 !important;
-}
-span.irs-bar,span.irs-to,span.irs-from{
+span.irs-bar,
+span.irs-to,
+span.irs-from {
     background: #ed145b !important;
 }
-.irs-handle i{
+.irs-handle i {
     background: #ed145b !important;
-
 }
-.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3, .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
+.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3,
+.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
     font-size: 16px !important;
     line-height: 23px;
     font-weight: bold !important;
-
 }
 .bravo_wrap .bravo-checkbox .fa-star {
     color: #686565 !important;
@@ -42,7 +56,12 @@ span.irs-bar,span.irs-to,span.irs-from{
     margin-top: 30px;
     font-weight: 600 !important;
 }
-.bravo_wrap .bravo_search_tour .bravo-list-item .list-item .item-tour .sale_info {
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-item
+    .list-item
+    .item-tour
+    .sale_info {
     position: absolute;
     width: 80px;
     height: 48px;
@@ -56,7 +75,7 @@ span.irs-bar,span.irs-to,span.irs-from{
     z-index: 8;
     background-color: #fc5b62 !important;
 }
-.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3, .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
+.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3,
+.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
     color: #fc5b62 !important;
-
 }
