@@ -13,7 +13,7 @@
 				</div>
 			</section>
    <div class="bravo_form_search">
-      <div class="container ">
+      <div class="container">
                 <div class="row">
                     <div class="col-12">
 					<div class="row g-0 custom-search-input-2 inner">
@@ -42,12 +42,12 @@
 						<input type="submit" class="btn_search" value="Search">
 					</div>
 				</div>
-                                </div>
+         </div>
                 </div>
             </div>
         </div>
 		  		<div class="filters_listing sticky_horizontal">
-			<div class="container">
+			<div class="container-fluid">
 				<ul class="clearfix">
 					<li>
 						<div class="switch-field">
@@ -78,7 +78,7 @@
 		</div>
 		<!-- End Map -->
 
-        <div class="container">
+        <div class="container-fluid">
             @include('Tour::frontend.layouts.search.list-item')
         </div>
     </div>

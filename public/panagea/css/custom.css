@@ -27,20 +27,16 @@
 .z-max {
     z-index: 99999999 !important;
 }
-span.irs-bar,
-span.irs-to,
-span.irs-from {
-    background: #ed145b !important;
-}
-.irs-handle i {
-    background: #ed145b !important;
-}
-.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3,
+
+/* search page custom css */
+
+/* .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3,
 .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
-    font-size: 16px !important;
+    font-size: 1.2rem !important;
     line-height: 23px;
     font-weight: bold !important;
 }
+
 .bravo_wrap .bravo-checkbox .fa-star {
     color: #686565 !important;
     font-size: 15px;
@@ -56,6 +52,7 @@ span.irs-from {
     margin-top: 30px;
     font-weight: 600 !important;
 }
+
 .bravo_wrap
     .bravo_search_tour
     .bravo-list-item
@@ -73,9 +70,5 @@ span.irs-from {
     color: #fff;
     font-size: 15px;
     z-index: 8;
-    background-color: #fc5b62 !important;
-}
-.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3,
-.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
-    color: #fc5b62 !important;
-}
+    background-color: #f91d1d !important;
+} */

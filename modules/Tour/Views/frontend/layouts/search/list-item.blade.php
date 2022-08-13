@@ -5,15 +5,14 @@
         @include('Tour::frontend.layouts.search.filter-search')
     </div>
     <div class="col-lg-9 col-md-12">
-
         <div class="bravo-list-item">
             <!-- sticky_horizontal -->
-<div class="filters_listing " style="">
-			<div class="container">
-				<ul class="clearfix">
-					<li>
+            <div class="filters_listing " style="">
+			    <div class="container-fluid">
+				    <ul class="clearfix">
+					    <li>
                     <div class="item">
-                        @php
+                            @php
                             $param = request()->input();
                             $orderby =  request()->input("orderby");
                         @endphp
@@ -45,14 +44,14 @@
                             </div>
                         </div>
                     </div>
-					</li>
-					<li>
-                       <a  class="btn_mapp" href="{{ route("tour.search",['_layout'=>'map']) }}">{{__("Show on the map")}}</a>
-					</li>
-				</ul>
-			</div>
-			<!-- /container -->
-</div>
+					    </li>
+					        <li>
+                            <a  class="btn_mapp" href="{{ route("tour.search",['_layout'=>'map']) }}">{{__("Show on the map")}}</a>
+					        </li>
+				        </ul>
+		        </div>
+			    <!-- /container -->
+            </div>
             <div class="topbar-search mt-2">
                 <h2 class="text">
                     @if($rows->total() > 1)
@@ -61,15 +60,15 @@
                         {{ __(":count tour found",['count'=>$rows->total()]) }}
                     @endif
                 </h2>
-                <!-- <div class="control">
+                 {{-- <div class="control">
                     @include('Tour::frontend.layouts.search.orderby')
-                </div> -->
+                </div>  --}}
             </div>
             <div class="list-item">
-                <div class="row">
+                {{-- <div class="row"> --}}
                     @if($rows->total() > 0)
                         @foreach($rows as $row)
-                            <div class="col-lg-12 col-md-6">
+                            <div class="col-12 p-0 align-items-stretch mt-0 mb-3 mt-sm-3 mt-md-3">
                                 @include('Tour::frontend.layouts.search.loop-list')
                             </div>
                         @endforeach
@@ -78,7 +77,7 @@
                             {{__("Tour not found")}}
                         </div>
                     @endif
-                </div>
+                {{-- </div> --}}
             </div>
             <div class="bravo-pagination">
                 {{$rows->appends(request()->query())->links()}}
