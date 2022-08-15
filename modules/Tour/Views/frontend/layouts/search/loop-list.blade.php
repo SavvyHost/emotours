@@ -110,16 +110,16 @@
                 @endif
                 <div class="clearfix">
                     <div class="float-left">
-                        <div class=" duration">
+                        <div class="duration">
                             <i class="icofont-wall-clock"></i>
                             {{duration_format($row->duration)}}
-                        </div> 
+                        </div>
                     </div>
                         <div class="float-left ml-5">
                             <div class="freeCancellation">
                             <i class="fa fa-check" aria-hidden="true"></i>
                                    {{__("Free Cancellation")}}
-                            </div> 
+                            </div>
                         </div>
                 </div>
 
