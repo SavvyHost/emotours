@@ -90,8 +90,7 @@
                 </div>
                 <div class="right">
                     @if($row->getBookingEnquiryType() === "book")
-                        <a href="#sidebar" class="btn btn-primary bravo-button-book-mobile" data-toggle="modal"
-                           data-target="#tour-form-book">{{__("Book Now")}}</a>
+                        <a href="#bravo_tour_book_app" class="btn btn-primary bravo-button-book-mobile">{{__("Book Now")}}</a>
                     @else
                         <a class="btn btn-primary" data-toggle="modal"
                            data-target="#enquiry_form_modal">{{__("Contact Now")}}</a>

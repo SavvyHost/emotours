@@ -62,9 +62,6 @@ ul.cbp_tmtimeline {
     left: 18.4% !important;
 }
 @media (max-width: 767px) {
-    #sidebar{
-        display: none;
-    }
     #tour-form-book #sidebar{
         display: block;
     }
