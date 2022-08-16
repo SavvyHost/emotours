@@ -30,45 +30,15 @@
 
 /* search page custom css */
 
-/* .bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3,
-.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
-    font-size: 1.2rem !important;
-    line-height: 23px;
-    font-weight: bold !important;
-}
-
-.bravo_wrap .bravo-checkbox .fa-star {
-    color: #686565 !important;
-    font-size: 15px;
-    position: relative;
-    top: -1px;
-    margin-right: 3px;
-}
-
-.bravo_wrap .bravo_search_tour .bravo_filter .filter-title {
-    font-size: 16px;
-    color: #ed145b !important;
-    margin-bottom: 5px;
-    margin-top: 30px;
-    font-weight: 600 !important;
-}
-
 .bravo_wrap
     .bravo_search_tour
     .bravo-list-item
     .list-item
     .item-tour
-    .sale_info {
-    position: absolute;
-    width: 80px;
-    height: 48px;
-    transform: rotate(45deg);
-    right: -30px;
-    top: -13px;
-    line-height: 65px;
-    text-align: center;
-    color: #fff;
-    font-size: 15px;
-    z-index: 8;
-    background-color: #f91d1d !important;
-} */
+    .thumb-image
+    a
+    img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s;
+}
