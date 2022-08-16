@@ -1,4 +1,4 @@
-<form action="{{ route("tour.search") }}" class="bravo_form" method="get">
+<form action="{{ route("tour.search") }}" class="bravo_form new_design" method="get">
     <div class="custom-search-input-2">
         <?php
         $location_name = "";
@@ -19,8 +19,7 @@
         $traverse($tour_location);
         ?>
         <div class="smart-search">
-            <input type="text" class="smart-search-location parent_text form-control pl-4"
-                   {{ ( empty(setting_item("tour_location_search_style")) or setting_item("tour_location_search_style") == "normal" ) ? "readonly" : ""  }} placeholder="{{__("Where are you going?")}}"
+            <input type="text" class="smart-search-location parent_text form-control pl-4" placeholder="{{__("Where are you going?")}}"
                    value="{{ $location_name }}" data-onLoad="{{__("Loading...")}}"
                    data-default="{{ json_encode($list_json) }}">
             <i class="icon_pin_alt"></i>
@@ -29,11 +28,13 @@
 
 
         <div class="form-group mt-2">
-            <input class="form-control" type="text" name="dates" ref="start_date_panagea" id="datepicker-form"
+            <input class="form-control bg-white" type="text" name="dates" ref="start_date_panagea" id="datepicker-form"
                    placeholder="When..">
-            <i class="icon_calendar"></i>
+            <label for="datepicker-form">
+                <i class="icon_calendar"></i>
+            </label>
         </div>
-        <div class="col-12">
+        <div class="col-6 ml-auto p-0">
             <div class="form-group">
                 <input type="submit" class="btn_search" value="Search">
             </div>

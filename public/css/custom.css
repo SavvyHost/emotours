@@ -1,0 +1,34 @@
+.bravo_wrap .bravo_form.new_design {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    display: block;
+}
+
+.bravo_wrap .bravo_form .smart-search .form-control, .bravo_wrap .bravo_form .smart-search .parent_text{
+    background: white;
+    padding: 0 14px !important;
+    color: gray;
+}
+.bravo_wrap .bravo_form .smart-search .form-control, .bravo_wrap .bravo_form .smart-search .parent_text::placeholder{
+    color: #a0a0a0 !important;
+}
+.custom-search-input-2 .bravo-autocomplete{
+    top: 72% !important;
+}
+.custom-search-input-2 .bravo-autocomplete .item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    border-bottom: 1px solid #E4E5EA;
+}
+.custom-search-input-2 .bravo-autocomplete i{
+    background: transparent !important;
+}
+.easepick-wrapper{
+    z-index: 9999;
+}
+.hero_single{
+    overflow: visible !important;
+}
