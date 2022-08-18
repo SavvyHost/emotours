@@ -99,7 +99,7 @@
 <script src="{{ asset('libs/lodash.min.js') }}"></script>
 <script src="{{ asset('libs/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('libs/vue/vue'.(!env('APP_DEBUG') ? '.min':'').'.js') }}"></script>
-<script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('panagea/js/mdb.min.js') }}"></script>
 <script src="{{ asset('libs/bootbox/bootbox.min.js') }}"></script>
 @if(Auth::id())
 	<script src="{{ asset('module/media/js/browser.js?_ver='.config('app.version')) }}"></script>
