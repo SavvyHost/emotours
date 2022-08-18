@@ -204,8 +204,9 @@
                 this[k] = bravo_booking_data[k];
             }
         },
-        mounted() {
+        async mounted() {
             var me = this;
+            let prices = [];
             var options = {
                 singleDatePicker: true,
                 showCalendar: false,
@@ -223,6 +224,7 @@
                     direction: bookingCore.rtl ? 'rtl' : 'ltr',
                     firstDay: daterangepickerLocale.first_day_of_week
                 },
+
                 isInvalidDate: function (date) {
                     for (var k = 0; k < me.allEvents.length; k++) {
                         var item = me.allEvents[k];
@@ -233,6 +235,71 @@
                     return false;
                 }
             };
+
+            // START CUSTOM
+            const DateTime = easepick.DateTime;
+
+            let month_start = new DateTime(new DateTime().setDate(1))
+            let month_end = month_start.clone().add(1, 'month')
+
+            await me.fetchEvents(month_start, month_end).then(_ => {
+                me.allEvents.map(item => {
+                    prices[item.start] = item
+                })
+            })
+
+            // Initialize date picker
+            new easepick.create({
+                element: document.getElementById('datepicker'),
+                css: [
+                    '/css/easepick.css',
+                    'https://easepick.com/css/demo_prices.css'
+                ],
+
+                setup(picker) {
+                    picker.on('click', async function (event) {
+                        if (event.path[0].classList.contains('next-button')) {
+                            month_start = month_end
+                            month_end = month_start.clone().add(1, 'month')
+
+                            await me.fetchEvents(month_start, month_end).then(_ => {
+                                me.allEvents.map(item => {
+                                    prices[item.start] = item
+                                })
+                            })
+                        } else if (event.path[0].classList.contains('previous-button')) {
+                            month_end = month_start
+                            month_start = month_end.clone().subtract(1, 'month')
+
+                            await me.fetchEvents(month_start, month_end).then(_ => {
+                                me.allEvents.map(item => {
+                                    prices[item.start] = item
+                                });
+                            })
+                        }
+
+                    })
+                    picker.on('select', (event) => {
+                        setTimeout(() => {
+                            let guestDropdown = document.querySelector('#guests-dropdown > a')
+                            guestDropdown.click()
+                        }, 100)
+                    })
+
+                    picker.on('view', (evt) => {
+                        const {view, date, target} = evt.detail;
+                        const d = date ? date.format('YYYY-MM-DD') : null;
+                        if (view === 'CalendarDay' && prices[d]) {
+                            const span = target.querySelector('.day-price') || document.createElement('span');
+                            span.className = 'day-price';
+                            span.innerHTML = `${prices[d].price_html}`;
+                            target.append(span);
+                        }
+                    });
+                },
+            })
+
+            // END CUSTOM
 
             if (typeof daterangepickerLocale == 'object') {
                 options.locale = _.merge(daterangepickerLocale, options.locale);
@@ -248,42 +315,45 @@
                     });
             });
 
-            document.addEventListener('click',({target})=>{
-                if(!target.closest('.panel-dropdown')){
-                   this.show_guests_dropdown = false
+            document.addEventListener('click', ({target}) => {
+                if (!target.closest('.panel-dropdown')) {
+                    this.show_guests_dropdown = false
                 }
             })
         },
         methods: {
+            formatDate: date => {
+                const d = new Date(date)
+                let month = (d.getMonth() + 1).toString()
+                let day = d.getDate().toString()
+                const year = d.getFullYear()
+                if (month.length < 2) {
+                    month = '0' + month
+                }
+                if (day.length < 2) {
+                    day = '0' + day
+                }
+                return [year, month, day].join('-')
+            },
             handleTotalPrice: function () {
             },
-            fetchEvents(start, end) {
+            async fetchEvents(start, end) {
                 var me = this;
                 var data = {
-                    start: start.format('YYYY-MM-DD'),
-                    end: end.format('YYYY-MM-DD'),
+                    start: this.formatDate(start),
+                    end: this.formatDate(end),
                     id: bravo_booking_data.id,
                     for_single: 1
                 };
-                console.log(data);
 
-                $.ajax({
+                await $.ajax({
                     url: bravo_booking_i18n.load_dates_url,
                     dataType: "json",
                     type: 'get',
                     data: data,
-                    beforeSend: function () {
-                        $('.daterangepicker').addClass("loading");
-                    },
-                    success: function (json) {
-                        me.allEvents = json;
-                        var drp = $(me.$refs.start_date).data('daterangepicker');
-                        drp.allEvents = json;
-                        drp.renderCalendar('left');
-                        if (!drp.singleDatePicker) {
-                            drp.renderCalendar('right');
-                        }
-                        $('.daterangepicker').removeClass("loading");
+                    success: async function (json) {
+                        me.allEvents = await json
+                        return json
                     },
                     error: function (e) {
                         console.log(e);
