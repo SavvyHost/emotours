@@ -7,6 +7,8 @@ header.header.sticky {
 
 /* Start Special tour list cards  */
 
+/* card structure  */
+
 .bravo_wrap .bravo_search_tour .bravo-list-tour .list-tours .card-tour-loop {
     overflow: hidden;
     position: relative;
@@ -24,29 +26,6 @@ header.header.sticky {
         border-radius: 0.5rem;
     }
 }
-/* .bravo_wrap .bravo_search_tour .bravo-list-tour .list-tours .card-tour-loop a {
-    text-decoration: none;
-    transition: all 0.3s;
-} */
-.bravo_wrap
-    .bravo_search_tour
-    .bravo-list-tour
-    .list-tours
-    .card-tour-loop
-    .sale_info {
-    position: absolute;
-    width: 80px;
-    height: 48px;
-    transform: rotate(45deg);
-    right: -30px;
-    top: -13px;
-    line-height: 65px;
-    text-align: center;
-    color: #fff;
-    font-size: 15px;
-    z-index: 8;
-    background-color: #c03;
-}
 
 .bravo_wrap
     .bravo_search_tour
@@ -54,8 +33,8 @@ header.header.sticky {
     .list-tours
     .card-tour-loop
     .product-card-tags {
-    top: 1.5rem;
-    left: 1.5rem;
+    top: 0;
+    left: 0;
     bottom: auto;
 }
 
@@ -86,7 +65,25 @@ header.header.sticky {
     z-index: 10000;
     font-weight: 700;
 }
-
+@media (max-width: 768px) {
+    .bravo_wrap
+        .bravo_search_tour
+        .bravo-list-tour
+        .list-tours
+        .card-tour-loop
+        .product-card-tag {
+        padding: 0rem 0.5rem;
+        font-weight: 600;
+    }
+    .bravo_wrap
+        .bravo_search_tour
+        .bravo-list-tour
+        .list-tours
+        .card-tour-loop
+        .product-traveler-ltso-badge {
+        margin: 0.25rem;
+    }
+}
 .bravo_wrap
     .bravo_search_tour
     .bravo-list-tour
@@ -95,6 +92,26 @@ header.header.sticky {
     .product-card-tag-sellout {
     background-color: #af143e;
     color: white;
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .sale_info {
+    position: absolute;
+    width: 80px;
+    height: 48px;
+    transform: rotate(45deg);
+    right: -30px;
+    top: -13px;
+    line-height: 65px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    z-index: 8;
+    background-color: #c03;
 }
 
 /* image list css  */
@@ -107,27 +124,37 @@ header.header.sticky {
     .card-tour-img {
     overflow: hidden;
     border-radius: 0.5rem;
-    margin: 1.5rem 0rem 1.5rem 1.5rem;
-    width: 100%;
-    padding-bottom: 69%;
+    margin: 1.2rem 0rem 1.2rem 1.2rem;
+    max-width: 100%;
     position: relative;
 }
-
-@media (min-width: 768px) {
+@media (max-width: 520px) {
     .bravo_wrap
         .bravo_search_tour
         .bravo-list-tour
         .list-tours
         .card-tour-loop
-        .card-tour-img
-        > :first-child {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        .card-tour-img {
+        margin: unset;
     }
 }
+
+/* @media (min-width: 768px) { */
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .card-tour-img
+    .bg-image
+    > :first-child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/* } */
 
 .bravo_wrap
     .bravo_search_tour
@@ -150,6 +177,7 @@ header.header.sticky {
     img:hover {
     transform: scale(1.1);
 }
+
 .bravo_wrap
     .bravo_search_tour
     .bravo-list-tour
@@ -160,11 +188,12 @@ header.header.sticky {
     position: absolute;
     right: 5px;
     z-index: 10;
-    top: 0;
+    bottom: 0;
     color: #fff;
     padding: 10px;
     cursor: pointer;
 }
+
 .bravo_wrap
     .bravo_search_tour
     .bravo-list-tour
@@ -176,6 +205,7 @@ header.header.sticky {
     transition: all 0.3s;
     font-size: 16px;
 }
+
 .bravo_wrap
     .bravo_search_tour
     .bravo-list-tour
@@ -215,7 +245,7 @@ header.header.sticky {
     .location {
     font-size: 13px;
     color: #5e6d77;
-    padding: 15px 15px 10px;
+    /* padding: 15px 15px 10px; */
 }
 .bravo_wrap
     .bravo_search_tour
@@ -248,14 +278,13 @@ header.header.sticky {
 
 /* start review css  */
 
-.bravo_wrap
+/* .bravo_wrap
     .bravo_search_tour
     .bravo-list-tour
     .list-tours
     .card-tour-loop
     .service-review {
-    padding: 10px 15px 15px;
-}
+} */
 .bravo_wrap
     .bravo_search_tour
     .bravo-list-tour
@@ -374,19 +403,19 @@ header.header.sticky {
     .list-tours
     .card-tour-loop
     .item-title {
-    padding: 0 15px;
-    font-size: 16px;
-    line-height: 22px;
-    min-height: 45px;
+    font-size: 1rem;
+    font-weight: 600;
+    /* min-height: 45px; */
 }
-@media (max-width: 766px) {
+
+@media (max-width: 768px) {
     .bravo_wrap
         .bravo_search_tour
         .bravo-list-tour
         .list-tours
         .card-tour-loop
-        .item-title {
-        min-height: auto;
+        .g-overview {
+        display: none;
     }
 }
 .bravo_wrap
@@ -429,7 +458,7 @@ header.header.sticky {
     .duration
     i {
     position: relative;
-    font-size: 17px;
+    font-size: 1.2rem;
 }
 /* end content css  */
 
@@ -441,7 +470,7 @@ header.header.sticky {
     .card-tour-loop
     .info
     .g-price {
-    /* flex: auto; */
+    flex: auto;
     /* text-align: right; */
 }
 .bravo_wrap
@@ -454,6 +483,26 @@ header.header.sticky {
     .prefix {
     color: #5e6d77;
     display: inline-block;
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .m-g-price {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .bravo_wrap
+        .bravo_search_tour
+        .bravo-list-tour
+        .list-tours
+        .card-tour-loop
+        .m-g-price {
+        display: flex;
+    }
 }
 .bravo_wrap
     .bravo_search_tour
@@ -504,7 +553,7 @@ header.header.sticky {
     right: 0;
     top: -15px;
     text-decoration: line-through;
-    font-size: 14px;
+    font-size: 15px;
     color: #c03 !important;
     font-weight: 500;
 }
