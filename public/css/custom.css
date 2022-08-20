@@ -211,6 +211,14 @@ header.header.sticky {
     box-shadow: -1px 1px 3px 0px #afafaf7d;
 }
 
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop:hover {
+    box-shadow: 0px 4px 8px 1px #85858580;
+}
+
 @media (min-width: 768px) {
     .bravo_wrap
         .bravo_search_tour

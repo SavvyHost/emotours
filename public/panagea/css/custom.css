@@ -35,6 +35,7 @@
 .z-max {
     z-index: 99999999 !important;
 }
+<<<<<<< HEAD
 
 /* search hero section MP4 video  */
 
@@ -320,58 +321,6 @@ ul.cbp_tmtimeline {
 
 /* Custom CSS FOR SEARCH PAGE  */
 
-span.irs-bar,
-span.irs-to,
-span.irs-from {
-    background: var(--primary-color) !important;
-}
-.irs-handle i {
-    background: var(--primary-color) !important;
-}
-.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3,
-.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
-    font-size: 16px !important;
-    line-height: 23px;
-    font-weight: bold !important;
-}
-.bravo_wrap .bravo-checkbox .fa-star {
-    color: #686565 !important;
-    font-size: 15px;
-    position: relative;
-    top: -1px;
-    margin-right: 3px;
-}
-
-.bravo_wrap .bravo_search_tour .bravo_filter .filter-title {
-    font-size: 16px;
-    color: var(--primary-color) !important;
-    margin-bottom: 5px;
-    margin-top: 30px;
-    font-weight: 600 !important;
-}
-.bravo_wrap
-    .bravo_search_tour
-    .bravo-list-item
-    .list-item
-    .item-tour
-    .sale_info {
-    position: absolute;
-    width: 80px;
-    height: 48px;
-    transform: rotate(45deg);
-    right: -30px;
-    top: -13px;
-    line-height: 65px;
-    text-align: center;
-    color: #fff;
-    font-size: 15px;
-    z-index: 8;
-    background-color: #fc5b62 !important;
-}
-.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h3,
-.bravo_wrap .bravo_search_tour .bravo_filter .g-filter-item .item-title h4 {
-    color: var(--primary-color) !important;
-}
 /* call to actions custom css style 4 */
 
 .bravo_wrap .page-template-content .bravo-call-to-action .hero-call-to-action {
