@@ -9,7 +9,7 @@
    <div class="bravo_search_tour">
         <section class="hero_in tours" @if($bg = setting_item("tour_page_search_banner")) style="background-image: url({{get_file_url($bg,'full')}})" @endif>
 				<div class="wrapper">
-					<div class="container">
+					<div class="container-fluid">
 						<h1 class="fadeInUp"><span></span>{{setting_item_with_lang("tour_page_search_title")}}</h1>
 					</div>
 				</div>
