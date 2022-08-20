@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('head')
     <link href="{{ asset('dist/frontend/module/tour/css/tour.css?_ver='.config('app.version')) }}" rel="stylesheet">
+    <link href="{{ asset('public\panagea\css\mdb.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
+	 
 @endsection
 @section('content')
    <div class="bravo_search_tour">
@@ -13,7 +15,7 @@
 				</div>
 			</section>
    <div class="bravo_form_search">
-      <div class="container ">
+      <div class="container">
                 <div class="row">
                     <div class="col-12">
 					<div class="row g-0 custom-search-input-2 inner">
@@ -42,12 +44,12 @@
 						<input type="submit" class="btn_search" value="Search">
 					</div>
 				</div>
-                                </div>
+         </div>
                 </div>
             </div>
         </div>
 		  		<div class="filters_listing sticky_horizontal">
-			<div class="container">
+			<div class="container-fluid">
 				<ul class="clearfix">
 					<li>
 						<div class="switch-field">
@@ -78,16 +80,19 @@
 		</div>
 		<!-- End Map -->
 
-        <div class="container">
+         <div class="container-fluid">
             @include('Tour::frontend.layouts.search.list-item')
-        </div>
-    </div>
+         </div>
+   </div>
 @endsection
 
 @section('footer')
     <script type="text/javascript" src="{{ asset("libs/ion_rangeslider/js/ion.rangeSlider.min.js") }}"></script>
     <script type="text/javascript" src="{{ asset('module/tour/js/tour.js?_ver='.config('app.version')) }}"></script>
 
+
+
+	 
 	 	<!-- Map -->
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script src="{{ asset("panagea/js/markerclusterer.js")}}"></script>

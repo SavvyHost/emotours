@@ -2,69 +2,57 @@
     $translation = $row->translateOrOrigin(app()->getLocale());
 @endphp
 
-<div class=" card item-tour {{$wrap_class ?? ''}}">
-<div class="row">
-        <div class="col-lg-4 col pt-2">
-            @if($row->is_featured == "1")
-            <div class="featured">
-                {{__("Featured")}}
-            </div>
+
+<div class="card-tour-loop row">
+        <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl($include_param ?? true)}}">
+    <div class="col-6 col-md-4 p-0 pr-2 rounded-sm"> 
+
+        <div class="card-tour-img position-relative scale-hover-5">    
+        <a class="ripple" @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl($include_param ?? true)}}">
+            @if($row->discount_percent)
+                <div class="sale_info">{{$row->discount_percent}}</div>
             @endif
-            <div class="thumb-image">
-                @if($row->discount_percent)
-                    <div class="sale_info">{{$row->discount_percent}}</div>
-                @endif
-                <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl($include_param ?? true)}}">
-                    @if($row->image_url)
-                        @if(!empty($disable_lazyload))
-                            <img src="{{$row->image_url}}" class="img-responsive" alt="{{$location->name ?? ''}}">
-                        @else
-                            {!! get_image_tag($row->image_id,'medium',['class'=>'img-responsive','alt'=>$row->title]) !!}
-                        @endif
-                    @endif
-                </a>
-                <div class=" service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
-                    <i class="fa fa-heart-o"></i>
+            @if($row->image_url)
+                @if(!empty($disable_lazyload))
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <picture>
+                        <img src="{{$row->image_url}}" class="product-image with-fallback scale-container half-ease-in-out" alt="{{$location->name ?? ''}}">
+                    </picture>
                 </div>
-            </div>
-        </div>
-        <div class=" col-lg-5 col ">
-                
-            <div class="location">
-                <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl($include_param ?? true)}}">
-                        {!! clean($translation->title) !!}
-                    </a>
-                    
-            </div>  
-            
-            @if($translation->content)
-                <div class="g-overview mt-2 listTour">
-                    <div class="description">
-                        <?php $string = $translation->content;
-                        if (strlen($string) > 25) {
-                        $trimstring = substr($string, 0, 120). ' <a href="#">..</a>';
-                        } else {
-                        $trimstring = $string;
-                        }
-                        echo $trimstring;
-                        //Output : Lorem Ipsum is simply dum [readmore...][1]
-                        ?>
+                @else
+                    {!! get_image_tag($row->image_id,'full',['class'=>'img-responsive','alt'=>$row->title]) !!}
+                @endif
+            @endif
+       
+            @if($row->is_featured == "1")
+                <div class="product-card-tags position-absolute position-t-0 attach-top mt-0 rounded-sm">
+                    <div class="font-weight-semi-bold product-traveler-ltso-badge">
+                        <span class=" product-card-tag product-card-tag-sellout micro ltso-tag-modal ">
+                            {{__("Likely to Sell Out ")}} 
+                        </span>
                     </div>
                 </div>
             @endif
-            <div class="item-title mt-1">
-                @if(!empty($row->location->name))
-                        @php $location =  $row->location->translateOrOrigin(app()->getLocale()) @endphp
-                        <i class="icofont-paper-plane"></i>
-                        {{$location->name ?? ''}}
-                    @endif
-            </div>
+        </a>
+                <div class=" service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
+                    <i class="fa fa-heart-o"></i>
+                </div>
+        </div>
+    </div>
+
+        <div class="col-6 col-md-6 pe-md-1 d-flex flex-column justify-content-md-between">
+            <div class="flex-md-1 d-flex flex-column">
+                <h2 class="item-title mb-0 pt-md-4">
+                    <a @if(!empty($blank)) target="_blank" @endif href="{{$row->getDetailUrl($include_param ?? true)}}">
+                        {!! clean($translation->title) !!}
+                    </a>
+                </h2>   
             @if(setting_item('tour_enable_review'))
-            <?php
-            $reviewData = $row->getScoreReview();
-            $score_total = $reviewData['score_total'];
-            ?>
-            <div class="mt-2 service-review tour-review-{{$score_total}}">
+                <?php
+                    $reviewData = $row->getScoreReview();
+                    $score_total = $reviewData['score_total'];
+                ?>
+            <div class="mt-2 service-review media flex-wrap pt-1 pt-md-2 tour-review-{{$score_total}}">
                 <div class="list-star">
                     <ul class="booking-item-rating-stars">
                         <li><i class="fa fa-star-o"></i></li>
@@ -85,73 +73,86 @@
                 </div>
                 <span class="review">
                     @if($reviewData['total_review'] > 1)
-                        {{ __(":number Reviews",["number"=>$reviewData['total_review'] ]) }}
+                        {{ __(":number ",["number"=>$reviewData['total_review'] ]) }}
                     @else
-                        {{ __(":number Review",["number"=>$reviewData['total_review'] ]) }}
+                        {{ __(":number ",["number"=>$reviewData['total_review'] ]) }}
                     @endif
-                </span>
-                <!-- <div class="float-right">
-                    <div class="info">
-                        <div class="g-price">
-                            
-                            <div class="prefix">
-                                <i class="icofont-flash"></i>
-                                <span class="fr_text">{{__("from")}}</span>
-                                
-                                
-                            </div>
-                            <div class="price">
-                                <span class="onsale">{{ $row->display_sale_price }}</span>
-                                <span class="text-price">{{ $row->display_price }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                
+                </span>   
             </div>
-            
+        @endif 
+                @if($translation->content)
+                <div class="g-overview mt-2">
+                        <?php $string = $translation->content;
+                            if (strlen($string) > 25) {
+                            $trimstring = substr($string, 0, 120). ' <a href="{{$row->getDetailUrl($include_param ?? true)}}">..</a>';
+                                } else {
+                            $trimstring = $string;
+                            }
+                            echo $trimstring;
+                            //Output : Lorem Ipsum is simply dum [readmore...][1]
+                        ?>
+                </div>
                 @endif
+                <div class="location mt-1">
+                    @if(!empty($row->location->name))
+                        @php $location =  $row->location->translateOrOrigin(app()->getLocale()) @endphp
+                        <i class="icofont-paper-plane"></i>
+                        {{$location->name ?? ''}}
+                    @endif
+                </div>
+            </div>
+            <div class="d-flex flex-column pb-md-4">
                 <div class="clearfix">
                     <div class="float-left">
-                    <div class=" duration">
+                        <div class="duration">
                             <i class="icofont-wall-clock"></i>
                             {{duration_format($row->duration)}}
-                 </div> 
-                    </div>
-                    <div class="float-left ml-5">
-                            <div class=" duration freeCancellation">
-                            <i class="fa fa-check" aria-hidden="true"></i>
-                                   {{__("Free Cancellation")}}
-                        </div> 
-                     </div>
-                </div>
-
-  
-        </div>
-        <div class=" col-lg-3 mt-lg-5 left-side">
-        <div class="info">
-                        <div class="g-price">
-                            
-                            <div class="prefix">
-                                <i class="icofont-flash"></i>
-                                <span class="fr_text">{{__("from")}}</span>
-                                
-                                
-                            </div>
-                            <div class="price">
-                                <span class="onsale">{{ $row->display_sale_price }}</span>
-                                <span class="text-price">{{ $row->display_price }}</span>
-                            </div>
                         </div>
                     </div>
-                    <div class="duration">
-                            <a class = "btn btn-danger" href="">Book Now</a>
+                    <div class="float-left ml-5">
+                        <div class="freeCancellation">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                            {{__("Free Cancellation")}}
+                        </div>
                     </div>
-        </div>
+                </div>
+                    <div class="m-g-price flex-column justify-content-md-center align-items-left align-items-md-right flex-wrap pt-1 pt-md-4 mt-md-0 pe-md-4">   
+                        <div class="prefix d-flex flex-md-column justify-content-md-center align-items-baseline align-items-md-end flex-wrap"> 
+                            <div class="prefix-icon">
+                                <i class="icofont-flash"></i>
+                                <span class="fr_text">{{__("from")}}</span>
+                            </div>
+                            <div class="price">
+                                <span class=" h3 line-height-same mb-0 price-font text-md-right ">{{ $row->display_price }}</span>
+                                <span class="onsale ">{{ $row->display_sale_price }}</span>
+                            </div>
+                        </div>
 
-            <!-- <div class="col">
-            <a class="btn btn-primary" href="#" role="button">Link</a>
-            </div> -->
-        </div>
+                        <div class="text-body small text-align-right-md">Price varies by group size</div>
 
-</div>
+                    </div>
+            </div>
+        </div>
+            <div class="col-md-2 d-none d-md-flex flex-column align-items-end ">
+                <div class="info w-75 flex-md-1">
+                    <div class="g-price d-flex flex-column justify-content-md-center align-items-left align-items-md-right flex-wrap pt-1 pt-md-4 mt-md-0 pe-md-4">   
+                        <div class="prefix d-flex flex-md-column justify-content-md-center align-items-baseline align-items-md-end flex-wrap"> 
+                                <i class="icofont-flash"></i>
+                                <span class="fr_text">{{__("from")}}</span> 
+                            <div class="price">
+                                <span class=" h3 line-height-same mb-0 price-font text-md-right ">{{ $row->display_price }}</span>
+                                <span class="onsale ">{{ $row->display_sale_price }}</span>
+                            </div>
+                        </div>
+
+                        <div class="text-body small text-align-right-md">Price varies by group size</div>
+
+                    </div>
+
+                </div>
+               <a class = "btn btn-primary" href="{{$row->getDetailUrl($include_param ?? true)}}">Book Now</a>   
+        </div>
+    </a>
+</div>  
+
+
