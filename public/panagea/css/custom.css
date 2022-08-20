@@ -27,18 +27,3 @@
 .z-max {
     z-index: 99999999 !important;
 }
-
-/* search page custom css */
-
-.bravo_wrap
-    .bravo_search_tour
-    .bravo-list-item
-    .list-item
-    .item-tour
-    .thumb-image
-    a
-    img {
-    width: 100%;
-    height: 100%;
-    transition: all 0.2s;
-}
