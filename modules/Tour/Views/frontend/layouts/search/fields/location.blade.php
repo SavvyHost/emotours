@@ -10,7 +10,7 @@
             <input type="hidden" name="map_lat" value="{{request()->input('map_lat')}}">
             <input type="hidden" name="map_lgn" value="{{request()->input('map_lgn')}}">
         </div>
-		
+
 		@else
             <?php
             $location_name = "";

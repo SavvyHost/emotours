@@ -465,3 +465,8 @@ span.irs-from {
 }
 
 /* End call to action custom css style 4 */
+
+.smart-search .parent_text {
+    height: 50px !important;
+    padding: 8px;
+}
