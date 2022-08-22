@@ -22,7 +22,7 @@
 
         <div class="panel-dropdown" id="guests-dropdown">
             <a @click.prevent="show_guests_dropdown = !show_guests_dropdown">Guests <span
-                        class="qtyTotal">1</span></a>
+                    class="qtyTotal">1</span></a>
             <div class="panel-dropdown-content right"
                  :style=" show_guests_dropdown ? 'opacity: 1;visibility: visible;' : 'opacity: 0;visibility: hidden;'">
                 <div class="form-group form-guest-search" v-for="(type,index) in person_types">
@@ -31,7 +31,8 @@
                         <label>@{{type.name}}</label>
                         <div class="qtyDec" @click="minusPersonType(type)"></div>
                         <span class="input"><input type="number" v-model="type.number" min="1"
-                                                   @change="changePersonType(type)" name="qtyInput"/></span>
+                                                   @change="changePersonType(type)"
+                                                   name="qtyInput"/></span>
                         <div class="qtyInc"
                              @click="addPersonType(type)"></div>
                     </div>
@@ -46,7 +47,8 @@
             <div class="form-group" v-for="(type,index) in extra_price">
                 <div class="extra-price-wrap d-flex justify-content-between">
                     <div class="flex-grow-1">
-                        <label><input type="checkbox" true-value="1" false-value="0" v-model="type.enable"> @{{type.name}}</label>
+                        <label><input type="checkbox" true-value="1" false-value="0"
+                                      v-model="type.enable"> @{{type.name}}</label>
                         <div class="render" v-if="type.price_type">(@{{type.price_type}})</div>
                     </div>
                     <div class="flex-shrink-0">@{{type.price_html}}</div>
@@ -54,10 +56,12 @@
             </div>
         </div>
         <div class="form-section-group form-group-padding mt-3" v-if="buyer_fees.length">
-            <div class="extra-price-wrap d-flex justify-content-between" v-for="(type,index) in buyer_fees">
+            <div class="extra-price-wrap d-flex justify-content-between"
+                 v-for="(type,index) in buyer_fees">
                 <div class="flex-grow-1">
                     <label>@{{type.type_name}}
-                        <i class="icofont-info-circle" v-if="type.desc" data-toggle="tooltip" data-placement="top" :title="type.type_desc"></i>
+                        <i class="icofont-info-circle" v-if="type.desc" data-toggle="tooltip"
+                           data-placement="top" :title="type.type_desc"></i>
                     </label>
                     <div class="render" v-if="type.price_type">(@{{type.price_type}})</div>
                 </div>
@@ -65,7 +69,7 @@
                     <div class="unit" v-if='type.unit == "percent"'>
                         @{{ type.price }}%
                     </div>
-                    <div class="unit" v-else >
+                    <div class="unit" v-else>
                         @{{ formatMoney(type.price) }}
                     </div>
                 </div>
@@ -83,7 +87,8 @@
                  :class="{'danger':!message.type,'success':message.type}"></div>
         </div>
 
-        <a href="#" class="btn_1 full-width outline wishlist {{$row->isWishList()}}" data-id="{{$row->id}}"
+        <a href="#" class="btn_1 full-width outline wishlist {{$row->isWishList()}}"
+           data-id="{{$row->id}}"
            data-type="{{$row->type}}"><i class="icon_heart"></i> Add to
             wishlist</a>
     </div>
@@ -91,13 +96,13 @@
     <ul class="share-buttons mb-1">
         <li><a class="fb-share"
                href="https://web.whatsapp.com/send?text={{$row->getDetailUrl()}}"><i
-                        class="social_facebook"></i> Share</a></li>
+                    class="social_facebook"></i> Share</a></li>
         <li><a class="whatsapp-share"
                href="https://www.facebook.com/sharer/sharer.php?u={{$row->getDetailUrl()}}&amp;title={{$translation->title}}"><i
-                        class="icofont-whatsapp"></i> Message</a></li>
+                    class="icofont-whatsapp"></i> Message</a></li>
         <li><a class="twitter-share"
                href="https://twitter.com/share?url={{$row->getDetailUrl()}}&amp;title={{$translation->title}}"><i
-                        class="social_twitter"></i> Tweet</a></li>
+                    class="social_twitter"></i> Tweet</a></li>
     </ul>
 </aside>
 @include("Booking::frontend.global.enquiry-form",['service_type'=>'tour'])

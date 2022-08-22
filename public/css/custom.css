@@ -247,7 +247,7 @@ header.header.sticky {
     .card-tour-loop
     .product-traveler-ltso-badge {
     align-items: center;
-    /* background-color: #af143e; */
+    background-color: #af143e;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
     display: flex;
@@ -403,7 +403,7 @@ header.header.sticky {
     .service-wishlist
     i {
     transition: all 0.3s;
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 
 .bravo_wrap
@@ -605,7 +605,6 @@ header.header.sticky {
     .item-title {
     font-size: 1rem;
     font-weight: 600;
-    /* min-height: 45px; */
 }
 
 @media (max-width: 768px) {
@@ -671,7 +670,7 @@ header.header.sticky {
     .info
     .g-price {
     flex: auto;
-    /* text-align: right; */
+    text-align: right;
 }
 .bravo_wrap
     .bravo_search_tour

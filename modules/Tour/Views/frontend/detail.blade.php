@@ -18,7 +18,8 @@
                         <li><a href="#bravo-reviews">{{__("Reviews")}}</a></li>
                         <li><a href="#suggestion">{{__("Suggestions")}}</a></li>
                     </ul>
-                    <div data-toggle="modal" data-target="#enquiry_form_modal" class="enquiry-item"><a href=""><span>Enquiry</span></a></div>
+                    <div data-toggle="modal" data-target="#enquiry_form_modal" class="enquiry-item"><a href=""><span>Enquiry</span></a>
+                    </div>
                 </div>
             </nav>
 
@@ -90,8 +91,8 @@
                 </div>
                 <div class="right">
                     @if($row->getBookingEnquiryType() === "book")
-                        <a href="#sidebar" class="btn btn-primary bravo-button-book-mobile" data-toggle="modal"
-                           data-target="#tour-form-book">{{__("Book Now")}}</a>
+                        <a href="#bravo_tour_book_app"
+                           class="btn btn-primary bravo-button-book-mobile">{{__("Book Now")}}</a>
                     @else
                         <a class="btn btn-primary" data-toggle="modal"
                            data-target="#enquiry_form_modal">{{__("Contact Now")}}</a>
@@ -133,46 +134,14 @@
             email_required: '{{ __("Email is Required") }}',
         };
     </script>
+    <script src="{{ asset('js/easepick.min.js') }}"></script>
     <script type="text/javascript"
             src="{{ asset('module/tour/js/single-tour.js?_ver='.config('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset("libs/fotorama/fotorama.js") }}"></script>
 
     <script src="{{ asset('panagea/js/input_qty.js') }}"></script>
-    <script src="{{ asset('js/easepick.min.js') }}"></script>
 
     <script>
-
-        // Initialize date picker
-        const picker = new easepick.create({
-            element: document.getElementById('datepicker'),
-            css: [
-                '{{ asset('css/easepick.css') }}',
-            ],
-            setup(picker) {
-                picker.on('select', (event) => {
-                    setTimeout(() => {
-                        let guestDropdown = document.querySelector('#guests-dropdown > a')
-                        guestDropdown.click()
-                    }, 100)
-
-                })
-            }
-        })
-        const pickerModal = new easepick.create({
-            element: document.getElementById('datepicker-modal'),
-            css: [
-                '{{ asset('css/easepick.css') }}',
-            ],
-            setup(picker) {
-                picker.on('select', (event) => {
-                    setTimeout(() => {
-                        let guestDropdown = document.querySelector('#guests-dropdown-modal > a')
-                        guestDropdown.click()
-                    }, 100)
-
-                })
-            }
-        })
 
     </script>
 
