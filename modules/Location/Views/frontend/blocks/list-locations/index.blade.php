@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="bravo-list-locations @if(!empty($layout)) {{ $layout }} @endif">
         <div class="title">
             {{$title}}
@@ -9,23 +9,17 @@
             </div>
         @endif
         @if(!empty($rows))
-            <div class="list-item swiper-locations">
+            <div class="list-item swiper swiper-locations">
                 <div class="swiper-wrapper">
                     @foreach($rows as $key=>$row)
-                        {{-- <?php
-                        $size_col = 4;
-                        if( !empty($layout) and (  $layout == "style_2" or $layout == "style_3" or $layout == "style_4" )){
-                            $size_col = 4;
-                        }else{
-                            if($key == 0){
-                                $size_col = 8;
-                            }
-                        }
-                        ?> --}}
-                        <div class="col-lg-3 col-md-6 swiper-slide">
+                        <div class="swiper-slide">
                             @include('Location::frontend.blocks.list-locations.loop')
                         </div>
                     @endforeach
+                </div>
+                <div class="row">
+                    <div class="swiper-button-next .button-next"></div>
+                    <div class="swiper-button-prev .button-prev"></div>
                 </div>
             </div>
         @endif
