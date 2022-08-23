@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
     <link rel="stylesheet" href="{{asset('panagea/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('panagea/css/vendors.css')}}">
+    <link rel="stylesheet" href="{{asset('panagea/css/swiper-bundle.min.css')}}">
     <link rel="stylesheet" href="{{asset('panagea/css/custom.css')}}">
     <!--/ Panagea Styles  -->
 
