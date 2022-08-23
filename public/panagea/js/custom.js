@@ -146,21 +146,22 @@ const featuredItem = new Swiper(".swiper-featured", {
         el: ".swiper-pagination",
         clickable: true,
     },
-    
+});
+
 $(function () {
     $(function () {
         $(".secondary_nav ul a").click(function (e) {
             "use strict";
-            console.log(1)
+            console.log(1);
             e.preventDefault();
             $("html, body").animate(
                 {
-                    scrollTop: $($(this).attr('href')).offset().top -65,
+                    scrollTop: $($(this).attr("href")).offset().top - 65,
                 },
                 0
             );
         });
-    })
+    });
     // Add Active Class on Navbar Link and Remove from the Siblings(if any exist!)
     $(".secondary_nav ul a").click(function () {
         $(".secondary_nav ul a").removeClass("active");
@@ -181,7 +182,9 @@ $(function () {
                 var blockId = $(this).attr("id");
                 if (blockId != undefined) {
                     $(".secondary_nav ul a").removeClass("active");
-                    $('.secondary_nav ul li a[href="#' + blockId + '"]').addClass("active");
+                    $(
+                        '.secondary_nav ul li a[href="#' + blockId + '"]'
+                    ).addClass("active");
                 }
             }
         });
