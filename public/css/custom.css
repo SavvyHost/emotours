@@ -187,3 +187,602 @@
 }
 
 /* END: SWIPER CAROUSEL */
+
+header,
+header.header.sticky {
+    padding: 15px 20px 0 !important;
+}
+
+/* Start Search Page CSS  */
+
+/* Start Special tour list cards  */
+
+/* card structure  */
+
+.bravo_wrap .bravo_search_tour .bravo-list-tour .list-tours .card-tour-loop {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: -1px 1px 3px 0px #afafaf7d;
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop:hover {
+    box-shadow: 0px 4px 8px 1px #85858580;
+}
+
+@media (min-width: 768px) {
+    .bravo_wrap
+        .bravo_search_tour
+        .bravo-list-tour
+        .list-tours
+        .card-tour-loop {
+        border: 0.0625rem solid #ddd;
+        border-radius: 0.5rem;
+    }
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .product-card-tags {
+    top: 0;
+    left: 0;
+    bottom: auto;
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .product-traveler-ltso-badge {
+    align-items: center;
+    /* background-color: #af143e; */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+    display: flex;
+    margin: 0.5rem;
+    padding: 0 4px;
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .product-card-tag {
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+    white-space: nowrap;
+    z-index: 10000;
+    font-weight: 700;
+}
+@media (max-width: 768px) {
+    .bravo_wrap
+        .bravo_search_tour
+        .bravo-list-tour
+        .list-tours
+        .card-tour-loop
+        .product-card-tag {
+        padding: 0rem 0.5rem;
+        font-weight: 600;
+    }
+    .bravo_wrap
+        .bravo_search_tour
+        .bravo-list-tour
+        .list-tours
+        .card-tour-loop
+        .product-traveler-ltso-badge {
+        margin: 0.25rem;
+    }
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .product-card-tag-sellout {
+    background-color: #af143e;
+    color: white;
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .sale_info {
+    position: absolute;
+    width: 80px;
+    height: 48px;
+    transform: rotate(45deg);
+    right: -30px;
+    top: -13px;
+    line-height: 65px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    z-index: 8;
+    background-color: #c03;
+}
+
+/* image list css  */
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .card-tour-img {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    margin: 1.2rem 0rem 1.2rem 1.2rem;
+    max-width: 100%;
+    position: relative;
+}
+@media (max-width: 520px) {
+    .bravo_wrap
+        .bravo_search_tour
+        .bravo-list-tour
+        .list-tours
+        .card-tour-loop
+        .card-tour-img {
+        margin: unset;
+    }
+}
+
+/* @media (min-width: 768px) { */
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .card-tour-img
+    .bg-image
+    > :first-child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/* } */
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .card-tour-img
+    a
+    img {
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .card-tour-img
+    img:hover {
+    transform: scale(1.1);
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .card-tour-img
+    .service-wishlist {
+    position: absolute;
+    right: 5px;
+    z-index: 10;
+    bottom: 0;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .card-tour-img
+    .service-wishlist
+    i {
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .card-tour-img
+    .service-wishlist.loading
+    i,
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .card-tour-img
+    .service-wishlist:hover
+    i {
+    color: #ff9290;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .card-tour-img
+    .service-wishlist.active
+    i {
+    color: red;
+}
+
+/* End image list css  */
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .location {
+    font-size: 13px;
+    color: #5e6d77;
+    /* padding: 15px 15px 10px; */
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .location
+    i {
+    position: relative;
+    font-size: 16px;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .category {
+    padding: 0 15px;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .category
+    .fa {
+    color: #687882;
+    opacity: 0.6;
+}
+
+/* start review css  */
+
+/* .bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .service-review {
+} */
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .service-review
+    .list-star {
+    display: inline-block;
+    line-height: 13px;
+    position: relative;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .service-review
+    .list-star
+    .booking-item-rating-stars {
+    padding: 0;
+    margin: 0;
+    width: 90px;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .service-review
+    .list-star
+    .booking-item-rating-stars:after,
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .service-review
+    .list-star
+    .booking-item-rating-stars:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .service-review
+    .list-star
+    .booking-item-rating-stars
+    li {
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .service-review
+    .list-star
+    .booking-item-rating-stars
+    li:last-child {
+    margin-right: 0;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .service-review
+    .list-star
+    .booking-item-rating-stars
+    li
+    .fa {
+    font-size: 15px;
+    color: #ffdc00;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .service-review
+    .list-star
+    .booking-item-rating-stars-active {
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .service-review
+    .review {
+    position: relative;
+    top: -2px;
+    font-size: 13px;
+    color: #768092;
+    margin-left: 10px;
+}
+
+/* end review css  */
+
+/* Start content css  */
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .item-title {
+    font-size: 1rem;
+    font-weight: 600;
+    /* min-height: 45px; */
+}
+
+@media (max-width: 768px) {
+    .bravo_wrap
+        .bravo_search_tour
+        .bravo-list-tour
+        .list-tours
+        .card-tour-loop
+        .g-overview {
+        display: none;
+    }
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .item-title
+    a {
+    color: #1a2b50;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .info {
+    padding: 0 15px;
+    display: flex;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .info
+    .duration {
+    flex: auto;
+    align-items: center;
+    color: #5e6d77;
+    position: relative;
+    top: 5px;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .info
+    .duration
+    i {
+    position: relative;
+    font-size: 1.2rem;
+}
+/* end content css  */
+
+/* start price css  */
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .info
+    .g-price {
+    flex: auto;
+    /* text-align: right; */
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .info
+    .g-price
+    .prefix {
+    color: #5e6d77;
+    display: inline-block;
+}
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .m-g-price {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .bravo_wrap
+        .bravo_search_tour
+        .bravo-list-tour
+        .list-tours
+        .card-tour-loop
+        .m-g-price {
+        display: flex;
+    }
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .info
+    .g-price
+    .prefix
+    i {
+    font-size: 16px;
+    color: #ffc107;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .info
+    .g-price
+    .price {
+    position: relative;
+    display: inline-block;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .info
+    .g-price
+    .price
+    .text-price {
+    font-size: 18px;
+    color: #1a2b48;
+    font-weight: 600;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop
+    .info
+    .g-price
+    .price
+    .onsale {
+    position: absolute;
+    right: 0;
+    top: -15px;
+    text-decoration: line-through;
+    font-size: 15px;
+    color: #c03 !important;
+    font-weight: 500;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop.infobox-item {
+    position: relative;
+}
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-tour
+    .list-tours
+    .card-tour-loop.infobox-item:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-color: transparent #fff #fff transparent;
+    border-style: solid;
+    border-width: 10px;
+    bottom: -9px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(45deg);
+    box-shadow: 1px 1px 0 #dfdfdf;
+    background: #fff;
+}
+
+/* End Special tour list cards  */
+
+/* End Search Page CSS  */

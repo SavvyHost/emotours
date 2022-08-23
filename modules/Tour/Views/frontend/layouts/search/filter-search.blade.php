@@ -1,4 +1,6 @@
+
 <div class="bravo_filter">
+    
     <form action="{{url(app_get_locale(false,false,'/').config('tour.tour_route_prefix'))}}" class="bravo_form_filter">
         @if( !empty(Request::query('location_id')) )
             <input type="hidden" name="location_id" value="{{Request::query('location_id')}}">
@@ -8,9 +10,14 @@
             <input type="hidden" value="{{Request::query('end',date("d/m/Y",strtotime("+1 day")))}}" name="end">
             <input type="hidden" name="date" value="{{Request::query('date')}}">
         @endif
-        <div class="filter-title">
-            {{__("FILTER BY")}}
-        </div>
+
+        <div id="filters_col">
+						<a data-bs-toggle="collapse" href="#collapseFilters" aria-expanded="true" aria-controls="collapseFilters" id="filters_col_bt" class="">            {{__("FILTER BY")}}
+                         </a>
+						<div class="collapse show" id="collapseFilters" style="">
+							<div class="filter_type">
+                            <div class="filter-title"> </div>
+               
         <div class="g-filter-item">
             <div class="item-title">
                 <h3>{{__("Filter Price")}}</h3>
@@ -47,20 +54,21 @@
                 <ul>
                     @for ($number = 5 ;$number >= 1 ; $number--)
                         <li>
-                            <div class="bravo-checkbox">
-                                <label>
-                                    <input name="review_score[]" type="checkbox" value="{{$number}}" @if(  in_array($number , request()->query('review_score',[])) )  checked @endif>
-                                    <span class="checkmark"></span>
-                                    @for ($review_score = 1 ;$review_score <= $number ; $review_score++)
-                                        <i class="fa fa-star"></i>
-                                    @endfor
+                            <div class="bravo-checkbox">         
+                                <label  class="switch">
+                                    <input  name="review_score[]" type="checkbox" value="{{$number}}" @if(  in_array($number , request()->query('review_score',[])) )  checked @endif>
+                                    <span class="slider round checkbox"></span>                                 
                                 </label>
+                                @for ($review_score = 1 ;$review_score <= $number ; $review_score++)
+                                        <i class="fa fa-star"></i>
+                                @endfor
                             </div>
                         </li>
                     @endfor
                 </ul>
             </div>
         </div>
+        
         <div class="g-filter-item">
             <div class="item-title">
                 <h3>{{__("Tour Type")}}</h3>
@@ -84,9 +92,10 @@
                         ?>
                         <li @if($i > 2 and empty($current_category_ids)) class="hide" @endif>
                             <div class="bravo-checkbox">
+                             
                                 <label>
                                     <input name="cat_id[]" {{$checked}} type="checkbox" value="{{$category->id}}"> {{$prefix}} {{$traslate->name}}
-                                    <span class="checkmark"></span>
+                                    <span  class="checkmark"></span>
                                 </label>
                             </div>
                         </li>
@@ -137,6 +146,10 @@
                 </div>
             @endif
         @endforeach
+                	</div>
+						</div>
+						<!--/collapse -->
+					</div>
     </form>
 </div>
 
