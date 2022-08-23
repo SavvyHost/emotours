@@ -10,7 +10,7 @@
     }
 @endphp
 @if(!empty($title))
-    <div class="g-include-exclude">
+    <section class="g-include-exclude" id="included-excluded">
         <h3> {{ $title }} </h3>
         <div class="row">
             @if($translation->include)
@@ -34,5 +34,5 @@
                 </div>
             @endif
         </div>
-    </div>
+    </section>
 @endif

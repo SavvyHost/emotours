@@ -1,24 +1,38 @@
 @extends('layouts.app')
 @section('head')
     <link href="{{ asset('dist/frontend/module/tour/css/tour.css?_ver='.config('app.version')) }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/ion_rangeslider/css/ion.rangeSlider.min.css") }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset("libs/fotorama/fotorama.css") }}"/>
 @endsection
 @section('content')
     <div class="bravo_detail_tour">
         @include('Tour::frontend.layouts.details.tour-banner')
-        <div class="bravo_content">
-            <div class="container">
+        <div class="bravo_content pt-0">
+            <nav class="secondary_nav sticky_horizontal">
+                <div class="container">
+                    <ul class="clearfix">
+                        <li><a href="#description" class="active">{{__("Overview")}}</a></li>
+                        <li><a href="#included-excluded">{{__("Included/Excluded")}}</a></li>
+                        <li><a href="#itinerary">{{__("Itinerary")}}</a></li>
+                        <li><a href="#faqs">{{__("FAQs")}}</a></li>
+                        <li><a href="#location">{{__("Location")}}</a></li>
+                        <li><a href="#bravo-reviews">{{__("Reviews")}}</a></li>
+                        <li><a href="#suggestion">{{__("Suggestions")}}</a></li>
+                    </ul>
+                    <div data-toggle="modal" data-target="#enquiry_form_modal" class="enquiry-item"><a href=""><span>Enquiry</span></a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container py-4">
                 <div class="row">
-                    <div class="col-md-12 col-lg-9">
+                    <div class="col-12">
                         @php $review_score = $row->review_data @endphp
                         @include('Tour::frontend.layouts.details.tour-detail')
-                        @include('Tour::frontend.layouts.details.tour-review')
                     </div>
-                    <div class="col-md-12 col-lg-3">
-                        @include('Tour::frontend.layouts.details.vendor')
-                        @include('Tour::frontend.layouts.details.tour-form-book')
-                        @include('Tour::frontend.layouts.details.open-hours')
+                    <div class="col-12">
+                        {{-- @include('Tour::frontend.layouts.details.vendor') --}}
+                        {{-- @include('Tour::frontend.layouts.details.tour-form-book') --}}
+                        @include('Tour::frontend.layouts.details.tour-review')
                     </div>
                 </div>
                 <div class="row end_tour_sticky">
@@ -41,45 +55,48 @@
                         </div>
                     </div>
                     @if(setting_item('tour_enable_review'))
-                    <?php
-                    $reviewData = $row->getScoreReview();
-                    $score_total = $reviewData['score_total'];
-                    ?>
-                    <div class="service-review tour-review-{{$score_total}}">
-                        <div class="list-star">
-                            <ul class="booking-item-rating-stars">
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                                <li><i class="fa fa-star-o"></i></li>
-                            </ul>
-                            <div class="booking-item-rating-stars-active" style="width: {{  $score_total * 2 * 10 ?? 0  }}%">
+                        <?php
+                        $reviewData = $row->getScoreReview();
+                        $score_total = $reviewData['score_total'];
+                        ?>
+                        <div class="service-review tour-review-{{$score_total}}">
+                            <div class="list-star">
                                 <ul class="booking-item-rating-stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
                                 </ul>
+                                <div class="booking-item-rating-stars-active"
+                                     style="width: {{  $score_total * 2 * 10 ?? 0  }}%">
+                                    <ul class="booking-item-rating-stars">
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <span class="review">
+                            <span class="review">
                         @if($reviewData['total_review'] > 1)
-                                {{ __(":number Reviews",["number"=>$reviewData['total_review'] ]) }}
-                            @else
-                                {{ __(":number Review",["number"=>$reviewData['total_review'] ]) }}
-                            @endif
+                                    {{ __(":number Reviews",["number"=>$reviewData['total_review'] ]) }}
+                                @else
+                                    {{ __(":number Review",["number"=>$reviewData['total_review'] ]) }}
+                                @endif
                     </span>
-                    </div>
+                        </div>
                     @endif
                 </div>
                 <div class="right">
                     @if($row->getBookingEnquiryType() === "book")
-                        <a class="btn btn-primary bravo-button-book-mobile">{{__("Book Now")}}</a>
+                        <a href="#bravo_tour_book_app"
+                           class="btn btn-primary bravo-button-book-mobile">{{__("Book Now")}}</a>
                     @else
-                        <a class="btn btn-primary" data-toggle="modal" data-target="#enquiry_form_modal">{{__("Contact Now")}}</a>
-                   @endif
+                        <a class="btn btn-primary" data-toggle="modal"
+                           data-target="#enquiry_form_modal">{{__("Contact Now")}}</a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -99,7 +116,7 @@
                 ready: function (engineMap) {
                     engineMap.addMarker([{{$row->map_lat}}, {{$row->map_lng}}], {
                         icon_options: {
-                            iconUrl:"{{get_file_url(setting_item("tour_icon_marker_map"),'full') ?? url('images/icons/png/pin.png') }}"
+                            iconUrl: "{{get_file_url(setting_item("tour_icon_marker_map"),'full') ?? url('images/icons/png/pin.png') }}"
                         }
                     });
                 }
@@ -110,15 +127,22 @@
     <script>
         var bravo_booking_data = {!! json_encode($booking_data) !!}
         var bravo_booking_i18n = {
-                no_date_select:'{{__('Please select Start date')}}',
-                no_guest_select:'{{__('Please select at least one guest')}}',
-                load_dates_url:'{{route('tour.vendor.availability.loadDates')}}',
-                name_required:'{{ __("Name is Required") }}',
-                email_required:'{{ __("Email is Required") }}',
-            };
+            no_date_select: '{{__('Please select Start date')}}',
+            no_guest_select: '{{__('Please select at least one guest')}}',
+            load_dates_url: '{{route('tour.vendor.availability.loadDates')}}',
+            name_required: '{{ __("Name is Required") }}',
+            email_required: '{{ __("Email is Required") }}',
+        };
     </script>
-    <script type="text/javascript" src="{{ asset("libs/ion_rangeslider/js/ion.rangeSlider.min.js") }}"></script>
+    <script src="{{ asset('js/easepick.min.js') }}"></script>
+    <script type="text/javascript"
+            src="{{ asset('module/tour/js/single-tour.js?_ver='.config('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset("libs/fotorama/fotorama.js") }}"></script>
-    <script type="text/javascript" src="{{ asset("libs/sticky/jquery.sticky.js") }}"></script>
-    <script type="text/javascript" src="{{ asset('module/tour/js/single-tour.js?_ver='.config('app.version')) }}"></script>
+
+    <script src="{{ asset('panagea/js/input_qty.js') }}"></script>
+
+    <script>
+
+    </script>
+
 @endsection

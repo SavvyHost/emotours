@@ -1,4 +1,4 @@
-<header class="header">
+<header class="{{ Request::is('tour/*') ? 'static-header' : 'header' }}">
     <div id="preloader" style="display: none;">
         <div data-loader="circle-side" style="display: none;"></div>
     </div><!-- /Page Preload -->
@@ -20,8 +20,7 @@
     <div>
         <ul id="top_menu">
 
-            <li><a href="cart-1.html" class="cart-menu-btn" title="Cart"><strong>4</strong></a></li>
-            <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
+           <li><a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist">Your wishlist</a></li>
 
 
         @auth()
