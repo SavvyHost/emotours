@@ -1,3 +1,12 @@
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+header,
+header.header.sticky {
+    padding: 15px 20px 0 !important;
+}
+
 /* customize tours card css  */
 
 .bravo_wrap

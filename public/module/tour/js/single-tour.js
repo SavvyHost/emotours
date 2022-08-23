@@ -1,32 +1,32 @@
 (function ($) {
     new Vue({
-        el: '#bravo_tour_book_app',
+        el: "#bravo_tour_book_app",
         data: {
-            id: '',
+            id: "",
             extra_price: [],
             person_types: [],
             message: {
-                content: '',
-                type: false
+                content: "",
+                type: false,
             },
-            html: '',
+            html: "",
             onSubmit: false,
-            start_date: '',
-            start_date_html: '',
+            start_date: "",
+            start_date_html: "",
             step: 1,
             guests: 1,
             price: 0,
             total_price_before_fee: 0,
             total_price_fee: 0,
             max_guests: 1,
-            start_date_obj: '',
+            start_date_obj: "",
             duration: 0,
             allEvents: [],
             buyer_fees: [],
             show_guests_dropdown: false,
 
             is_form_enquiry_and_book: false,
-            enquiry_type: 'book',
+            enquiry_type: "book",
             enquiry_is_submit: false,
             enquiry_name: "",
             enquiry_email: "",
@@ -38,7 +38,7 @@
                 handler: function f() {
                     this.step = 1;
                 },
-                deep: true
+                deep: true,
             },
             start_date() {
                 this.step = 1;
@@ -50,7 +50,7 @@
                 handler: function f() {
                     this.step = 1;
                 },
-                deep: true
+                deep: true,
             },
             start_date() {
                 this.step = 1;
@@ -61,9 +61,12 @@
                     var cur_date = new Date(item.start).getTime();
                     if (cur_date === startDate) {
                         if (item.person_types != null) {
-                            me.person_types = Object.assign([], item.person_types);
+                            me.person_types = Object.assign(
+                                [],
+                                item.person_types
+                            );
                         } else {
-                            me.person_types = null
+                            me.person_types = null;
                         }
                         me.max_guests = parseInt(item.max_guests);
                         me.price = parseFloat(item.price);
@@ -82,7 +85,9 @@
                     if (me.person_types != null) {
                         for (var ix in me.person_types) {
                             var person_type = me.person_types[ix];
-                            total += parseFloat(person_type.price) * parseInt(person_type.number);
+                            total +=
+                                parseFloat(person_type.price) *
+                                parseInt(person_type.number);
                             total_guests += parseInt(person_type.number);
                         }
                     } else {
@@ -102,12 +107,18 @@
                                     break;
                                 case "per_hour":
                                     if (me.duration > 0) {
-                                        type_total += parseFloat(item.price) * parseFloat(me.duration);
+                                        type_total +=
+                                            parseFloat(item.price) *
+                                            parseFloat(me.duration);
                                     }
                                     break;
                                 case "per_day":
                                     if (me.duration > 0) {
-                                        type_total += parseFloat(item.price) * Math.ceil(parseFloat(me.duration) / 24);
+                                        type_total +=
+                                            parseFloat(item.price) *
+                                            Math.ceil(
+                                                parseFloat(me.duration) / 24
+                                            );
                                     }
                                     break;
                             }
@@ -130,7 +141,10 @@
                         var fee_price = parseFloat(item.price);
 
                         //for Percent
-                        if (typeof item.unit !== "undefined" && item.unit === "percent") {
+                        if (
+                            typeof item.unit !== "undefined" &&
+                            item.unit === "percent"
+                        ) {
                             fee_price = (total / 100) * fee_price;
                         }
 
@@ -147,15 +161,17 @@
                 return 0;
             },
             total_price_html: function () {
-                if (!this.total_price) return '';
+                if (!this.total_price) return "";
                 return window.bravo_format_money(this.total_price);
             },
             daysOfWeekDisabled() {
                 var res = [];
 
                 for (var k in this.open_hours) {
-                    if (typeof this.open_hours[k].enable == 'undefined' || this.open_hours[k].enable != 1) {
-
+                    if (
+                        typeof this.open_hours[k].enable == "undefined" ||
+                        this.open_hours[k].enable != 1
+                    ) {
                         if (k == 7) {
                             res.push(0);
                         } else {
@@ -178,16 +194,18 @@
 
                     switch (this.deposit_type) {
                         case "percent":
-                            total_price_depossit = tmp_total_price * this.deposit_amount / 100;
+                            total_price_depossit =
+                                (tmp_total_price * this.deposit_amount) / 100;
                             break;
                         default:
                             total_price_depossit = this.deposit_amount;
                     }
                     if (deposit_fomular === "deposit_and_fee") {
-                        total_price_depossit = total_price_depossit + this.total_price_fee;
+                        total_price_depossit =
+                            total_price_depossit + this.total_price_fee;
                     }
 
-                    return total_price_depossit
+                    return total_price_depossit;
                 }
                 return this.total_price;
             },
@@ -197,7 +215,7 @@
             is_deposit_ready: function () {
                 if (this.deposit && this.deposit_amount) return true;
                 return false;
-            }
+            },
         },
         created: function () {
             for (var k in bravo_booking_data) {
@@ -216,149 +234,165 @@
                 dateFormat: bookingCore.date_format,
                 enableLoading: true,
                 showEventTooltip: true,
-                classNotAvailable: ['disabled', 'off'],
+                classNotAvailable: ["disabled", "off"],
                 disableHightLight: true,
                 minDate: this.minDate,
-                opens: bookingCore.rtl ? 'right' : 'left',
+                opens: bookingCore.rtl ? "right" : "left",
                 locale: {
-                    direction: bookingCore.rtl ? 'rtl' : 'ltr',
-                    firstDay: daterangepickerLocale.first_day_of_week
+                    direction: bookingCore.rtl ? "rtl" : "ltr",
+                    firstDay: daterangepickerLocale.first_day_of_week,
                 },
 
                 isInvalidDate: function (date) {
                     for (var k = 0; k < me.allEvents.length; k++) {
                         var item = me.allEvents[k];
-                        if (item.start == date.format('YYYY-MM-DD')) {
+                        if (item.start == date.format("YYYY-MM-DD")) {
                             return item.active ? false : true;
                         }
                     }
                     return false;
-                }
+                },
             };
 
             // START CUSTOM
             const DateTime = easepick.DateTime;
 
-            let month_start = new DateTime(new DateTime().setDate(1))
-            let month_end = month_start.clone().add(1, 'month')
+            let month_start = new DateTime(new DateTime().setDate(1));
+            let month_end = month_start.clone().add(1, "month");
 
-            await me.fetchEvents(month_start, month_end).then(_ => {
-                me.allEvents.map(item => {
-                    prices[item.start] = item
-                })
-            })
+            await me.fetchEvents(month_start, month_end).then((_) => {
+                me.allEvents.map((item) => {
+                    prices[item.start] = item;
+                });
+            });
 
             // Initialize date picker
             new easepick.create({
-                element: document.getElementById('datepicker'),
+                element: document.getElementById("datepicker"),
                 css: [
-                    '/css/easepick.css',
-                    'https://easepick.com/css/demo_prices.css'
+                    "/css/easepick.css",
+                    "https://easepick.com/css/demo_prices.css",
                 ],
 
                 setup(picker) {
-                    picker.on('click', async function (event) {
-                        if (event.path[0].classList.contains('next-button')) {
-                            month_start = month_end
-                            month_end = month_start.clone().add(1, 'month')
+                    picker.on("click", async function (event) {
+                        if (event.path[0].classList.contains("next-button")) {
+                            month_start = month_end;
+                            month_end = month_start.clone().add(1, "month");
 
-                            await me.fetchEvents(month_start, month_end).then(_ => {
-                                me.allEvents.map(item => {
-                                    prices[item.start] = item
-                                })
-                            })
-                        } else if (event.path[0].classList.contains('previous-button')) {
-                            month_end = month_start
-                            month_start = month_end.clone().subtract(1, 'month')
-
-                            await me.fetchEvents(month_start, month_end).then(_ => {
-                                me.allEvents.map(item => {
-                                    prices[item.start] = item
+                            await me
+                                .fetchEvents(month_start, month_end)
+                                .then((_) => {
+                                    me.allEvents.map((item) => {
+                                        prices[item.start] = item;
+                                    });
                                 });
-                            })
+                        } else if (
+                            event.path[0].classList.contains("previous-button")
+                        ) {
+                            month_end = month_start;
+                            month_start = month_end
+                                .clone()
+                                .subtract(1, "month");
+
+                            await me
+                                .fetchEvents(month_start, month_end)
+                                .then((_) => {
+                                    me.allEvents.map((item) => {
+                                        prices[item.start] = item;
+                                    });
+                                });
                         }
-
-                    })
-                    picker.on('select', (event) => {
+                    });
+                    picker.on("select", (event) => {
                         setTimeout(() => {
-                            let guestDropdown = document.querySelector('#guests-dropdown > a')
-                            guestDropdown.click()
-                        }, 100)
-                    })
+                            let guestDropdown = document.querySelector(
+                                "#guests-dropdown > a"
+                            );
+                            guestDropdown.click();
+                        }, 100);
+                    });
 
-                    picker.on('view', (evt) => {
-                        const {view, date, target} = evt.detail;
-                        const d = date ? date.format('YYYY-MM-DD') : null;
-                        if (view === 'CalendarDay' && prices[d]) {
-                            const span = target.querySelector('.day-price') || document.createElement('span');
-                            span.className = 'day-price';
+                    picker.on("view", (evt) => {
+                        const { view, date, target } = evt.detail;
+                        const d = date ? date.format("YYYY-MM-DD") : null;
+                        if (view === "CalendarDay" && prices[d]) {
+                            const span =
+                                target.querySelector(".day-price") ||
+                                document.createElement("span");
+                            span.className = "day-price";
                             span.innerHTML = `${prices[d].price_html}`;
                             target.append(span);
                         }
                     });
                 },
-            })
+            });
 
             // END CUSTOM
 
-            if (typeof daterangepickerLocale == 'object') {
+            if (typeof daterangepickerLocale == "object") {
                 options.locale = _.merge(daterangepickerLocale, options.locale);
             }
             this.$nextTick(function () {
-                $(this.$refs.start_date).daterangepicker(options).on('apply.daterangepicker',
-                    function (ev, picker) {
-                        me.start_date = picker.startDate.format('YYYY-MM-DD');
-                        me.start_date_html = picker.startDate.format(bookingCore.date_format);
+                $(this.$refs.start_date)
+                    .daterangepicker(options)
+                    .on("apply.daterangepicker", function (ev, picker) {
+                        me.start_date = picker.startDate.format("YYYY-MM-DD");
+                        me.start_date_html = picker.startDate.format(
+                            bookingCore.date_format
+                        );
                     })
-                    .on('update-calendar', function (e, obj) {
-                        me.fetchEvents(obj.leftCalendar.calendar[0][0], obj.leftCalendar.calendar[5][6])
+                    .on("update-calendar", function (e, obj) {
+                        me.fetchEvents(
+                            obj.leftCalendar.calendar[0][0],
+                            obj.leftCalendar.calendar[5][6]
+                        );
                     });
             });
 
-            document.addEventListener('click', ({target}) => {
-                if (!target.closest('.panel-dropdown')) {
-                    this.show_guests_dropdown = false
+            document.addEventListener("click", ({ target }) => {
+                if (!target.closest(".panel-dropdown")) {
+                    this.show_guests_dropdown = false;
                 }
-            })
+            });
         },
         methods: {
-            formatDate: date => {
-                const d = new Date(date)
-                let month = (d.getMonth() + 1).toString()
-                let day = d.getDate().toString()
-                const year = d.getFullYear()
+            formatDate: (date) => {
+                const d = new Date(date);
+                let month = (d.getMonth() + 1).toString();
+                let day = d.getDate().toString();
+                const year = d.getFullYear();
                 if (month.length < 2) {
-                    month = '0' + month
+                    month = "0" + month;
                 }
                 if (day.length < 2) {
-                    day = '0' + day
+                    day = "0" + day;
                 }
-                return [year, month, day].join('-')
+                return [year, month, day].join("-");
             },
-            handleTotalPrice: function () {
-            },
+            handleTotalPrice: function () {},
             async fetchEvents(start, end) {
                 var me = this;
                 var data = {
                     start: this.formatDate(start),
                     end: this.formatDate(end),
                     id: bravo_booking_data.id,
-                    for_single: 1
+                    for_single: 1,
                 };
 
                 await $.ajax({
                     url: bravo_booking_i18n.load_dates_url,
                     dataType: "json",
-                    type: 'get',
+                    type: "get",
                     data: data,
                     success: async function (json) {
-                        me.allEvents = await json
-                        return json
+                        me.allEvents = await json;
+                        return json;
                     },
                     error: function (e) {
                         console.log(e);
                         console.log("Can not get availability");
-                    }
+                    },
                 });
             },
             formatMoney: function (m) {
@@ -374,7 +408,8 @@
             },
             addPersonType(type) {
                 type.number = parseInt(type.number);
-                if (type.number < parseInt(type.max) || !type.max) type.number += 1;
+                if (type.number < parseInt(type.max) || !type.max)
+                    type.number += 1;
             },
             minusPersonType(type) {
                 type.number = parseInt(type.number);
@@ -386,12 +421,13 @@
                     type.number = type.max;
                 }
                 if (type.number < type.min) {
-                    type.number = type.min
+                    type.number = type.min;
                 }
             },
             addGuestsType() {
                 var me = this;
-                if (me.guests < parseInt(me.max_guests) || !me.max_guests) me.guests += 1;
+                if (me.guests < parseInt(me.max_guests) || !me.max_guests)
+                    me.guests += 1;
             },
             minusGuestsType() {
                 var me = this;
@@ -406,26 +442,27 @@
                 this.onSubmit = true;
                 var me = this;
 
-                this.message.content = '';
+                this.message.content = "";
 
                 if (this.step == 1) {
-                    this.html = '';
+                    this.html = "";
                 }
                 $.ajax({
-                    url: bookingCore.url + '/booking/addToCart',
+                    url: bookingCore.url + "/booking/addToCart",
                     data: {
                         service_id: this.id,
-                        service_type: 'tour',
+                        service_type: "tour",
                         start_date: this.$refs.start_date_panagea.value,
                         person_types: this.person_types,
                         extra_price: this.extra_price,
                         guests: this.guests,
-                        _token: document.querySelector('meta[name=csrf-token]').getAttribute('content')
+                        _token: document
+                            .querySelector("meta[name=csrf-token]")
+                            .getAttribute("content"),
                     },
-                    dataType: 'json',
-                    type: 'post',
+                    dataType: "json",
+                    type: "post",
                     success: function (res) {
-
                         if (!res.status) {
                             me.onSubmit = false;
                         }
@@ -438,17 +475,17 @@
                             me.step = res.step;
                         }
                         if (res.html) {
-                            me.html = res.html
+                            me.html = res.html;
                         }
 
                         if (res.url) {
-                            window.location.href = res.url
+                            window.location.href = res.url;
                         }
 
-                        if (res.errors && typeof res.errors == 'object') {
-                            var html = '';
+                        if (res.errors && typeof res.errors == "object") {
+                            var html = "";
                             for (var i in res.errors) {
-                                html += res.errors[i] + '<br>';
+                                html += res.errors[i] + "<br>";
                             }
                             me.message.content = html;
                         }
@@ -460,16 +497,17 @@
                         bravo_handle_error_response(e);
 
                         if (e.status == 401) {
-                            $('.bravo_single_book_wrap').modal('hide');
+                            $(".bravo_single_book_wrap").modal("hide");
                         }
 
                         if (e.status != 401 && e.responseJSON) {
-                            me.message.content = e.responseJSON.message ? e.responseJSON.message : 'Can not booking';
+                            me.message.content = e.responseJSON.message
+                                ? e.responseJSON.message
+                                : "Can not booking";
                             me.message.type = false;
-
                         }
-                    }
-                })
+                    },
+                });
             },
             doEnquirySubmit: function (e) {
                 e.preventDefault();
@@ -477,29 +515,29 @@
                 if (!this.validateenquiry()) return false;
                 this.onSubmit = true;
                 var me = this;
-                this.message.content = '';
+                this.message.content = "";
 
                 $.ajax({
-                    url: bookingCore.url + '/booking/addEnquiry',
+                    url: bookingCore.url + "/booking/addEnquiry",
                     data: {
                         service_id: this.id,
-                        service_type: 'tour',
+                        service_type: "tour",
                         name: this.enquiry_name,
                         email: this.enquiry_email,
                         phone: this.enquiry_phone,
                         note: this.enquiry_note,
                     },
-                    dataType: 'json',
-                    type: 'post',
+                    dataType: "json",
+                    type: "post",
                     success: function (res) {
                         if (res.message) {
                             me.message.content = res.message;
                             me.message.type = res.status;
                         }
-                        if (res.errors && typeof res.errors == 'object') {
-                            var html = '';
+                        if (res.errors && typeof res.errors == "object") {
+                            var html = "";
                             for (var i in res.errors) {
-                                html += res.errors[i] + '<br>';
+                                html += res.errors[i] + "<br>";
                             }
                             me.message.content = html;
                         }
@@ -511,20 +549,21 @@
                             me.enquiry_note = "";
                         }
                         me.onSubmit = false;
-
                     },
                     error: function (e) {
                         me.onSubmit = false;
                         bravo_handle_error_response(e);
                         if (e.status == 401) {
-                            $('.bravo_single_book_wrap').modal('hide');
+                            $(".bravo_single_book_wrap").modal("hide");
                         }
                         if (e.status != 401 && e.responseJSON) {
-                            me.message.content = e.responseJSON.message ? e.responseJSON.message : 'Can not booking';
+                            me.message.content = e.responseJSON.message
+                                ? e.responseJSON.message
+                                : "Can not booking";
                             me.message.type = false;
                         }
-                    }
-                })
+                    },
+                });
             },
             validateenquiry() {
                 if (!this.enquiry_name) {
@@ -540,51 +579,53 @@
                 return true;
             },
             openStartDate() {
-                $(this.$refs.start_date).trigger('click');
-            }
-        }
-
+                $(this.$refs.start_date).trigger("click");
+            },
+        },
     });
     $(window).on("load", function () {
         var urlHash = window.location.href.split("#")[1];
-        if (urlHash && $('.' + urlHash).length) {
-            var offset_other = 70
+        if (urlHash && $("." + urlHash).length) {
+            var offset_other = 70;
             if (urlHash === "review-list") {
                 offset_other = 330;
             }
-            $('html,body').animate({
-                scrollTop: $('.' + urlHash).offset().top - offset_other
-            }, 1000);
+            $("html,body").animate(
+                {
+                    scrollTop: $("." + urlHash).offset().top - offset_other,
+                },
+                1000
+            );
         }
     });
 
     $(".bravo-button-book-mobile").click(function () {
-        $('.bravo_single_book_wrap').modal('show');
+        $(".bravo_single_book_wrap").modal("show");
     });
 
     $(".bravo_detail_tour .g-faq .item .header").click(function () {
         $(this).parent().toggleClass("active");
     });
 
-
     $(".bravo_detail_tour .g-itinerary").each(function () {
-        $(this).find(".owl-carousel").owlCarousel({
-            items: 3,
-            loop: false,
-            margin: 15,
-            nav: false,
-            responsive: {
-                0: {
-                    items: 1
+        $(this)
+            .find(".owl-carousel")
+            .owlCarousel({
+                items: 3,
+                loop: false,
+                margin: 15,
+                nav: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    768: {
+                        items: 2,
+                    },
+                    1000: {
+                        items: 3,
+                    },
                 },
-                768: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        })
+            });
     });
-
 })(jQuery);
