@@ -173,7 +173,7 @@ ul.cbp_tmtimeline {
 }
 .theiaStickySidebar {
     background-color: #eaeef3;
-    border-radius: 4px;
+    border-radius: 0.5rem;
     margin-top: -1rem;
     padding-bottom: 1rem;
 }

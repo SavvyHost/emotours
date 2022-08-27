@@ -1,5 +1,3 @@
-<aside class="col-lg-4" id="sidebar"
-       style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
     <div class="box_detail booking" id="bravo_tour_book_app">
         <div class="price">
             <div>
@@ -13,12 +11,10 @@
             <div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div>
         </div>
 
-
         <div class="form-group scroll-fix">
             <input class="form-control" type="text" placeholder="When.." ref="start_date_panagea"
                    id="datepicker" value="@{{start_date_html}}">
         </div>
-
 
         <div class="panel-dropdown" id="guests-dropdown">
             <a @click.prevent="show_guests_dropdown = !show_guests_dropdown">Guests <span
@@ -26,7 +22,6 @@
             <div class="panel-dropdown-content right"
                  :style=" show_guests_dropdown ? 'opacity: 1;visibility: visible;' : 'opacity: 0;visibility: hidden;'">
                 <div class="form-group form-guest-search" v-for="(type,index) in person_types">
-
                     <div class="qtyButtons">
                         <label>@{{type.name}}</label>
                         <div class="qtyDec" @click="minusPersonType(type)"></div>
@@ -36,8 +31,6 @@
                         <div class="qtyInc"
                              @click="addPersonType(type)"></div>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -80,7 +73,7 @@
             <a class="btn_1 full-width purchase" @click="doSubmit($event)"
                :class="{'disabled':onSubmit,'btn-success':(step == 2),'btn-primary':step == 1}"
                name="submit">
-                {{__("Purchase")}}
+                {{__("Check Availability")}}
                 <i v-show="onSubmit" class="fa fa-spinner fa-spin"></i>
             </a>
             <div class="alert-text mt10" v-show="message.content" v-html="message.content"
@@ -95,14 +88,14 @@
 
     <ul class="share-buttons mb-1">
         <li><a class="fb-share"
-               href="https://web.whatsapp.com/send?text={{$row->getDetailUrl()}}"><i
+               href="https://www.facebook.com/sharer/sharer.php?u={{$row->getDetailUrl()}}"><i
                     class="social_facebook"></i> Share</a></li>
         <li><a class="whatsapp-share"
-               href="https://www.facebook.com/sharer/sharer.php?u={{$row->getDetailUrl()}}&amp;title={{$translation->title}}"><i
+               href="https://web.whatsapp.com/send?text={{$row->getDetailUrl()}}&amp;title={{$translation->title}}"><i
                     class="icofont-whatsapp"></i> Message</a></li>
         <li><a class="twitter-share"
                href="https://twitter.com/share?url={{$row->getDetailUrl()}}&amp;title={{$translation->title}}"><i
                     class="social_twitter"></i> Tweet</a></li>
     </ul>
-</aside>
+    
 @include("Booking::frontend.global.enquiry-form",['service_type'=>'tour'])
