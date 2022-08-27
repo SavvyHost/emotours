@@ -8,7 +8,7 @@
         @include('Tour::frontend.layouts.details.tour-banner')
         <div class="bravo_content pt-0">
             <nav class="secondary_nav sticky_horizontal">
-                <div class="container">
+                <div class="container-fluid">
                     <ul class="clearfix">
                         <li><a href="#description" class="active">{{__("Overview")}}</a></li>
                         <li><a href="#included-excluded">{{__("Included/Excluded")}}</a></li>
@@ -23,27 +23,27 @@
                 </div>
             </nav>
 
-            <div class="container py-4">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-12 col-lg-8">
                         @php $review_score = $row->review_data @endphp
                         @include('Tour::frontend.layouts.details.tour-detail')
-                    </div>
-                    <div class="col-12">
-                        {{-- @include('Tour::frontend.layouts.details.vendor') --}}
-                        {{-- @include('Tour::frontend.layouts.details.tour-form-book') --}}
                         @include('Tour::frontend.layouts.details.tour-review')
                     </div>
-                </div>
-                <div class="row end_tour_sticky">
-                    <div class="col-md-12">
+                   <aside class="col-md-12 col-lg-4" id="sidebar">
+                        @include('Tour::frontend.layouts.details.tour-form-book-panagea')
+                   </aside>
+                    <div class="row end_tour_sticky">
+                        <div class="col-md-12">
                         @include('Tour::frontend.layouts.details.tour-related')
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="bravo-more-book-mobile">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="left">
                     <div class="g-price">
                         <div class="prefix">
@@ -80,12 +80,12 @@
                                 </div>
                             </div>
                             <span class="review">
-                        @if($reviewData['total_review'] > 1)
+                                @if($reviewData['total_review'] > 1)
                                     {{ __(":number Reviews",["number"=>$reviewData['total_review'] ]) }}
                                 @else
                                     {{ __(":number Review",["number"=>$reviewData['total_review'] ]) }}
                                 @endif
-                    </span>
+                            </span>
                         </div>
                     @endif
                 </div>
@@ -140,9 +140,5 @@
     <script type="text/javascript" src="{{ asset("libs/fotorama/fotorama.js") }}"></script>
 
     <script src="{{ asset('panagea/js/input_qty.js') }}"></script>
-
-    <script>
-
-    </script>
 
 @endsection

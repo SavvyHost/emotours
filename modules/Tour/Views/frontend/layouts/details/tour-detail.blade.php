@@ -1,7 +1,4 @@
-<div class="container margin_60_35">
-    <div class="row">
-        <div class="col-lg-8">
-
+<div class="container-fluid">
             @if(!empty($row->duration) or !empty($row->category_tour->name) or !empty($row->max_people) or !empty($row->location->name))
                 <div class="g-tour-feature">
                     <div class="row">
@@ -108,9 +105,9 @@
                     </div>
                 @endif
 
-
-                <section id="description" class="g-overview">
-                <h2>{{__("Overview")}}</h2>
+            {{-- @if($translation->content) --}}
+            <div id="description" class="g-overview">
+                    <h2>{{__("Overview")}}</h2>
                 <div class="description">
                     @php echo $translation->content @endphp
                 </div>
@@ -121,32 +118,23 @@
                 @include('Tour::frontend.layouts.details.tour-faqs')
                 @includeIf("Hotel::frontend.layouts.details.hotel-surrounding")
 
+                
                 @if($row->map_lat && $row->map_lng)
-                    <section class="g-location" id="location">
-                        <div class="location-title">
-                            <h3>{{__("Tour Location")}}</h3>
-                            @if($translation->address)
-                                <div class="address">
-                                    <i class="icofont-location-arrow"></i>
-                                    {{$translation->address}}
-                                </div>
-                            @endif
+                <div class="g-location">
+                    <div class="location-title">
+                        <h3>{{__("Tour Location")}}</h3>
+                @if($translation->address)
+                        <div class="address">
+                            <i class="icofont-location-arrow"></i>
+                            {{$translation->address}}
                         </div>
+                @endif
+                    </div>
 
-                        <div class="location-map">
-                            <div id="map_content"></div>
-                        </div>
-                    </section>
-            @endif
-            <!-- /row -->
-
-            </section>
-            <!-- /section -->
-
-
-        </div>
-        <!-- /col -->
-        <!--  Reviews  -->
-        @include('Tour::frontend.layouts.details.tour-form-book-panagea')
-    </div>
+                    <div class="location-map">
+                        <div id="map_content"></div>
+                    </div>
+                </div>
+                @endif
+            </div>
 </div>

@@ -1,33 +1,33 @@
-.g-field-search .form-group{
+.g-field-search .form-group {
     position: static;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     top: auto;
     left: auto;
     right: 48px;
 }
 
-.z-max{
+.z-max {
     z-index: 99999999 !important;
 }
-.static-header{
+.static-header {
     position: relative;
 }
 .static-header .main-menu > ul > li span > a,
 .static-header ul#top_menu li a.cart-menu-btn:before,
 ul#top_menu li a.wishlist_bt_top:before,
-.static-header .dropdown-user a{
+.static-header .dropdown-user a {
     color: #444;
 }
-ul#top_menu li a.wishlist_bt_top:before{
+ul#top_menu li a.wishlist_bt_top:before {
     color: #fff;
 }
-.static-header:not(.sticky) ul#top_menu li a.wishlist_bt_top:before{
-    color:#444
+.static-header:not(.sticky) ul#top_menu li a.wishlist_bt_top:before {
+    color: #444;
 }
 
-.secondary_nav{
+.secondary_nav {
     top: 0 !important;
 }
 
@@ -36,10 +36,11 @@ input#datepicker[readonly] {
 }
 
 .easepick-wrapper {
-    z-index: 12
+    z-index: 12;
 }
 
-.btn_1.full-width.purchase, a.btn_1.full-width.purchase {
+.btn_1.full-width.purchase,
+a.btn_1.full-width.purchase {
     color: #ffffff;
 }
 
@@ -62,15 +63,15 @@ ul.cbp_tmtimeline {
     left: 18.4% !important;
 }
 @media (max-width: 767px) {
-    #tour-form-book #sidebar{
+    #tour-form-book #sidebar {
         display: block;
     }
 }
-.secondary_nav div{
+.secondary_nav div {
     position: relative;
     display: flex;
 }
-.secondary_nav ul{
+.secondary_nav ul {
     width: 100%;
     margin: 2px;
     overflow: hidden;
@@ -88,21 +89,22 @@ ul.cbp_tmtimeline {
 .secondary_nav ul li {
     display: inline-block;
 }
-.secondary_nav ul li:last-of-type{
+.secondary_nav ul li:last-of-type {
     margin-left: auto;
 }
-.secondary_nav .container div{
+.secondary_nav .container div {
     margin-right: 30px;
 }
-#datepicker-modal{
+#datepicker-modal {
     background: #ffffff;
 }
-#tour-form-book{
+#tour-form-book {
     padding: 0 !important;
 }
-.theiaStickySidebar{
-    background-color: #EAEEF3;
-    border-radius: 4px;
+
+.theiaStickySidebar {
+    background-color: #eaeef3;
+    border-radius: 0.5rem;
     margin-top: -1rem;
     padding-bottom: 1rem;
 }
