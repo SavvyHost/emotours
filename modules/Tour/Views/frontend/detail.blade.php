@@ -18,7 +18,8 @@
                         <li><a href="#bravo-reviews">{{__("Reviews")}}</a></li>
                         <li><a href="#suggestion">{{__("Suggestions")}}</a></li>
                     </ul>
-                    <div data-toggle="modal" data-target="#enquiry_form_modal" class="enquiry-item"><a href=""><span>Enquiry</span></a></div>
+                    <div data-toggle="modal" data-target="#enquiry_form_modal" class="enquiry-item"><a href=""><span>Enquiry</span></a>
+                    </div>
                 </div>
             </nav>
 
@@ -88,16 +89,15 @@
                         </div>
                     @endif
                 </div>
-                    <div class="right">
+                <div class="right">
                     @if($row->getBookingEnquiryType() === "book")
-                        <a href="#sidebar" class="btn btn-primary bravo-button-book-mobile" data-toggle="modal"
-                           data-target="#tour-form-book">{{__("Book Now")}}</a>
+                        <a href="#bravo_tour_book_app"
+                           class="btn btn-primary bravo-button-book-mobile">{{__("Book Now")}}</a>
                     @else
                         <a class="btn btn-primary" data-toggle="modal"
                            data-target="#enquiry_form_modal">{{__("Contact Now")}}</a>
                     @endif
                 </div>
-
             </div>
         </div>
     </div>
