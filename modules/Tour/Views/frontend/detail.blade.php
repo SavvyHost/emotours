@@ -133,7 +133,6 @@
             email_required: '{{ __("Email is Required") }}',
         };
     </script>
-    <script src="{{ asset('js/easepick.min.js') }}"></script>
     <script type="text/javascript"
             src="{{ asset('module/tour/js/single-tour.js?_ver='.config('app.version')) }}"></script>
     <script type="text/javascript" src="{{ asset("libs/fotorama/fotorama.js") }}"></script>
