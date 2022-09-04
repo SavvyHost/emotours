@@ -1,3 +1,5 @@
+<aside class="col-lg-4" id="sidebar"
+       style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
     <div class="box_detail booking" id="bravo_tour_book_app">
         <div class="price">
             <div>
@@ -97,5 +99,5 @@
                href="https://twitter.com/share?url={{$row->getDetailUrl()}}&amp;title={{$translation->title}}"><i
                     class="social_twitter"></i> Tweet</a></li>
     </ul>
-    
+</aside>
 @include("Booking::frontend.global.enquiry-form",['service_type'=>'tour'])
