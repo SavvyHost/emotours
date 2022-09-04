@@ -40,10 +40,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="bravo-more-book-mobile">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="left">
                     <div class="g-price">
                         <div class="prefix">
@@ -80,19 +79,19 @@
                                 </div>
                             </div>
                             <span class="review">
-                                @if($reviewData['total_review'] > 1)
+                        @if($reviewData['total_review'] > 1)
                                     {{ __(":number Reviews",["number"=>$reviewData['total_review'] ]) }}
                                 @else
                                     {{ __(":number Review",["number"=>$reviewData['total_review'] ]) }}
                                 @endif
-                            </span>
+                    </span>
                         </div>
                     @endif
                 </div>
                 <div class="right">
                     @if($row->getBookingEnquiryType() === "book")
-                        <a href="#bravo_tour_book_app"
-                           class="btn btn-primary bravo-button-book-mobile">{{__("Book Now")}}</a>
+                        <a href="#sidebar" class="btn btn-primary bravo-button-book-mobile" data-toggle="modal"
+                           data-target="#tour-form-book">{{__("Book Now")}}</a>
                     @else
                         <a class="btn btn-primary" data-toggle="modal"
                            data-target="#enquiry_form_modal">{{__("Contact Now")}}</a>
