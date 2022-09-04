@@ -138,5 +138,42 @@
     <script type="text/javascript" src="{{ asset("libs/fotorama/fotorama.js") }}"></script>
 
     <script src="{{ asset('panagea/js/input_qty.js') }}"></script>
+    <script src="{{ asset('js/easepick.min.js') }}"></script>
+
+    <script>
+
+        // Initialize date picker
+        const picker = new easepick.create({
+            element: document.getElementById('datepicker'),
+            css: [
+                '{{ asset('css/easepick.css') }}',
+            ],
+            setup(picker) {
+                picker.on('select', (event) => {
+                    setTimeout(() => {
+                        let guestDropdown = document.querySelector('#guests-dropdown > a')
+                        guestDropdown.click()
+                    }, 100)
+
+                })
+            }
+        })
+        const pickerModal = new easepick.create({
+            element: document.getElementById('datepicker-modal'),
+            css: [
+                '{{ asset('css/easepick.css') }}',
+            ],
+            setup(picker) {
+                picker.on('select', (event) => {
+                    setTimeout(() => {
+                        let guestDropdown = document.querySelector('#guests-dropdown-modal > a')
+                        guestDropdown.click()
+                    }, 100)
+
+                })
+            }
+        })
+
+    </script>
 
 @endsection
