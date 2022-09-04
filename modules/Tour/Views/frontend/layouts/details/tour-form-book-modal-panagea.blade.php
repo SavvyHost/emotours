@@ -18,7 +18,7 @@
                         </div>
 
                         <span class="mt-2">{{ $row->display_price }}/<small>{{ __('person') }}</small></span>
-                        <div class="score"><span>{{ __('Good') }}<em>350 {{ __ ('Reviews') }}</em></span><strong>7.0</strong></div>
+                        <div class="score"><span>Good<em>350 Reviews</em></span><strong>7.0</strong></div>
                     </div>
 
 
@@ -28,7 +28,7 @@
                     </div>
 
 
-                    <div class="panel-dropdown mt-3" id="guests-dropdown-modal">
+                    <div class="panel-dropdown" id="guests-dropdown">
                         <a @click.prevent="show_guests_dropdown = !show_guests_dropdown">Guests <span
                                     class="qtyTotal">1</span></a>
                         <div class="panel-dropdown-content right"
@@ -49,38 +49,7 @@
                         </div>
                     </div>
 
-                    <div class="form-section-group form-group mt-3" v-if="extra_price.length">
-                        <h6 class="form-section-title">{{__('Extra prices:')}}</h6>
-                        <div class="form-group" v-for="(type,index) in extra_price">
-                            <div class="extra-price-wrap d-flex justify-content-between">
-                                <div class="flex-grow-1">
-                                    <label><input type="checkbox" true-value="1" false-value="0" v-model="type.enable"> @{{type.name}}</label>
-                                    <div class="render" v-if="type.price_type">(@{{type.price_type}})</div>
-                                </div>
-                                <div class="flex-shrink-0">@{{type.price_html}}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-section-group form-group-padding" v-if="buyer_fees.length">
-                        <div class="extra-price-wrap d-flex justify-content-between" v-for="(type,index) in buyer_fees">
-                            <div class="flex-grow-1">
-                                <label>@{{type.type_name}}
-                                    <i class="icofont-info-circle" v-if="type.desc" data-toggle="tooltip" data-placement="top" :title="type.type_desc"></i>
-                                </label>
-                                <div class="render" v-if="type.price_type">(@{{type.price_type}})</div>
-                            </div>
-                            <div class="flex-shrink-0">
-                                <div class="unit" v-if='type.unit == "percent"'>
-                                    @{{ type.price }}%
-                                </div>
-                                <div class="unit" v-else >
-                                    @{{ formatMoney(type.price) }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="submit-group mt-4">
+                    <div class="submit-group">
                         <a class="btn_1 full-width purchase" @click="doSubmit($event)"
                            :class="{'disabled':onSubmit,'btn-success':(step == 2),'btn-primary':step == 1}"
                            name="submit">
@@ -92,8 +61,9 @@
                     </div>
 
                     <a href="#" class="btn_1 full-width outline wishlist {{$row->isWishList()}}" data-id="{{$row->id}}"
-                       data-type="{{$row->type}}"><i class="icon_heart"></i>{{ __ ('Add to
-                        wishlist') }}</a>
+                       data-type="{{$row->type}}"><i class="icon_heart"></i> Add to
+                        wishlist</a>
+                    <div class="text-center"><small>No money charged in this step</small></div>
                 </div>
             </div>
         </div>
