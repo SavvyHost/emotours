@@ -1,4 +1,4 @@
-<div class="modal fade" tabindex="-2" role="dialog" id="tour-form-book">
+<div class="modal fade" tabindex="-2" role="dialog" id="tour-form">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
