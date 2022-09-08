@@ -141,6 +141,7 @@
 <script src="{{ asset('panagea/js/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('panagea/js/custom.js') }}"></script>
 <!-- /Include Custom JavaScript Files -->
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"><script>
 
 @yield('footer')
 

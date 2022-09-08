@@ -73,19 +73,18 @@
                 </div>
             @endif
 
-
-                @if($row->getGallery())
-                    <div class="g-gallery">
-                        <div class="fotorama" data-width="100%" data-thumbwidth="135" data-thumbheight="135" data-thumbmargin="15" data-nav="thumbs" data-allowfullscreen="true">
-                            @foreach($row->getGallery() as $key=>$item)
-                                <a href="{{$item['large']}}" data-thumb="{{$item['thumb']}}" data-alt="{{ __("Gallery") }}"></a>
-                            @endforeach
-                        </div>
-                        <div class="social">
-                            <div class="social-share">
-                <span class="social-icon">
-                    <i class="icofont-share"></i>
-                </span>
+            @if($row->getGallery())
+                <div class="g-gallery">
+                    <div class="fotorama" data-width="100%" data-thumbwidth="135" data-thumbheight="135" data-thumbmargin="15" data-nav="thumbs" data-allowfullscreen="true">
+                        @foreach($row->getGallery() as $key=>$item)
+                            <a href="{{$item['large']}}" data-thumb="{{$item['thumb']}}" data-alt="{{ __("Gallery") }}"></a>
+                        @endforeach
+                    </div>
+                    <div class="social">
+                        <div class="social-share">
+                            <span class="social-icon">
+                            <i class="icofont-share"></i>
+                            </span>
                                 <ul class="share-wrapper">
                                     <li>
                                         <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{$row->getDetailUrl()}}&amp;title={{$translation->title}}" target="_blank" rel="noopener" original-title="{{__("Facebook")}}">
@@ -98,16 +97,16 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
-                                <i class="fa fa-heart-o"></i>
-                            </div>
+                        </div>
+                        <div class="service-wishlist {{$row->isWishList()}}" data-id="{{$row->id}}" data-type="{{$row->type}}">
+                            <i class="fa fa-heart-o"></i>
                         </div>
                     </div>
+                </div>
                 @endif
 
 
-                <section id="description" class="g-overview">
+            <section id="description" class="g-overview">
                 <h2>{{__("Overview")}}</h2>
                 <div class="description">
                     @php echo $translation->content @endphp
@@ -135,9 +134,7 @@
                             <div id="map_content"></div>
                         </div>
                     </section>
-            @endif
+                @endif
             </section>
     </div>
-        @include('Tour::frontend.layouts.details.tour-form-book-panagea')
-        @include('Tour::frontend.layouts.details.tour-form-book-modal-panagea')
 </div>
