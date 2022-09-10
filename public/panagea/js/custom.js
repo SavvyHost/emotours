@@ -150,43 +150,57 @@ const featuredItem = new Swiper(".swiper-featured", {
 
 $(function () {
     $(function () {
-        $(".secondary_nav ul a").click(function (e) {
+        $(".mdc-tab-bar a").click(function (e) {
             "use strict";
             console.log(1);
             e.preventDefault();
             $("html, body").animate(
                 {
-                    scrollTop: $($(this).attr("href")).offset().top - 65,
+                    scrollTop: $($(this).attr("href")).offset().top - 70,
                 },
                 0
             );
         });
     });
     // Add Active Class on Navbar Link and Remove from the Siblings(if any exist!)
-    $(".secondary_nav ul a").click(function () {
-        $(".secondary_nav ul a").removeClass("active");
-        $(this).addClass("active");
+    $(".mdc-tab-bar a").click(function () {
+        $(".mdc-tab-bar a").removeClass("mdc-tab--active");
+        $(this).addClass("mdc-tab--active");
         $(this)
-            .addClass("active")
+            .addClass("mdc-tab--active")
             .parent()
             .siblings()
             .find("a")
-            .removeClass("active");
+            .removeClass("mdc-tab--active");
     });
 
     // Sync Navbar Links With Sections
-
     $(window).scroll(function () {
         $("section").each(function () {
-            if ($(window).scrollTop() >= $(this).offset().top - 160) {
+            if ($(window).scrollTop() >= (this).offset().top - 160) {
                 var blockId = $(this).attr("id");
                 if (blockId != undefined) {
-                    $(".secondary_nav ul a").removeClass("active");
-                    $(
-                        '.secondary_nav ul li a[href="#' + blockId + '"]'
-                    ).addClass("active");
+                    $(".mdc-tab-bar a").removeClass("mdc-tab--active");
+                    $('.mdc-tab-bar a [href="#' + blockId + '"]').addClass(
+                        "mdc-tab--active"
+                    );
                 }
             }
         });
     });
 });
+
+import { MDCTabBar } from "@material/tab-bar";
+import { MDCTabIndicator } from "@material/tab-indicator";
+import { MDCTabScroller } from "@material/tab-scroller";
+
+const tabBar = new MDCTabBar(document.querySelector(".mdc-tab-bar"));
+
+tabBar.activateTab((index: number) => void ) ;
+ 
+    
+
+const tabIndicator = new MDCTabIndicator(document.querySelector(".mdc-tab-indicator"));
+const tabScroller = new MDCTabScroller(document.querySelector(".mdc-tab-scroller"));
+
+    

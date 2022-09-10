@@ -136,34 +136,17 @@ ul.cbp_tmtimeline {
         display: block;
     }
 }
+
+/* secoundary nav css  */
 .secondary_nav div {
-    position: relative;
+    /* position: relative; */
     display: flex;
 }
-.secondary_nav ul {
-    width: 100%;
-    margin: 2px;
-    overflow: hidden;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-.secondary_nav ul::-webkit-scrollbar {
-    height: 0;
-    width: 0;
-    display: none;
-}
-.secondary_nav ul::-webkit-scrollbar-thumb {
-    display: none;
-}
-.secondary_nav ul li {
-    display: inline-block;
-}
+
 .secondary_nav ul li:last-of-type {
     margin-left: auto;
 }
-.secondary_nav .container div {
-    margin-right: 30px;
-}
+
 #datepicker-modal {
     background: #ffffff;
 }

@@ -4384,7 +4384,6 @@ a.boxed_list:hover i {
 .secondary_nav {
     background: #fff;
     border-bottom: 1px solid #ededed;
-    padding: 15px 0;
 }
 
 .secondary_nav.is_stuck {
@@ -8606,7 +8605,6 @@ ul.share-buttons {
     flex-direction: row;
     justify-content: center;
     gap: 2px;
-
 }
 
 ul.share-buttons li {
@@ -8643,11 +8641,11 @@ ul.share-buttons li a.fb-share:hover {
 
 ul.share-buttons li a.whatsapp-share {
     border-color: #07cb00;
-    color:  #07cb00;
+    color: #07cb00;
 }
 
 ul.share-buttons li a.whatsapp-share:hover {
-    background:  #07cb00;
+    background: #07cb00;
     color: #fff;
 }
 
