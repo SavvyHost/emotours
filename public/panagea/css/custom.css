@@ -71,14 +71,17 @@
     border: none !important;
 }
 
-.swiper-locations .swiper-wrapper .swiper-slide {
+/* .swiper-locations .swiper-wrapper .swiper-slide {
     -webkit-transition-timing-function: linear !important;
     -o-transition-timing-function: linear !important;
     transition-timing-function: linear !important;
-}
+} */
 
 .static-header {
     position: relative;
+}
+.static-header .logo_sticky {
+    display: none;
 }
 .static-header .main-menu > ul > li span > a,
 .static-header ul#top_menu li a.cart-menu-btn:before,

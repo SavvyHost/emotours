@@ -177,7 +177,7 @@ $(function () {
     // Sync Navbar Links With Sections
     $(window).scroll(function () {
         $("section").each(function () {
-            if ($(window).scrollTop() >= (this).offset().top - 160) {
+            if ($(window).scrollTop() >= this.offset().top - 160) {
                 var blockId = $(this).attr("id");
                 if (blockId != undefined) {
                     $(".mdc-tab-bar a").removeClass("mdc-tab--active");
@@ -196,11 +196,11 @@ import { MDCTabScroller } from "@material/tab-scroller";
 
 const tabBar = new MDCTabBar(document.querySelector(".mdc-tab-bar"));
 
-tabBar.activateTab((index: number) => void ) ;
- 
-    
+// tabBar.activateTab((index: number) => void ) ;
 
-const tabIndicator = new MDCTabIndicator(document.querySelector(".mdc-tab-indicator"));
-const tabScroller = new MDCTabScroller(document.querySelector(".mdc-tab-scroller"));
-
-    
+const tabIndicator = new MDCTabIndicator(
+    document.querySelector(".mdc-tab-indicator")
+);
+const tabScroller = new MDCTabScroller(
+    document.querySelector(".mdc-tab-scroller")
+);

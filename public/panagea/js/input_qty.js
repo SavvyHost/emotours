@@ -1,10 +1,9 @@
 // Quantity buttons
 function qtySum() {
-    var arr = document.getElementsByName('qtyInput');
+    var arr = document.getElementsByName("qtyInput");
     var tot = 0;
     for (var i = 0; i < arr.length; i++) {
-        if (parseInt(arr[i].value))
-            tot += parseInt(arr[i].value);
+        if (parseInt(arr[i].value)) tot += parseInt(arr[i].value);
     }
 
     var cardQty = document.querySelector(".qtyTotal");
@@ -14,16 +13,14 @@ function qtySum() {
 qtySum();
 
 $(function () {
-
     // $(".qtyButtons input").after('<div class="qtyInc"></div>');
     // $(".qtyButtons input").before('<div class="qtyDec"></div>');
 
     $(".qtyDec, .qtyInc").on("click", function () {
-
         var $button = $(this);
-        var oldValue = $button.parent().find('span input').val();
+        var oldValue = $button.parent().find("span input").val();
 
-        if ($button.hasClass('qtyInc')) {
+        if ($button.hasClass("qtyInc")) {
             var newVal = parseFloat(oldValue) + 1;
         } else {
             // don't allow decrementing below zero
@@ -37,7 +34,6 @@ $(function () {
         $(".qtyTotal").innerHTML = newVal;
         qtySum();
         $(".qtyTotal").addClass("rotate-x");
-
     });
 
     function removeAnimation() {
@@ -46,5 +42,4 @@ $(function () {
 
     const counter = document.querySelector(".qtyTotal");
     counter.addEventListener("animationend", removeAnimation);
-
 });
