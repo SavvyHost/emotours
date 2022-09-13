@@ -1195,7 +1195,7 @@ ul#top_menu li a.logged img {
 }
 
 .dropdown-user .dropdown-menu ul li a:hover {
-    color: #fc5b62 !important;
+    color: var(--primary-color) !important;
     opacity: 1 !important;
     padding-left: 15px;
 }
@@ -1466,7 +1466,7 @@ header.sticky .hamburger-inner::after {
 }
 
 .hero_in a.btn_photos:hover {
-    color: #fc5b62;
+    color: var(--primary-color);
 }
 
 /* Animations */
@@ -1544,7 +1544,7 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-    color: #fc5b62;
+    color: var(--primary-color);
     opacity: 1;
 }
 
@@ -1563,7 +1563,7 @@ footer ul.links li a:hover {
 
 footer ul.links li a:hover:after {
     opacity: 1;
-    color: #fc5b62;
+    color: var(--primary-color);
 }
 
 footer ul.links li a:after {
@@ -1661,7 +1661,7 @@ footer #copy {
     -moz-border-radius: 0 3px 3px 0;
     -ms-border-radius: 0 3px 3px 0;
     border-radius: 0 3px 3px 0;
-    background-color: #fc5b62;
+    background-color: var(--primary-color);
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -1897,7 +1897,7 @@ ul#additional_links li:after {
 }
 
 .flexslider .slides:after {
-    content: "\0020";
+    content: "0020";
     display: block;
     clear: both;
     visibility: hidden;

@@ -1,3 +1,11 @@
+/* Start of GLOBAL STYLES  */
+
+:root {
+    --primary-color: #ff5f1f;
+    --secondary-color: #00acd5;
+    --accent-color: #e1f9ff;
+}
+
 .container-fluid {
     max-width: 84.75rem;
     box-sizing: border-box;
@@ -27,6 +35,128 @@
 .z-max {
     z-index: 99999999 !important;
 }
+
+/* search hero section MP4 video  */
+
+.hero_single.version_4 {
+    height: 610px;
+}
+
+.hero_single.version_4 .wrapper {
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.hero_single.version_4 .wrapper .main_search {
+    background-color: rgba(247, 247, 247, 0.596);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    width: 480px;
+    text-align: left;
+    padding: 15px 30px 15px 30px;
+}
+
+.hero_single.version_4 .wrapper .main_search h3 {
+    color: #333;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero_single.version_4 .wrapper .main_search p {
+    color: #555;
+    font-weight: 400;
+    margin: 5px 0 0 0;
+    padding: 0;
+    font-size: 1.3125rem;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+    .hero_single.version_4 .wrapper .main_search {
+        width: auto;
+        padding: 5px 25px 5px 25px;
+    }
+    .hero_single.version_4 .wrapper .main_search h3 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+    .hero_single.version_4 .wrapper .main_search p {
+        font-size: 1.275rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero_single.version_4 .wrapper .main_search h3 {
+        font-size: 1.375rem;
+    }
+    .hero_single.version_4 .wrapper .main_search p {
+        font-size: 1.175rem;
+    }
+}
+
+.hero_single.version_4 .wrapper .main_search .custom-search-input-2 {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.hero_single.version_4
+    .wrapper
+    .main_search
+    .custom-search-input-2
+    .form-group {
+    margin-bottom: 10px;
+}
+
+.hero_single.version_4 .wrapper .main_search .custom-search-input-2 i {
+    line-height: 48px;
+    top: 1px;
+    right: 1px;
+    padding-right: 12px;
+    height: 46px;
+}
+
+.hero_single.version_4 .wrapper .main_search .custom-search-input-2 input {
+    border: 1px solid #d2d8dd;
+}
+
+.hero_single.version_4
+    .wrapper
+    .main_search
+    .custom-search-input-2
+    .panel-dropdown {
+    border: 1px solid #d2d8dd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    height: 50px;
+    padding: 14px 12px 0 15px;
+    background-color: #fff;
+}
+
+.hero_single.version_4
+    .wrapper
+    .main_search
+    .custom-search-input-2
+    input[type="submit"] {
+    border: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+}
+
+.hero_single.version_4 video {
+    opacity: 1;
+}
+
+/* end search hero section  */
+
+/* starts css swipper sliders  */
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
@@ -64,6 +194,10 @@
     pointer-events: visible;
 }
 
+/* .swiper-locations .swiper-slide {
+    overflow-x: auto;
+} */
+
 /* featured items custom css style 3  */
 
 .bravo_wrap .page-template-content .bravo-featured-item.style3 .featured-item {
@@ -75,14 +209,18 @@
     -webkit-transition-timing-function: linear !important;
     -o-transition-timing-function: linear !important;
     transition-timing-function: linear !important;
-} */
+}
+
+/* end of swiper custom css  */
 
 .static-header {
     position: relative;
 }
+
 .static-header .logo_sticky {
     display: none;
 }
+
 .static-header .main-menu > ul > li span > a,
 .static-header ul#top_menu li a.cart-menu-btn:before,
 ul#top_menu li a.wishlist_bt_top:before,
@@ -139,17 +277,34 @@ ul.cbp_tmtimeline {
         display: block;
     }
 }
-
-/* secoundary nav css  */
 .secondary_nav div {
-    /* position: relative; */
+    position: relative;
     display: flex;
 }
-
+.secondary_nav ul {
+    width: 100%;
+    margin: 2px;
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.secondary_nav ul::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+    display: none;
+}
+.secondary_nav ul::-webkit-scrollbar-thumb {
+    display: none;
+}
+.secondary_nav ul li {
+    display: inline-block;
+}
 .secondary_nav ul li:last-of-type {
     margin-left: auto;
 }
-
+.secondary_nav .container div {
+    margin-right: 30px;
+}
 #datepicker-modal {
     background: #ffffff;
 }
@@ -158,7 +313,106 @@ ul.cbp_tmtimeline {
 }
 .theiaStickySidebar {
     background-color: #eaeef3;
-    border-radius: 0.5rem;
-    /* padding-bottom: 1rem;
-    padding-top: 1rem; */
+    border-radius: 4px;
+    margin-top: -1rem;
+    padding-bottom: 1rem;
+}
+
+/* call to actions custom css style 4 */
+
+.bravo_wrap .page-template-content .bravo-call-to-action .hero-call-to-action {
+    border-radius: 8px;
+    padding-bottom: unset;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: #e4f0f0;
+    text-align: center;
+}
+
+.bravo_wrap .page-template-content .bravo-call-to-action .row {
+    flex-flow: row wrap;
+    align-items: normal;
+    justify-content: flex-start;
+    margin-left: -0.75rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: -0.75rem;
+}
+
+@media screen and (max-width: 767px) {
+    .bravo_wrap .page-template-content .bravo-call-to-action .row {
+        flex-direction: column-reverse;
+    }
+    .bravo_wrap
+        .page-template-content
+        .bravo-call-to-action
+        .hero-call-to-action {
+        margin-left: unset;
+        margin-right: unset;
+    }
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .row
+    .bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .hero-call-to-action
+    .section {
+    width: 100%;
+    flex: 1 0 0px;
+    max-width: 100%;
+    margin-left: 0%;
+    right: auto;
+    left: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .hero-call-to-action
+    .context-new {
+    padding: 2rem;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .hero-call-to-action
+    .offer-banner {
+    order: 1;
+    flex: 1;
+    align-self: stretch;
+    height: 100%;
+    width: 100%;
+    border-radius: 0 8px 8px 0;
+    object-fit: cover;
+    object-position: 25% 25%;
+    overflow: hidden;
+}
+
+.bravo_wrap .page-template-content .bravo-call-to-action .context-new .title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-call-to-action
+    .context-new
+    .sub_title {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+}
+
+/* End call to action custom css style 4 */
+
+.smart-search .parent_text {
+    height: 50px !important;
+    padding: 8px;
 }

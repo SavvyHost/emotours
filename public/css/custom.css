@@ -1,11 +1,11 @@
-.overflow-x-hidden {
+/* .overflow-x-hidden {
     overflow-x: hidden;
 }
 
 header,
 header.header.sticky {
     padding: 15px 20px 0 !important;
-}
+} */
 
 /* customize tours card css  */
 
@@ -127,6 +127,10 @@ header.header.sticky {
     min-height: 0 !important;
     margin: 0 !important;
     height: 0;
+}
+
+.bravo_wrap .page-template-content .bravo-list-locations .list-item {
+    margin-bottom: 40px;
 }
 
 .bravo_wrap
@@ -252,7 +256,7 @@ header.header.sticky {
     .card-tour-loop
     .product-traveler-ltso-badge {
     align-items: center;
-    /* background-color: #af143e; */
+    background-color: #af143e;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
     display: flex;
@@ -346,7 +350,6 @@ header.header.sticky {
     }
 }
 
-/* @media (min-width: 768px) { */
 .bravo_wrap
     .bravo_search_tour
     .bravo-list-tour
@@ -361,7 +364,6 @@ header.header.sticky {
     left: 0;
     right: 0;
 }
-/* } */
 
 .bravo_wrap
     .bravo_search_tour
@@ -410,7 +412,7 @@ header.header.sticky {
     .service-wishlist
     i {
     transition: all 0.3s;
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 
 .bravo_wrap
@@ -612,7 +614,6 @@ header.header.sticky {
     .item-title {
     font-size: 1rem;
     font-weight: 600;
-    /* min-height: 45px; */
 }
 
 @media (max-width: 768px) {
@@ -678,7 +679,7 @@ header.header.sticky {
     .info
     .g-price {
     flex: auto;
-    /* text-align: right; */
+    text-align: right;
 }
 .bravo_wrap
     .bravo_search_tour
@@ -795,3 +796,44 @@ header.header.sticky {
 /* End Special tour list cards  */
 
 /* End Search Page CSS  */
+
+/* Start Hero Form CSS  */
+
+.bravo_wrap .bravo_form.new_design {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    display: block;
+}
+
+.bravo_wrap .bravo_form .smart-search .form-control,
+.bravo_wrap .bravo_form .smart-search .parent_text {
+    background: white;
+    padding: 0 14px !important;
+    color: gray;
+}
+.bravo_wrap .bravo_form .smart-search .form-control,
+.bravo_wrap .bravo_form .smart-search .parent_text::placeholder {
+    color: #a0a0a0 !important;
+}
+.custom-search-input-2 .bravo-autocomplete {
+    top: 72% !important;
+}
+.custom-search-input-2 .bravo-autocomplete .item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    border-bottom: 1px solid #e4e5ea;
+}
+.custom-search-input-2 .bravo-autocomplete i {
+    background: transparent !important;
+}
+.easepick-wrapper {
+    z-index: 9999;
+}
+.hero_single {
+    overflow: visible !important;
+}
+
+/* End Hero Form CSS  */

@@ -120,7 +120,7 @@
                         <div class="prefix d-flex flex-md-column justify-content-md-center align-items-baseline align-items-md-end flex-wrap"> 
                             <div class="prefix-icon">
                                 <i class="icofont-flash"></i>
-                                <span class="fr_text">{{__("from")}}</span>
+                                <span class="fr_text text-body text-lowercase text-md-right mr-1 mr-md-0 font-xs">{{__("from")}}</span>
                             </div>
                             <div class="price">
                                 <span class=" h3 line-height-same mb-0 price-font text-md-right ">{{ $row->display_price }}</span>

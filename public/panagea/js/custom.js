@@ -1,6 +1,4 @@
-//Featured
-
-// Locations
+//Featured Tours Swiper
 const swiperFeatured = new Swiper(".swiper-featured-tours", {
     direction: "horizontal",
     spaceBetween: 10,
@@ -18,7 +16,7 @@ const swiperFeatured = new Swiper(".swiper-featured-tours", {
             spaceBetween: 15,
         },
         992: {
-            slidesPerView: 5,
+            slidesPerView: 4.2,
             spaceBetween: 20,
         },
     },
@@ -148,47 +146,51 @@ const featuredItem = new Swiper(".swiper-featured", {
     },
 });
 
-$(function () {
-    $(function () {
-        $(".mdc-tab-bar a").click(function (e) {
-            "use strict";
-            console.log(1);
-            e.preventDefault();
-            $("html, body").animate(
-                {
-                    scrollTop: $($(this).attr("href")).offset().top - 70,
-                },
-                0
-            );
-        });
-    });
-    // Add Active Class on Navbar Link and Remove from the Siblings(if any exist!)
-    $(".mdc-tab-bar a").click(function () {
-        $(".mdc-tab-bar a").removeClass("mdc-tab--active");
-        $(this).addClass("mdc-tab--active");
-        $(this)
-            .addClass("mdc-tab--active")
-            .parent()
-            .siblings()
-            .find("a")
-            .removeClass("mdc-tab--active");
-    });
+// End of Swiper JS
 
-    // Sync Navbar Links With Sections
-    $(window).scroll(function () {
-        $("section").each(function () {
-            if ($(window).scrollTop() >= this.offset().top - 160) {
-                var blockId = $(this).attr("id");
-                if (blockId != undefined) {
-                    $(".mdc-tab-bar a").removeClass("mdc-tab--active");
-                    $('.mdc-tab-bar a [href="#' + blockId + '"]').addClass(
-                        "mdc-tab--active"
-                    );
-                }
-            }
-        });
-    });
-});
+// start single tour page js
+
+// $(function () {
+//     $(function () {
+//         $(".mdc-tab-bar a").click(function (e) {
+//             "use strict";
+//             console.log(1);
+//             e.preventDefault();
+//             $("html, body").animate(
+//                 {
+//                     scrollTop: $($(this).attr("href")).offset().top - 65,
+//                 },
+//                 0
+//             );
+//         });
+//     });
+//     // Add Active Class on Navbar Link and Remove from the Siblings(if any exist!)
+//     $(".mdc-tab-bar a").click(function () {
+//         $(".mdc-tab-bar a").removeClass("mdc-tab--active");
+//         $(this).addClass("mdc-tab--active");
+//         $(this)
+//             .addClass("mdc-tab--active")
+//             .parent()
+//             .siblings()
+//             .find("a")
+//             .removeClass("mdc-tab--active");
+//     });
+
+//     // Sync Navbar Links With Sections
+//     $(window).scroll(function () {
+//         $("section").each(function () {
+//             if ($(window).scrollTop() >= this.offset().top - 160) {
+//                 var blockId = $(this).attr("id");
+//                 if (blockId != undefined) {
+//                     $(".secondary_nav ul a").removeClass("active");
+//                     $(
+//                         '.secondary_nav ul li a[href="#' + blockId + '"]'
+//                     ).addClass("active");
+//                 }
+//             }
+//         });
+//     });
+// });
 
 import { MDCTabBar } from "@material/tab-bar";
 import { MDCTabIndicator } from "@material/tab-indicator";
@@ -204,3 +206,4 @@ const tabIndicator = new MDCTabIndicator(
 const tabScroller = new MDCTabScroller(
     document.querySelector(".mdc-tab-scroller")
 );
+// End single tour page js

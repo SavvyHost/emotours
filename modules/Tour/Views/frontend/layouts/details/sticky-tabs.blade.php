@@ -10,7 +10,7 @@
     }
 @endphp
 <section class="secondary_nav sticky_horizontal">
-   <div class="mdc-tab-bar" role="tablist"> 
+   <div class="mdc-tab-bar " role="tablist"> 
       <div class="mdc-tab-scroller ">
          <div class="mdc-tab-scroller__scroll-area">
             <div class="mdc-tab-scroller__scroll-content">
@@ -104,3 +104,4 @@
   </div>
 </section>
 
+@include("Booking::frontend.global.enquiry-form",['service_type'=>'tour'])

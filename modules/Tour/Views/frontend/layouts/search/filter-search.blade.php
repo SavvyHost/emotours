@@ -12,17 +12,16 @@
         @endif
 
         <div id="filters_col">
-						<a data-bs-toggle="collapse" href="#collapseFilters" aria-expanded="true" aria-controls="collapseFilters" id="filters_col_bt" class="">            {{__("FILTER BY")}}
-                         </a>
-						<div class="collapse show" id="collapseFilters" style="">
-							<div class="filter_type">
-                            <div class="filter-title"> </div>
-               
-        <div class="g-filter-item">
-            <div class="item-title">
-                <h3>{{__("Filter Price")}}</h3>
-                <i class="fa fa-angle-up" aria-hidden="true"></i>
-            </div>
+			<a data-bs-toggle="collapse" href="#collapseFilters" aria-expanded="true" aria-controls="collapseFilters" id="filters_col_bt" class="">            {{__("FILTER BY")}}
+            </a>
+			    <div class="collapse show" id="collapseFilters" style="">
+					<div class="filter_type">
+                    <div class="filter-title"> </div>
+                <div class="g-filter-item">
+                    <div class="item-title">
+                        <h3>{{__("Filter Price")}}</h3>
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </div>
             <div class="item-content">
                 <div class="bravo-filter-price">
                     <?php
@@ -109,6 +108,7 @@
                 </ul>
                 @if(count($tour_category) > 3 and empty($current_category_ids))
                     <button type="button" class="btn btn-link btn-more-item">{{__("More")}} <i class="fa fa-caret-down"></i></button>
+                    <button type="button" class="btn btn-link btn-less-item">{{__("Less")}} <i class="fa fa-caret-up"></i></button>
                 @endif
             </div>
         </div>
@@ -147,9 +147,8 @@
             @endif
         @endforeach
                 	</div>
-						</div>
-						<!--/collapse -->
-					</div>
+				</div>
+			</div>
     </form>
 </div>
 

@@ -9,7 +9,7 @@
    <div class="bravo_search_tour">
         <section class="hero_in tours" @if($bg = setting_item("tour_page_search_banner")) style="background-image: url({{get_file_url($bg,'full')}})" @endif>
 				<div class="wrapper">
-					<div class="container">
+					<div class="container-fluid">
 						<h1 class="fadeInUp"><span></span>{{setting_item_with_lang("tour_page_search_title")}}</h1>
 					</div>
 				</div>
@@ -89,10 +89,7 @@
 @section('footer')
     <script type="text/javascript" src="{{ asset("libs/ion_rangeslider/js/ion.rangeSlider.min.js") }}"></script>
     <script type="text/javascript" src="{{ asset('module/tour/js/tour.js?_ver='.config('app.version')) }}"></script>
-
-
-
-	 
+ 
 	 	<!-- Map -->
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<script src="{{ asset("panagea/js/markerclusterer.js")}}"></script>
@@ -128,4 +125,6 @@
             grid: false
         });
 	</script>
+
+	<script src="{{ asset('js/easepick.min.js') }}"></script>
 @endsection

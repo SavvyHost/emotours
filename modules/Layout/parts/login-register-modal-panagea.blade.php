@@ -1,4 +1,4 @@
-<div class="modal login overflow-y-hidden z-max" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal login overflow-y-hidden" id="login" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div id="sign-in-dialog" class="modal-content pt-0" role="document">
             <div class="zoom-anim-dialog">

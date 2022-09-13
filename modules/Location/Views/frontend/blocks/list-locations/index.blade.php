@@ -1,13 +1,14 @@
 <div class="container-fluid">
     <div class="bravo-list-locations @if(!empty($layout)) {{ $layout }} @endif">
-        <div class="title">
-            {{$title}}
-        </div>
-        @if(!empty($desc))
-            <div class="sub-title">
-                {{$desc}}
+            @if($title)
+            <div class="main_title_3">
+                <span><em></em></span>
+                <h3>{{$title}}</h3> 
+                @if(!empty($desc))
+                <p>{{$desc}}</p>
+                @endif
             </div>
-        @endif
+            @endif
         @if(!empty($rows))
             <div class="list-item swiper swiper-locations">
                 <div class="swiper-wrapper">

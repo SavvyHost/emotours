@@ -3,8 +3,8 @@
 
     $(window).on("load", function () {
         $('[data-loader="circle-side"]').fadeOut(); // will first fade out the loading animation
-        $("#preloader").delay(200).fadeOut("slow"); // will fade out the white DIV that covers the website.
-        $("body").delay(200);
+        $("#preloader").delay(250).fadeOut("slow"); // will fade out the white DIV that covers the website.
+        $("body").delay(250);
         $(".hero_in h1,.hero_in form").addClass("animated");
         $(".hero_single, .hero_in").addClass("start_bg_zoom");
         $(window).scroll();
@@ -44,7 +44,7 @@
             navbars: [
                 {
                     position: "bottom",
-                    content: ['<a href="#0">© 2022 Panagea</a>'],
+                    content: ['<a href="#0">© 2022 Emotours</a>'],
                 },
             ],
         },
