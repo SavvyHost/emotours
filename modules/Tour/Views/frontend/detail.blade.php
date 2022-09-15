@@ -16,7 +16,7 @@
                         @include('Tour::frontend.layouts.details.tour-detail')
                         @include('Tour::frontend.layouts.details.tour-review')
                     </div>
-                   <aside class="col-md-12 col-lg-4" id="sidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+                   <aside class="col-md-12 col-lg-4 mt-4" id="sidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
                         @include('Tour::frontend.layouts.details.tour-form-book-panagea')
                    </aside>
                     <div class="row">
