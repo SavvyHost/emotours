@@ -106,12 +106,36 @@
                 @endif
 
 
-            <section id="description" class="g-overview">
+            <section id="description" class="g-overview" for='tab1' >
                 <h2>{{__("Overview")}}</h2>
                 <div class="description">
                     @php echo $translation->content @endphp
                 </div>
-
+<div>
+    <section id="dynamic-demo-toolbar">
+  <nav id="dynamic-tab-bar" class="mdc-tab-bar" role="tablist">
+    <a role="tab" aria-controls="panel-1"
+       class="mdc-tab mdc-tab--active" href="#panel-1">Item One</a>
+    <a role="tab" aria-controls="panel-2"
+       class="mdc-tab" href="#panel-2">Item Two</a>
+    <a role="tab" aria-controls="panel-3"
+       class="mdc-tab" href="#panel-3">Item Three</a>
+    <span class="mdc-tab-bar__indicator"></span>
+  </nav>
+</section>
+<section>
+  <div class="panels">
+    <p class="panel active" id="panel-1" role="tabpanel" aria-hidden="false">Item One</p>
+    <p class="panel" id="panel-2" role="tabpanel" aria-hidden="true">Item Two</p>
+    <p class="panel" id="panel-3" role="tabpanel" aria-hidden="true">Item Three</p>
+  </div>
+  <div class="dots">
+    <a class="dot active" data-trigger="panel-1" href="#panel-1"></a>
+    <a class="dot" data-trigger="panel-2" href="#panel-2"></a>
+    <a class="dot" data-trigger="panel-3" href="#panel-3"></a>
+  </div>
+</section>
+</div>
                 @include('Tour::frontend.layouts.details.tour-include-exclude')
                 @include('Tour::frontend.layouts.details.tour-attributes')
                 @include('Tour::frontend.layouts.details.tour-itinerary')

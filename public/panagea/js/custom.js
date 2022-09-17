@@ -6,24 +6,24 @@ const swiperFeatured = new Swiper(".swiper-featured-tours", {
     breakpoints: {
         320: {
             slidesPerView: 1.2,
-            freeMode: true,
+            freeMode: true
         },
         576: {
-            slidesPerView: 2.3,
+            slidesPerView: 2.3
         },
         768: {
             slidesPerView: 3.3,
-            spaceBetween: 15,
+            spaceBetween: 15
         },
         992: {
             slidesPerView: 4.2,
-            spaceBetween: 20,
-        },
+            spaceBetween: 20
+        }
     },
     navigation: {
         nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+        prevEl: ".swiper-button-prev"
+    }
 });
 
 const swiperCategory = new Swiper(".swiper-category", {
@@ -33,24 +33,24 @@ const swiperCategory = new Swiper(".swiper-category", {
     spaceBetween: 10,
     navigation: {
         nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        prevEl: ".swiper-button-prev"
     },
     breakpoints: {
         320: {
-            slidesPerView: 1.2,
+            slidesPerView: 1.2
         },
         576: {
-            slidesPerView: 2.3,
+            slidesPerView: 2.3
         },
         768: {
             slidesPerView: 3.3,
-            spaceBetween: 15,
+            spaceBetween: 15
         },
         992: {
             slidesPerView: 5,
-            spaceBetween: 20,
-        },
-    },
+            spaceBetween: 20
+        }
+    }
 });
 
 // Locations
@@ -61,24 +61,24 @@ const swiperLocations = new Swiper(".swiper-locations", {
     breakpoints: {
         320: {
             slidesPerView: 1.2,
-            freeMode: true,
+            freeMode: true
         },
         576: {
-            slidesPerView: 2.3,
+            slidesPerView: 2.3
         },
         768: {
             slidesPerView: 3.3,
-            spaceBetween: 15,
+            spaceBetween: 15
         },
         992: {
             slidesPerView: 5,
-            spaceBetween: 20,
-        },
+            spaceBetween: 20
+        }
     },
     navigation: {
         nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+        prevEl: ".swiper-button-prev"
+    }
 });
 
 //
@@ -92,27 +92,27 @@ const swiperReviews = new Swiper(".swiper-reviews", {
     freeMode: true,
     autoplay: {
         delay: 3000,
-        disableOnInteraction: true,
+        disableOnInteraction: true
     },
     breakpoints: {
         320: {
-            slidesPerView: 1.2,
+            slidesPerView: 1.2
         },
         576: {
-            slidesPerView: 2.2,
+            slidesPerView: 2.2
         },
         768: {
-            slidesPerView: 3,
+            slidesPerView: 3
         },
         992: {
             slidesPerView: 4,
-            spaceBetween: 20,
-        },
+            spaceBetween: 20
+        }
     },
     pagination: {
         el: ".swiper-pagination",
-        clickable: true,
-    },
+        clickable: true
+    }
 });
 
 // swiper featured item
@@ -122,28 +122,28 @@ const featuredItem = new Swiper(".swiper-featured", {
     spaceBetween: 10,
     autoplay: {
         delay: 6000,
-        disableOnInteraction: true,
+        disableOnInteraction: true
     },
 
     breakpoints: {
         320: {
-            slidesPerView: 1,
+            slidesPerView: 1
         },
         576: {
-            slidesPerView: 2,
+            slidesPerView: 2
         },
         768: {
-            slidesPerView: 3,
+            slidesPerView: 3
         },
         1024: {
             slidesPerView: 4,
-            spaceBetween: 20,
-        },
+            spaceBetween: 20
+        }
     },
     pagination: {
         el: ".swiper-pagination",
-        clickable: true,
-    },
+        clickable: true
+    }
 });
 
 // End of Swiper JS
@@ -196,14 +196,108 @@ import { MDCTabBar } from "@material/tab-bar";
 import { MDCTabIndicator } from "@material/tab-indicator";
 import { MDCTabScroller } from "@material/tab-scroller";
 
-const tabBar = new MDCTabBar(document.querySelector(".mdc-tab-bar"));
+// const tabBar = new MDCTabBar(document.querySelector(".mdc-tab-bar"));
 
-// tabBar.activateTab((index: number) => void ) ;
+// tabBar.focusOnActivate = true;
 
-const tabIndicator = new MDCTabIndicator(
-    document.querySelector(".mdc-tab-indicator")
-);
-const tabScroller = new MDCTabScroller(
-    document.querySelector(".mdc-tab-scroller")
-);
-// End single tour page js
+// // tabBar.activateTab((index: number) => void ) ;
+
+// const tabIndicator = new MDCTabIndicator(
+//     document.querySelector(".mdc-tab-indicator")
+// );
+// const tabScroller = new MDCTabScroller(
+//     document.querySelector(".mdc-tab-scroller")
+// );
+// // End single tour page js
+
+// this is an example 1 of js code for dynamic tabs
+
+function initTabs(el) {
+    var tabBar = new mdc.tabBar.MDCTabBar(document.querySelector("#" + el));
+    var panels = document.querySelector("[for=" + el + "]");
+    tabBar.preventDefaultOnClick = true;
+    function updatePanel(index) {
+        var activePanel = panels.querySelector(
+            ".mdc-tab-content.mdc-tab-content--active"
+        );
+        if (activePanel) {
+            activePanel.classList.remove("mdc-tab-content--active");
+        }
+        var newActivePanel = panels.querySelector(
+            ".mdc-tab-content:nth-child(" + (index + 1) + ")"
+        );
+        if (newActivePanel) {
+            newActivePanel.classList.add("mdc-tab-content--active");
+        }
+    }
+    tabBar.listen("MDCTabBar:activated", function(t) {
+        var tabs = t.detail;
+        var nthChildIndex = tabs.index;
+        updatePanel(nthChildIndex);
+    });
+}
+initTabs("tab1");
+
+// this is an example 2 of js code for dynamic tabs
+
+var dynamicTabBar = (window.dynamicTabBar = new mdc.tabs.MDCTabBar(
+    document.querySelector("#dynamic-tab-bar")
+));
+var dots = document.querySelector(".dots");
+var panels = document.querySelector(".panels");
+
+dynamicTabBar.tabs.forEach(function(tab) {
+    tab.preventDefaultOnClick = true;
+});
+
+function updateDot(index) {
+    var activeDot = dots.querySelector(".dot.active");
+    if (activeDot) {
+        activeDot.classList.remove("active");
+    }
+    var newActiveDot = dots.querySelector(
+        ".dot:nth-child(" + (index + 1) + ")"
+    );
+    if (newActiveDot) {
+        newActiveDot.classList.add("active");
+    }
+}
+
+function updatePanel(index) {
+    var activePanel = panels.querySelector(".panel.active");
+    if (activePanel) {
+        activePanel.classList.remove("active");
+    }
+    var newActivePanel = panels.querySelector(
+        ".panel:nth-child(" + (index + 1) + ")"
+    );
+    if (newActivePanel) {
+        newActivePanel.classList.add("active");
+    }
+}
+
+dynamicTabBar.listen("MDCTabBar:change", function({ detail: tabs }) {
+    var nthChildIndex = tabs.activeTabIndex;
+
+    updatePanel(nthChildIndex);
+    updateDot(nthChildIndex);
+});
+
+dots.addEventListener("click", function(evt) {
+    if (!evt.target.classList.contains("dot")) {
+        return;
+    }
+
+    evt.preventDefault();
+
+    var dotIndex = [].slice
+        .call(dots.querySelectorAll(".dot"))
+        .indexOf(evt.target);
+
+    if (dotIndex >= 0) {
+        dynamicTabBar.activeTabIndex = dotIndex;
+    }
+
+    updatePanel(dotIndex);
+    updateDot(dotIndex);
+});
