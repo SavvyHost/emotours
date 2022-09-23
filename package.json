@@ -41,7 +41,7 @@
         "ionicons": "^4.6.3",
         "raw-loader": "^2.0.0",
         "style-loader": "^0.23.1",
-        "vue": "^2.6.12",
+        "vue": "^2.7.10",
         "vue-form-generator": "^2.3.4",
         "vuedraggable": "^2.23.2"
     }
