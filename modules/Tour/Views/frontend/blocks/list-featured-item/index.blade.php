@@ -1,10 +1,11 @@
 @if($list_item)
     <div class="bravo-featured-item {{$style ?? ''}}">
-        <div class="container">
-            <div class="row">
+        <div class="container-fluid">
+        <div class="swiper swiper-featured">
+            <div class=" swiper-wrapper">
                 @foreach($list_item as $k=>$item)
                     <?php $image_url = get_file_url($item['icon_image'], 'full') ?>
-                    <div class="col-md-4">
+                    <div class="swiper-slide">
                         <div class="featured-item">
                             <div class="image">
                                 @if(!empty($style) and $style == 'style2')
@@ -23,6 +24,9 @@
                     </div>
                 @endforeach
             </div>
+                        <div class="swiper-pagination"></div>
+
+        </div>
         </div>
     </div>
 @endif

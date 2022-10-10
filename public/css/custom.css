@@ -5,4 +5,190 @@
 header,
 header.header.sticky {
     padding: 15px 20px 0 !important;
+/* customize tours card css  */
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-item
+    .list-item
+    .item-tour
+    .featured {
+    border-radius: 5px;
+    padding: 3px 5px;
+    top: 10px !important;
+    left: 10px !important;
+}
+
+/* .bravo_wrap
+    .bravo_search_tour
+    .bravo-list-item
+    .list-item
+    .item-tour
+    .sale_info-new {
+    position: absolute;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    width: 4rem;
+    height: 4rem;
+    transform: rotate(0deg);
+    right: 10px;
+    top: 10px;
+    background-color: #e1f9ff;
+    border-radius: 13px;
+    z-index: 100;
+} */
+
+.bravo_wrap
+    .bravo_search_tour
+    .bravo-list-item
+    .list-item
+    .item-tour
+    .sale_info-new {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 65px;
+    height: 77px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    background: url(..\public\icon\badge_save.png);
+    font-size: 11px;
+    line-height: 12px;
+    padding-top: 32px;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-list-tour
+    .item-tour
+    .item-title-2:hover {
+    text-decoration: 1px #2a2d32;
+}
+.bravo_wrap .page-template-content .bravo-list-tour .item-tour .item-title-2 {
+    padding: 0 15px;
+    font-size: 1rem;
+    line-height: 22px;
+    min-height: 45px;
+    text-align: left;
+    color: #2a2d32;
+    margin-bottom: 0.5rem;
+}
+
+.bravo_wrap .page-template-content .bravo-list-tour .item-tour-new {
+    border-radius: 8px !important;
+    border: none;
+    box-shadow: inset -1px 1px 5px 0 #e1e1e179;
+}
+.bravo_wrap .page-template-content .bravo-list-tour .item-tour:hover {
+    box-shadow: 1px 3px 5px 0px #b2adad94;
+}
+/* End customize tours card css  */
+
+/* START: SWIPER CAROUSEL */
+
+/* locations custom css  */
+
+.bravo_wrap
+    .page-template-content
+    .bravo-list-locations.style_4
+    .list-item
+    .destination-item
+    .image {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    min-height: 0;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-list-locations.style_4
+    .list-item
+    .destination-item
+    .content
+    .desc {
+    top: 3rem;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-list-locations
+    .list-item
+    .destination-item {
+    padding-top: 63.49% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    height: 0;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-list-locations.style_4
+    .list-item
+    .destination-item
+    .content
+    .title {
+    text-shadow: #000 0.0625rem 0 0.625rem;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+/* swiper category css  */
+
+.swiper-category .swiper-wrapper {
+    height: 180px;
+    /* border-radius: 10px; */
+}
+
+.bravo-box-category-tour .swiper-category .swiper-wrapper .swiper-slide {
+    width: 70%;
+}
+
+.bravo_wrap .page-template-content .bravo-box-category-tour .list-item .item {
+    /* height: 180px; */
+    border-radius: 10px;
+    transition: all 0.1ms;
+}
+.bravo_wrap
+    .page-template-content
+    .bravo-box-category-tour
+    .list-item
+    .item:hover {
+    box-shadow: 2px 6px 8px 0px rgb(171 170 170 / 91%);
+}
+
+.bravo_wrap .page-template-content .bravo-box-category-tour .swiper-wrapper {
+    margin: 10px 5px;
+}
+
+.bravo_wrap .page-template-content .bravo-box-category-tour .list-item .item a {
+    /* width: 100%; */
+    height: 100%;
+    border-radius: 10px;
+}
+
+.bravo_wrap
+    .page-template-content
+    .bravo-box-category-tour
+    .list-item
+    .item
+    a
+    img {
+    width: 100%;
+    border-radius: 10px;
+    /* height: 100%; */
+}
+.bravo_wrap
+    .page-template-content
+    .bravo-box-category-tour
+    .list-item
+    .item
+    .text-title {
+    text-shadow: #000 0.0625rem 0 0.625rem;
 }

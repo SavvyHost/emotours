@@ -51,6 +51,10 @@ class ListTours extends BaseBlock
                             'value'   => 'carousel_simple',
                             'name' => __("Slider Carousel Simple")
                         ],
+                        [
+                            'value'   => 'carousel_new',
+                            'name' => __("Slider Carousel new")
+                        ],
                     ]
                 ],
                 [
