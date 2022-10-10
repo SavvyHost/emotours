@@ -21,7 +21,7 @@
     @endif
 
     @include('Layout::parts.seo-meta')
-    <link href="{{ asset('libs/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('panagea/css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('libs/icofont/icofont.min.css') }}" rel="stylesheet">
@@ -37,7 +37,6 @@
     <link rel="stylesheet" href="{{asset('panagea/css/custom.css')}}">
     <!--/ Panagea Styles  -->
 
-    <link rel="stylesheet" type="text/css" href="{{ asset("libs/daterange/daterangepicker.css") }}" >
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel='stylesheet' id='google-font-css-css'  href='https://fonts.googleapis.com/css?family=Poppins%3A300%2C400%2C500%2C600' type='text/css' media='all' />
@@ -136,7 +135,7 @@
     @php event(new \Modules\Layout\Events\LayoutEndHead()); @endphp
 
 </head>
-<body class="frontend-page {{ !empty($row->header_style) ? "header-".$row->header_style : "header-normal" }} {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif">
+<body class=" {{$body_class ?? ''}} @if(setting_item_with_lang('enable_rtl')) is-rtl @endif @if(is_api()) is_api @endif">
     @php event(new \Modules\Layout\Events\LayoutBeginBody()); @endphp
 
     @if(!is_demo_mode())

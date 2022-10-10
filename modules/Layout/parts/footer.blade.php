@@ -1,61 +1,94 @@
 @if(!is_api())
-	<div class="bravo_footer">
-		<div class="mailchimp">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-lg-10 col-lg-offset-1">
-						<div class="row">
-							<div class="col-xs-12  col-md-7 col-lg-6">
-								<div class="media ">
-									<div class="media-left hidden-xs">
-										<i class="icofont-island-alt"></i>
-									</div>
-									<div class="media-body">
-										<h4 class="media-heading">{{__("Get Updates & More")}}</h4>
-										<p>{{__("Thoughtful thoughts to your inbox")}}</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12 col-md-5 col-lg-6">
-								<form action="{{route('newsletter.subscribe')}}" class="subcribe-form bravo-subscribe-form bravo-form">
-									@csrf
-									<div class="form-group">
-										<input type="text" name="email" class="form-control email-input" placeholder="{{__('Your Email')}}">
-										<button type="submit" class="btn-submit">{{__('Subscribe')}}
-											<i class="fa fa-spinner fa-pulse fa-fw"></i>
-										</button>
-									</div>
-									<div class="form-mess"></div>
-								</form>
-
-							</div>
+<footer>
+		<div class="container margin_60_35">
+			<div class="row">
+				<div class="col-lg-5 col-md-12 pe-5">
+					 @php
+            $logo_id = setting_item("logo_id");
+            if(!empty($row->custom_logo)){
+            $logo_id = $row->custom_logo;
+            }
+            @endphp
+            @if($logo_id)
+            <?php $logo = get_file_url($logo_id,'full') ?>
+					<p><img src="{{$logo}}" width="150" height="60" alt=""></p> @endif
+					<p>Emotours Offers a wide range of travel services in Egypt including Guided Day tours, Travel packages.</p>
+					<div class="follow_us">
+						<ul>
+							<li>Follow us</li>
+							<li><a href="#0"><i class="ti-facebook"></i></a></li>
+							<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
+							<li><a href="#0"><i class="ti-google"></i></a></li>
+							<li><a href="#0"><i class="ti-pinterest"></i></a></li>
+							<li><a href="#0"><i class="ti-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 ms-lg-auto">
+					<h5>Useful links</h5>
+					<ul class="links">
+						<li><a href="about.html">About</a></li>
+						<li><a href="login.html">Login</a></li>
+						<li><a href="register.html">Register</a></li>
+						<li><a href="blog.html">News &amp; Events</a></li>
+						<li><a href="contacts.html">Contacts</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<h5>Contact with Us</h5>
+					<ul class="contacts">
+						<li><a href="tel://+201141510735"><i class="ti-mobile"></i> +2 011 4151 0735</a></li>
+						<li><a href="mailto:info@emotours.com"><i class="ti-email"></i> info@emotours.com</a></li>
+					</ul>
+					<div id="newsletter">
+					<h6>Newsletter</h6>
+					<div id="message-newsletter"></div>
+					<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
+						<div class="form-group">
+							<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
+							<input type="submit" value="Submit" id="submit-newsletter">
 						</div>
+					</form>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="main-footer">
-			<div class="container">
-				<div class="row">
-					@if($list_widget_footers = setting_item_with_lang("list_widget_footer"))
-                        <?php $list_widget_footers = json_decode($list_widget_footers); ?>
-						@foreach($list_widget_footers as $key=>$item)
-							<div class="col-lg-{{$item->size ?? '3'}} col-md-6">
-								<div class="nav-footer">
-									<div class="title">
-										{{$item->title}}
-									</div>
-									<div class="context">
-										{!! $item->content  !!}
-									</div>
-								</div>
+			<!--/row-->
+			<hr>
+			<div class="row">
+				<div class="col-lg-6">
+					<ul id="footer-selector">
+						<li>
+							<div class="styled-select" id="lang-selector">
+								<select>
+									<option value="English" selected>English</option>
+									<option value="French">French</option>
+									<option value="Spanish">Spanish</option>
+									<option value="Russian">Russian</option>
+								</select>
 							</div>
-						@endforeach
-					@endif
+						</li>
+						<li>
+							<div class="styled-select" id="currency-selector">
+								<select>
+									<option value="US Dollars" selected>US Dollars</option>
+									<option value="Euro">Euro</option>
+								</select>
+							</div>
+						</li>
+						<li><img src="img/cards_all.svg" alt=""></li>
+					</ul>
+				</div>
+				<div class="col-lg-6">
+					<ul id="additional_links">
+						<li><a href="#0">Terms and conditions</a></li>
+						<li><a href="#0">Privacy</a></li>
+						<li><span>© Emotours</span></li>
+					</ul>
 				</div>
 			</div>
 		</div>
-		<div class="copy-right">
+	
+		{{-- <div class="copy-right">
 			<div class="container context">
 				<div class="row">
 					<div class="col-md-12">
@@ -66,9 +99,12 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+		</div> --}}
+		<div id="toTop"></div><!-- Back to top button -->
+</footer>
 @endif
+
+
 
 @include('Layout::parts.login-register-modal-panagea')
 @include('Layout::parts.chat')
@@ -99,7 +135,7 @@
 <script src="{{ asset('libs/lodash.min.js') }}"></script>
 <script src="{{ asset('libs/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('libs/vue/vue'.(!env('APP_DEBUG') ? '.min':'').'.js') }}"></script>
-<script src="{{ asset('libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('panagea/js/mdb.min.js') }}"></script>
 <script src="{{ asset('libs/bootbox/bootbox.min.js') }}"></script>
 @if(Auth::id())
 	<script src="{{ asset('module/media/js/browser.js?_ver='.config('app.version')) }}"></script>
@@ -140,6 +176,11 @@
 <script src="{{ asset('panagea/js/main.js') }}"></script>
 <script src="{{ asset('panagea/js/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('panagea/js/custom.js') }}"></script>
+
+<!-- SPECIFIC SCRIPTS -->
+<script src="{{ asset('panagea/js/jarallax.min.js') }}"></script> 
+<script src="{{ asset('panagea/js/jarallax-video.min.js') }}"></script> 
+<script src="{{ asset('panagea/js/input_qty.js') }}"></script> 
 <!-- /Include Custom JavaScript Files -->
 
 @yield('footer')

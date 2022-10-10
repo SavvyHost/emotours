@@ -6,6 +6,9 @@
         @case("style_3")
             @include("Tour::frontend.blocks.call-to-action.style-3")
         @break
+        @case("style_4")
+            @include("Tour::frontend.blocks.call-to-action.style-4")
+        @break
         @default
             @include("Tour::frontend.blocks.call-to-action.style-normal")
     @endswitch

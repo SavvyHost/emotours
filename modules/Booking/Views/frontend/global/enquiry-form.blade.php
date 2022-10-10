@@ -1,4 +1,4 @@
-<div class="modal fade" tabindex="-1" role="dialog" id="enquiry_form_modal">
+<div class="modal fade z-max" tabindex="-1" role="dialog" id="enquiry_form_modal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content enquiry_form_modal_form">
             <div class="modal-header">

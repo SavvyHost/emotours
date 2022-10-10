@@ -1,6 +1,4 @@
-//Featured
-
-// Locations
+//Featured Tours Swiper
 const swiperFeatured = new Swiper(".swiper-featured-tours", {
     direction: "horizontal",
     spaceBetween: 10,
@@ -18,7 +16,7 @@ const swiperFeatured = new Swiper(".swiper-featured-tours", {
             spaceBetween: 15,
         },
         992: {
-            slidesPerView: 5,
+            slidesPerView: 4.2,
             spaceBetween: 20,
         },
     },
@@ -147,3 +145,52 @@ const featuredItem = new Swiper(".swiper-featured", {
         clickable: true,
     },
 });
+
+// End of Swiper JS
+
+// start single tour page js
+
+$(function () {
+    $(function () {
+        $(".secondary_nav ul a").click(function (e) {
+            "use strict";
+            console.log(1);
+            e.preventDefault();
+            $("html, body").animate(
+                {
+                    scrollTop: $($(this).attr("href")).offset().top - 65,
+                },
+                0
+            );
+        });
+    });
+    // Add Active Class on Navbar Link and Remove from the Siblings(if any exist!)
+    $(".secondary_nav ul a").click(function () {
+        $(".secondary_nav ul a").removeClass("active");
+        $(this).addClass("active");
+        $(this)
+            .addClass("active")
+            .parent()
+            .siblings()
+            .find("a")
+            .removeClass("active");
+    });
+
+    // Sync Navbar Links With Sections
+
+    $(window).scroll(function () {
+        $("section").each(function () {
+            if ($(window).scrollTop() >= $(this).offset().top - 160) {
+                var blockId = $(this).attr("id");
+                if (blockId != undefined) {
+                    $(".secondary_nav ul a").removeClass("active");
+                    $(
+                        '.secondary_nav ul li a[href="#' + blockId + '"]'
+                    ).addClass("active");
+                }
+            }
+        });
+    });
+});
+
+// End single tour page js

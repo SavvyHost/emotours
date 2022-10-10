@@ -2,14 +2,13 @@
     <div class="bravo-box-category-tour">
         <div class="container-fluid">
             @if($title)
-                <div class="title">
-                    {{$title}}
-                </div>
-            @endif
-            @if(!empty($desc))
-                <div class="desc">
-                    {{$desc}}
-                </div>
+            <div class="main_title_3">
+                <span><em></em></span>
+                <h3>{{$title}}</h3> 
+                @if(!empty($desc))
+                <p>{{$desc}}</p>
+                @endif
+            </div>
             @endif
             <div class="list-item swiper swiper-category">
                 <div class="swiper-wrapper">
