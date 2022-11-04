@@ -39,8 +39,8 @@
         "font-awesome": "^4.7.0",
         "he-tree-vue": "^1.1.2",
         "ionicons": "^4.6.3",
-        "raw-loader": "^2.0.0",
-        "style-loader": "^0.23.1",
+        "raw-loader": "^4.0.1",
+        "style-loader": "^1.1.4",
         "vue": "^2.6.12",
         "vue-form-generator": "^2.3.4",
         "vuedraggable": "^2.23.2"
