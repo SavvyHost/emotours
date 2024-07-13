@@ -34,7 +34,7 @@
     },
     "dependencies": {
         "@tinymce/tinymce-vue": "^3.2.0",
-        "bootbox": "^5.4.0",
+        "bootbox": "^5.5.3",
         "core-js": "^2.6.11",
         "font-awesome": "^4.7.0",
         "he-tree-vue": "^1.1.2",
